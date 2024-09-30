@@ -2,16 +2,15 @@ import React, { useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import BaseAdminto from '@Adminto/Base';
 import CreateReactScript from '../Utils/CreateReactScript';
-import Table from '../Components/Table';
-import Modal from '../Components/Modal';
-import InputFormGroup from '../Components/form/InputFormGroup';
+import Table from '@Adminto/Table';
+import Modal from '@Adminto/Modal';
+import InputFormGroup from '@Adminto/form/InputFormGroup';
 import ReactAppend from '../Utils/ReactAppend';
-import DxButton from '../Components/dx/DxButton';
+import DxButton from '@Adminto/Dx/DxButton';
 import TextareaFormGroup from '@Adminto/form/TextareaFormGroup';
-import { renderToString } from 'react-dom/server';
 import SwitchFormGroup from '@Adminto/form/SwitchFormGroup';
 import SlidersRest from '../Actions/Admin/SlidersRest';
-import ImageFormGroup from '../Components/Adminto/form/ImageFormGroup';
+import ImageFormGroup from '@Adminto/form/ImageFormGroup';
 import Swal from 'sweetalert2';
 
 const slidersRest = new SlidersRest()

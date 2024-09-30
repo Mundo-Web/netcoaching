@@ -3,6 +3,7 @@ import React from 'react'
 import CreateReactScript from './Utils/CreateReactScript'
 import { Link } from '@inertiajs/react'
 import logo from './Svg/logo.svg'
+import Global from './Utils/Global'
 
 const ConfirmEmail = ({ email }) => {
 
@@ -18,7 +19,7 @@ const ConfirmEmail = ({ email }) => {
                 <Link href="/">
                   <img src={logo} alt="" className="mx-auto" style={{ height: '40px' }} />
                 </Link>
-                <p className="text-muted mt-2 mb-4">Bienvenido a Net Coaching</p>
+                <p className="text-muted mt-2 mb-4">Bienvenido a {Global.APP_NAME}</p>
               </div>
               <div className="card text-center">
                 <div className="card-body p-4">

@@ -7,6 +7,7 @@ import { Link } from '@inertiajs/react'
 import Swal from 'sweetalert2'
 import { GET } from 'sode-extend-react'
 import logo from './Svg/logo.svg'
+import Global from './Utils/Global'
 
 const Login = ({ PUBLIC_RSA_KEY, token, APP_DOMAIN, APP_PROTOCOL }) => {
 
@@ -64,7 +65,7 @@ const Login = ({ PUBLIC_RSA_KEY, token, APP_DOMAIN, APP_PROTOCOL }) => {
                 <Link href="/">
                   <img src={logo} alt="" className="mx-auto" style={{ height: '40px' }} />
                 </Link>
-                <p className="text-muted mt-2 mb-4">Bienvenido a Net Coaching</p>
+                <p className="text-muted mt-2 mb-4">Bienvenido a {Global.APP_NAME}</p>
               </div>
               <div className="card">
                 <div className="card-body p-4">

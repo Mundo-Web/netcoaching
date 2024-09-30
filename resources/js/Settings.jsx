@@ -5,12 +5,12 @@ import CreateReactScript from './Utils/CreateReactScript'
 import ReactAppend from './Utils/ReactAppend'
 import SetQuillValue from './Utils/SetQuillValue'
 import SettingsRest from './actions/SettingsRest'
-import BaseAdminto from './components/Adminto/Base'
-import Modal from './Components/Modal'
-import Table from './Components/Table'
-import InputFormGroup from './Components/form/InputFormGroup'
-import QuillFormGroup from './Components/form/QuillFormGroup'
-import TippyButton from './components/form/TippyButton'
+import BaseAdminto from '@Adminto/Base'
+import Modal from '@Adminto/Modal'
+import Table from '@Adminto/Table'
+import InputFormGroup from '@Adminto/form/InputFormGroup'
+import QuillFormGroup from '@Adminto/form/QuillFormGroup'
+import TippyButton from '@Adminto/form/TippyButton'
 
 const Settings = ({ can }) => {
   const gridRef = useRef()

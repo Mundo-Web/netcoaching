@@ -2,8 +2,8 @@ import Tippy from '@tippyjs/react'
 import React from 'react'
 import 'tippy.js/dist/tippy.css'
 import Logout from '../../Actions/Logout'
-import MenuItem from '../MenuItem'
-import MenuItemContainer from '../MenuItemContainer'
+import MenuItem from './Menu/MenuItem'
+import MenuItemContainer from './Menu/MenuItemContainer'
 
 const Menu = ({ session, hasRole }) => {
   const mainRole = session.roles[0]
@@ -111,6 +111,7 @@ const Menu = ({ session, hasRole }) => {
                 <MenuItem href='/coachee/agreements' icon='mdi mdi-handshake'>Acuerdos</MenuItem>
                 <MenuItem href='/coachee/sessions' icon='mdi mdi-playlist-play'>Sesiones</MenuItem>
               </MenuItemContainer>
+              <MenuItem href="/coachee/payments" icon='mdi mdi-currency-usd'>Pagos</MenuItem>
             </>
           }
 

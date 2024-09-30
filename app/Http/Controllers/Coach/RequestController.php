@@ -17,16 +17,4 @@ class RequestController extends BasicController
         return $model::with(['coachee'])
             ->where('coach_id', Auth::user()->id);
     }
-
-    public function setPaginationSummary(string $model)
-    {
-        $last = Agreement::orderBy('contract_number', 'desc')->first();
-        $correlative = 1;
-        if ($last) {
-            $correlative = $last->contract_number + 1;
-        }
-        return [
-            'contract_number' => $correlative
-        ];
-    }
 }

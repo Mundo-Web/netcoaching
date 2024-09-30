@@ -43,4 +43,13 @@ class Agreement extends Model
     {
         return $this->hasOne(User::class, 'id', 'coachee_id');
     }
+    public function observations()
+    {
+        return $this->hasMany(Observation::class, 'agreement_id', 'id');
+    }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class, 'agreement_id', 'id');
+    }
 }

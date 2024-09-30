@@ -2,17 +2,17 @@ import React, { useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import BaseAdminto from '@Adminto/Base';
 import CreateReactScript from '../Utils/CreateReactScript';
-import Table from '../Components/Table';
-import Modal from '../Components/Modal';
-import InputFormGroup from '../Components/form/InputFormGroup';
+import Table from '@Adminto/Table';
+import Modal from '@Adminto/Modal';
+import InputFormGroup from '@Adminto/form/InputFormGroup';
 import ReactAppend from '../Utils/ReactAppend';
-import DxButton from '../Components/dx/DxButton';
+import DxButton from '@Adminto/Dx/DxButton';
 import TextareaFormGroup from '@Adminto/form/TextareaFormGroup';
 import SwitchFormGroup from '@Adminto/form/SwitchFormGroup';
-import ImageFormGroup from '../Components/Adminto/form/ImageFormGroup';
-import SelectFormGroup from '../Components/form/SelectFormGroup';
+import ImageFormGroup from '@Adminto/form/ImageFormGroup';
+import SelectFormGroup from '@Adminto/form/SelectFormGroup';
 import TestimoniesRest from '../Actions/Admin/TestimoniesRest';
-import DxBox from '../Components/Adminto/Dx/DxBox';
+import DxBox from '@Adminto/Dx/DxBox';
 import Swal from 'sweetalert2';
 
 const testimoniesRest = new TestimoniesRest()

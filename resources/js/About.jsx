@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client';
 import Base from './Components/Tailwind/Base';
 import VissionMissionSection from './Components/About/VissionMissionSection';
 import StatisticsSection from './Components/About/StatisticsSection';
+import Global from './Utils/Global';
 
 function About({ aboutus, indicators }) {
   const history = aboutus.find(({ name }) => name == 'Historia')
@@ -17,7 +18,7 @@ function About({ aboutus, indicators }) {
           <article className="flex gap-5 max-md:flex-col">
             <div className="flex flex-col w-4/12 max-md:ml-0 max-md:w-full">
               <h1 className="text-4xl font-bold leading-10 text-cyan-950 max-md:mt-3 max-md:max-w-full">
-                Net Coaching: Un Viaje desde sus Inicios hasta Hoy
+                {Global.APP_NAME}: Un Viaje desde sus Inicios hasta Hoy
               </h1>
             </div>
             <div className="flex flex-col ml-5 w-8/12 max-md:ml-0 max-md:w-full">
@@ -31,7 +32,6 @@ function About({ aboutus, indicators }) {
       <img
         loading="lazy"
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/eb7d4e1f35374fe412bb24f1d4b542859fa12dc2cb3967d2deec7e548a818f23?placeholderIfAbsent=true&apiKey=5cee531c8862493aa6f0e0854aa64731"
-        alt="Net Coaching journey"
         className="object-contain w-full rounded aspect-[3.19] max-md:max-w-full"
       />
       <StatisticsSection indicators={indicators} />
@@ -40,7 +40,7 @@ function About({ aboutus, indicators }) {
           <div className="flex flex-col max-w-full w-[628px]">
             <header className="flex flex-col w-full max-md:max-w-full">
               <h2 className="w-full text-4xl font-bold leading-10 max-md:max-w-full">
-                Mirando hacia el Horizonte: Las Metas y Visiones Futuras de Net Coaching
+                Mirando hacia el Horizonte: Las Metas y Visiones Futuras de {Global.APP_NAME}
               </h2>
               <p className="mt-6 w-full text-base leading-6 max-md:max-w-full">
                 Descubre cómo estamos moldeando el camino hacia un mañana más brillante en el desarrollo humano y

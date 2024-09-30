@@ -1,18 +1,18 @@
 import React, { useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import BaseAdminto from '../Components/Adminto/Base';
+import BaseAdminto from '@Adminto/Base';
 import CreateReactScript from '../Utils/CreateReactScript';
-import Table from '../Components/Table';
-import Modal from '../Components/Modal';
-import InputFormGroup from '../Components/form/InputFormGroup';
+import Table from '@Adminto/Table';
+import Modal from '@Adminto/Modal';
+import InputFormGroup from '@Adminto/form/InputFormGroup';
 import ReactAppend from '../Utils/ReactAppend';
-import SelectFormGroup from '../Components/form/SelectFormGroup';
-import DxButton from '../Components/dx/DxButton';
+import SelectFormGroup from '@Adminto/form/SelectFormGroup';
+import DxButton from '@Adminto/Dx/DxButton';
 import BenefitsRest from '../Actions/Admin/BenefitsRest';
-import TextareaFormGroup from '../Components/Adminto/form/TextareaFormGroup';
+import TextareaFormGroup from '@Adminto/form/TextareaFormGroup';
 import { renderToString } from 'react-dom/server';
-import SwitchFormGroup from '../Components/Adminto/form/SwitchFormGroup';
-import ImageFormGroup from '../Components/Adminto/form/ImageFormGroup';
+import SwitchFormGroup from '@Adminto/form/SwitchFormGroup';
+import ImageFormGroup from '@Adminto/form/ImageFormGroup';
 import Swal from 'sweetalert2';
 
 const benefitsRest = new BenefitsRest()

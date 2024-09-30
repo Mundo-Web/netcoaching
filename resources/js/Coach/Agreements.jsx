@@ -1,21 +1,36 @@
 import React, { useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import BaseAdminto from '../Components/Adminto/Base';
+import BaseAdminto from '@Adminto/Base';
 import CreateReactScript from '@Utils/CreateReactScript';
-import Table from '../Components/Table';
+import Table from '@Adminto/Table';
 import ReactAppend from '@Utils/ReactAppend';
 import DxButton from '../Components/dx/DxButton';
 import AgreementsRest from '../Actions/Coach/AgreementsRest';
 import Modal from '../Components/Coach/Agreements/Modal';
+import AdmintoModal from '@Adminto/Modal'
+import Details from '../Components/Coach/Agreements/Details';
 
 const agreementsRest = new AgreementsRest()
 
 const Agreements = () => {
-
   const gridRef = useRef()
+  const modalRef = useRef()
+  const observationsModalRef = useRef()
 
-  const [contractNumber, setContractNumber] = useState(1)
   const [dataLoaded, setDataLoaded] = useState(null)
+  const [agreementLoaded, setAgreementLoaded] = useState(null)
+  const [observations, setObservations] = useState([])
+
+  const onModalOpen = (data) => {
+    setAgreementLoaded(data)
+    $(modalRef.current).modal('show');
+  }
+
+  const onObservationsClicked = (data) => {
+    console.log(data)
+    setObservations(data.observations)
+    $(observationsModalRef.current).modal('show')
+  }
 
   const onDeleteClicked = async (id) => {
     const { isConfirmed } = await Swal.fire({
@@ -43,19 +58,6 @@ const Agreements = () => {
             onClick: () => $(gridRef.current).dxDataGrid('instance').refresh()
           }
         });
-        container.unshift({
-          widget: 'dxButton', location: 'after',
-          options: {
-            icon: 'plus',
-            text: 'Nuevo registro',
-            hint: 'Nuevo registro',
-            onClick: () => onModalOpen()
-          }
-        });
-      }}
-      onRefresh={({ summary }) => {
-        if (!summary?.contract_number) return
-        setContractNumber(summary.contract_number)
       }}
       columns={[
         {
@@ -101,7 +103,10 @@ const Agreements = () => {
                 break
               case 0:
                 ReactAppend(container, <div>
-                  <span className='badge bg-danger rounded-pill'>Observado</span>
+                  <span className='badge bg-danger rounded-pill' onClick={() => onObservationsClicked(data)} style={{ cursor: 'pointer' }}>
+                    Observado
+                    <i className='ms-1 mdi mdi-arrow-top-right'></i>
+                  </span>
                 </div>)
                 break
               default:
@@ -113,6 +118,13 @@ const Agreements = () => {
         {
           caption: 'Acciones',
           cellTemplate: (container, { data }) => {
+            container.css('text-overflow', 'unset')
+            container.append(DxButton({
+              className: 'btn btn-xs btn-soft-dark',
+              title: 'Ver acuerdo',
+              icon: 'fas fa-file-invoice',
+              onClick: () => onModalOpen(data)
+            }))
             container.append(DxButton({
               className: 'btn btn-xs btn-soft-primary',
               title: 'Editar',
@@ -131,6 +143,31 @@ const Agreements = () => {
         }
       ]} />
     <Modal dataLoaded={dataLoaded} setDataLoaded={setDataLoaded} onSave={() => $(gridRef.current).dxDataGrid('instance').refresh()} />
+    <AdmintoModal modalRef={modalRef} title={`Acuerdo C${String(agreementLoaded?.contract_number).padStart(3, '0')}`} hideFooter size='lg' >
+      <Details {...agreementLoaded} />
+    </AdmintoModal>
+    <AdmintoModal modalRef={observationsModalRef} title='Observaciones' hideFooter>
+      <ul className='conversation-list'>
+        {
+          observations.map(({ observer, description, created_at }, index) => {
+            return <li key={index} className={index + 1 == observations.length ? 'mb-0' : ''}>
+              <div class="message-list">
+                <div class="chat-avatar">
+                  <img src={`/api/profile/thumbnail/${observer.uuid}`} alt={observer.name} />
+                </div>
+                <div class="conversation-text">
+                  <div class="ctext-wrap">
+                    <span class="user-name">{observer.name.split(' ')[0]} {observer.lastname.split(' ')[0]}</span>
+                    <p>{description}</p>
+                  </div>
+                  <span class="time">{moment(created_at).format('lll')}</span>
+                </div>
+              </div>
+            </li>
+          })
+        }
+      </ul>
+    </AdmintoModal>
   </>
   )
 }

@@ -43,12 +43,12 @@ const Requests = () => {
           caption: 'Coach',
           cellTemplate: (container, { data }) => {
             ReactAppend(container, <a href={`/profile/${data.coach.uuid}`} className='d-flex gap-2 align-items-center' target='_blank'>
-              <div class="inbox-item-img">
-                <img src={`/api/profile/thumbnail/${data.coach.relative_id}`} class="rounded-circle avatar-sm" alt="" />
+              <div className="inbox-item-img">
+                <img src={`/api/profile/thumbnail/${data.coach.relative_id}`} className="rounded-circle avatar-sm" alt="" />
               </div>
               <div>
-                <h5 class="inbox-item-author mt-0 mb-0">{data.coach.name} {data.coach.lastname}</h5>
-                <p class="inbox-item-text mb-0">{data.coach.email}</p>
+                <h5 className="inbox-item-author mt-0 mb-0">{data.coach.name} {data.coach.lastname}</h5>
+                <p className="inbox-item-text mb-0">{data.coach.email}</p>
               </div>
             </a>)
           }

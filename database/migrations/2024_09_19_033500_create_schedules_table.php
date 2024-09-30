@@ -13,13 +13,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('schedules', function (Blueprint $table) {
-            $table->uuid('id')->default(DB::raw('(UUID())'))->primary();
+            $table->id();
+            $table->char('agreement_id', 36)->index();
+            $table->unsignedBigInteger('coach_id'); // users
+            $table->unsignedBigInteger('coachee_id'); // users
+            $table->string('name');
             $table->dateTime('session_date');
             $table->boolean('completed')->default(false);
-            $table->char('agreement_id')->index();
+            $table->boolean('status')->default(true)->nullable();
             $table->timestamps();
 
             $table->foreign('agreement_id')->references('id')->on('agreements')->cascadeOnDelete();
+            $table->foreign('coach_id')->references('id')->on('users')->cascadeOnDelete();
+            $table->foreign('coachee_id')->references('id')->on('users')->cascadeOnDelete();
         });
     }
 

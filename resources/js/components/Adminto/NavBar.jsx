@@ -1,10 +1,11 @@
 import React, { useEffect } from "react"
 import Logout from "../../Actions/Logout"
+import Global from "../../Utils/Global"
 
 const NavBar = ({ session = {}, title = 'Pagina' }) => {
 
   useEffect(() => {
-    document.title = `${title} | Net Coaching`
+    document.title = `${title} | ${Global.APP_NAME}`
   }, [null])
 
   return (

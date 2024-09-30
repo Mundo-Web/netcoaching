@@ -19,15 +19,18 @@ use App\Http\Controllers\Admin\SubscriptionController as AdminSubscriptionContro
 use App\Http\Controllers\Coach\ResourceController as CoachResourceController;
 use App\Http\Controllers\Coach\RequestController as CoachRequestController;
 use App\Http\Controllers\Coach\AgreementController as CoachAgreementController;
+use App\Http\Controllers\Coach\ScheduleController as CoachScheduleController;
 
 // Coachee
 use App\Http\Controllers\Coachee\RequestController as CoacheeRequestController;
 use App\Http\Controllers\Coachee\AgreementController as CoacheeAgreementController;
+use App\Http\Controllers\Coachee\ObservationController as CoacheeObservationController;
+use App\Http\Controllers\Coachee\ScheduleController as CoacheeScheduleController;
+
 
 // Public
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\Coach\ScheduleController as CoachScheduleController;
 use App\Http\Controllers\CoachController;
 use App\Http\Controllers\CoverController;
 use App\Http\Controllers\DashboardController;
@@ -147,6 +150,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/agreements', [CoachAgreementController::class, 'save']);
         Route::post('/agreements/paginate', [CoachAgreementController::class, 'paginate']);
         Route::patch('/agreements/status', [CoachAgreementController::class, 'status']);
+        Route::get('/agreements/code', [CoachAgreementController::class, 'lastCode']);
         Route::delete('/agreements/{id}', [CoachAgreementController::class, 'delete']);
 
         Route::post('/schedules', [CoachScheduleController::class, 'save']);
@@ -157,6 +161,14 @@ Route::middleware('auth')->group(function () {
 
     Route::middleware('can:Coachee')->prefix('coachee')->group(function () {
         Route::post('/requests/paginate', [CoacheeRequestController::class, 'paginate']);
+
+        Route::post('/agreements', [CoacheeAgreementController::class, 'save']);
+        Route::post('/agreements/paginate', [CoacheeAgreementController::class, 'paginate']);
+        Route::get('/agreements/accept/{id}', [CoacheeAgreementController::class, 'accept']);
+
+        Route::post('/observations', [CoacheeObservationController::class, 'save']);
+
+        Route::post('/schedules/paginate', [CoacheeScheduleController::class, 'paginate']);
     });
 
     Route::post('/profile', [ProfileController::class, 'saveProfile']);

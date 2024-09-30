@@ -15,6 +15,10 @@ class AboutusSeeder extends Seeder
     {
         $aboutuses = [
             [
+                'name' => 'Somos',
+                'description' => 'Somos Trasciende,... Sed commodo turpis et lorem fermentum, pulvinar laoreet arcu condimentum. *Nam pharetra, magna a sollicitudin dictum*, urna felis euismod nulla, sit amet rhoncus sapien enim in lectus. Fusce tristique a nunc vel dapibus. In hac habitasse platea dictumst.',
+            ],
+            [
                 'name' => 'Resúmen',
                 'description' => 'NetCoaching te acompaña en cada paso hacia el éxito personal y profesional, ofreciéndote herramientas efectivas para el desarrollo y el crecimiento a través de sesiones personalizadas con expertos.',
             ],
@@ -33,7 +37,7 @@ class AboutusSeeder extends Seeder
         ];
 
         foreach ($aboutuses as $aboutus) {
-            Aboutus::updateOrCreate(['name' => $aboutus['name']],[
+            Aboutus::updateOrCreate(['name' => $aboutus['name']], [
                 'description' => $aboutus['description']
             ]);
         }

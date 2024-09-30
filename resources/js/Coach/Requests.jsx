@@ -17,16 +17,15 @@ const Requests = () => {
 
   const gridRef = useRef()
 
-  const [contractNumber, setContractNumber] = useState(1);
   const [dataLoaded, setDataLoaded] = useState(null)
 
   const onDeleteClicked = async (id) => {
     const { value: reason } = await Swal.fire({
       title: 'Rechazar solicitud',
       html: renderToString(<div style={{ fontSize: 'medium' }}>
-        <div class="form-group mb-2">
+        <div className="form-group mb-2">
           <label htmlFor="reason-select" style={{ marginBottom: '4px' }}>Razón</label>
-          <select id="reason-select" class="form-select" style={{
+          <select id="reason-select" className="form-select" style={{
             width: '100%'
           }}>
             <option value="">Seleccione una razón</option>
@@ -37,7 +36,7 @@ const Requests = () => {
         </div>
         <div className='form-group' id="other-reason" style={{ display: 'none' }}>
           <label htmlFor="other-reason-input" style={{ marginBottom: '4px' }}>Especifique</label>
-          <textarea id='other-reason-input' class="form-control" placeholder="Especifique la razón" style={{
+          <textarea id='other-reason-input' className="form-control" placeholder="Especifique la razón" style={{
             minHeight: '27px',
             fieldSizing: 'content'
           }}></textarea>
@@ -125,10 +124,6 @@ const Requests = () => {
           }
         });
       }}
-      onRefresh={({ summary }) => {
-        if (!summary?.contract_number) return
-        setContractNumber(summary.contract_number)
-      }}
       columns={[
         {
           dataField: 'id',
@@ -196,9 +191,8 @@ const Requests = () => {
                 className: 'btn btn-xs btn-soft-primary',
                 title: 'Redactar acuerdo',
                 icon: 'fa fas fa-file-signature',
-                onClick: () => onModalOpen({
-                  request_id: data.id,
-                  contract_number: contractNumber
+                onClick: () => setDataLoaded({
+                  request_id: data.id
                 })
               }))
               container.append(DxButton({
@@ -213,7 +207,7 @@ const Requests = () => {
           allowExporting: false
         }
       ]} />
-    <Modal dataLoaded={dataLoaded} setDataLoaded={setDataLoaded} onSave={() => $(gridRef.current).dxDataGrid('instance').refresh()}/>
+    <Modal dataLoaded={dataLoaded} setDataLoaded={setDataLoaded} onSave={() => $(gridRef.current).dxDataGrid('instance').refresh()} />
   </>
   )
 }

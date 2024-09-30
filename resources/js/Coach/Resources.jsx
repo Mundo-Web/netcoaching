@@ -1,16 +1,16 @@
 import React, { useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import BaseAdminto from '../Components/Adminto/Base';
+import BaseAdminto from '@Adminto/Base';
 import CreateReactScript from '@Utils/CreateReactScript';
 import ResourcesRest from '../Actions/Coach/ResourcesRest';
-import Table from '../Components/Table';
-import Modal from '../Components/Modal';
-import InputFormGroup from '../Components/form/InputFormGroup';
+import Table from '@Adminto/Table';
+import Modal from '@Adminto/Modal';
+import InputFormGroup from '@Adminto/form/InputFormGroup';
 import ReactAppend from '@Utils/ReactAppend';
-import SelectFormGroup from '../Components/form/SelectFormGroup';
-import QuillFormGroup from '../Components/form/QuillFormGroup';
-import DxButton from '../Components/dx/DxButton';
-import TextareaFormGroup from '../Components/Adminto/form/TextareaFormGroup';
+import SelectFormGroup from '@Adminto/form/SelectFormGroup';
+import QuillFormGroup from '@Adminto/form/QuillFormGroup';
+import DxButton from '@Adminto/Dx/DxButton';
+import TextareaFormGroup from '@Adminto/form/TextareaFormGroup';
 
 const resourcesRest = new ResourcesRest()
 
