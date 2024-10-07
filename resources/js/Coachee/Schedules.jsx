@@ -1,18 +1,20 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import BaseAdminto from '../Components/Adminto/Base';
+import BaseAdminto from '@Adminto/Base';
 import CreateReactScript from '@Utils/CreateReactScript';
-import Table from '../Components/Adminto/Table';
+import Table from '@Adminto/Table';
 import ReactAppend from '@Utils/ReactAppend';
-import Tippy from '@tippyjs/react';
 import SchedulesRest from '../Actions/Coachee/SchedulesRest';
-import DxButton from '../Components/dx/DxButton';
-import Modal from '../Components/Adminto/Modal';
+import DxButton from '@Adminto/Dx/DxButton';
+import Modal from '@Adminto/Modal';
 
 const schdulesRest = new SchedulesRest()
 
 const Schedules = () => {
   const gridRef = useRef()
+  const modalReportRef = useRef()
+
+  const [dataLoaded, setDataLoaded] = useState(null)
 
   return (<>
     <Table gridRef={gridRef} title='Sesiones' rest={schdulesRest}
@@ -72,7 +74,10 @@ const Schedules = () => {
               className: 'btn btn-xs btn-soft-warning',
               title: 'Reporte',
               icon: 'fa fa-clipboard-check',
-              onClick: () => onModalOpen(data)
+              onClick: () => {
+                setDataLoaded(data)
+                $(modalReportRef.current).modal('show')
+              }
             }))
             container.append(DxButton({
               className: 'btn btn-xs btn-soft-dark',
@@ -92,7 +97,23 @@ const Schedules = () => {
         }
       ]} />
 
-      <Modal/>
+    <Modal modalRef={modalReportRef} title={`REPORTE: Sesión #${String(dataLoaded?.id).padStart(3, '0')}`} size='md' position='right'>
+      <p className='mb-1'>
+        <b>Título</b>: {dataLoaded?.name}
+      </p>
+      <p className='mb-1'>
+        <b>Fecha</b>: {moment(dataLoaded?.session_date).format('LL')} {dataLoaded?.agreement?.time}
+      </p>
+      <hr className='my-2'/>
+      <div className='mb-2'>
+        <h4 className='mb-1'>Acuerdo C{String(dataLoaded?.agreement?.contract_number).padStart(3, '0')}</h4>
+        <b>{dataLoaded?.agreement?.process_topic}</b>
+      </div>
+      <button className='btn btn-sm btn-soft-primary rounded-pill'>
+        <i className='fa fa-eye me-1'></i>
+        Ver acuerdo
+      </button>
+    </Modal>
   </>
   )
 }

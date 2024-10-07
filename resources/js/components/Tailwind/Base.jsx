@@ -17,7 +17,7 @@ const Base = ({ children, summary, session, faqs }) => {
       ref: '/coaches'
     },
     {
-      label: 'Blog',
+      label: 'Recursos',
       ref: '/resources'
     },
     {

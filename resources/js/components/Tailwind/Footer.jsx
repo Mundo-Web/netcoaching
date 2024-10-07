@@ -145,7 +145,7 @@ const Footer = ({ items, summary, faqs }) => {
           isOpen={modalOpen === index}
           onRequestClose={closeModal}
           contentLabel={item.title}
-          className="absolute left-1/2 -translate-x-1/2 bg-white p-6 rounded shadow-lg w-[95%] max-w-lg my-8"
+          className="absolute left-1/2 -translate-x-1/2 bg-white p-10 rounded shadow-lg w-[95%] max-w-5xl my-8"
           overlayClassName="fixed inset-0 bg-black bg-opacity-50 z-50"
         >
           <button onClick={closeModal} className="float-right text-gray-500 hover:text-gray-900">
