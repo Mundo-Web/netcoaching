@@ -14,7 +14,7 @@ const Header = ({ sliders = [] }) => {
       {sliders.map((slider, i) => {
         return <SwiperSlide key={i}>
           <img className='absolute size-full object-cover object-center z-10 opacity-50' src={`/api/sliders/media/${slider.image}`} alt="" onError={e => e.target.src = Banner} />
-          <div className='z-20 relative flex flex-col items-center px-20 pt-40 pb-40 w-full max-md:px-5 max-md:py-24 max-md:max-w-full'>
+          <div className='z-20 relative flex flex-col items-center justify-center px-20 pt-40 pb-40 w-full h-full max-md:px-5 max-md:py-24 max-md:max-w-full'>
             <div className="flex flex-col mb-0 w-full max-w-[1062px] max-md:mb-2.5 max-md:max-w-full">
               <div className="flex flex-col w-full text-center max-md:max-w-full">
                 <p className="hidden md:block self-center text-base leading-6 text-white w-[810px] max-md:max-w-full" style={{
