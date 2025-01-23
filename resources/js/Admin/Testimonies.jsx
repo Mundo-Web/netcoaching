@@ -62,8 +62,9 @@ const Testimonies = ({ countries }) => {
     }
     const file = imageRef.current.files[0]
     if (file) {
-      const { thumbnail, type, ...rest } = await File.compress(file, { square: false })
-      formData.append('image', await File.fromURL(`data:${type};base64,${thumbnail}`))
+      // const { thumbnail, type, ...rest } = await File.compress(file, { square: false })
+      // formData.append('image', await File.fromURL(`data:${type};base64,${thumbnail}`))
+      formData.append('image', file)
     }
 
     const result = await testimoniesRest.save(formData)
@@ -176,7 +177,7 @@ const Testimonies = ({ countries }) => {
         <input ref={idRef} type='hidden' />
         <div className='col-12'>
           <div className='row'>
-            <ImageFormGroup eRef={imageRef} label='Imagen' col='col-sm-4 col-xs-12' aspect={1}/>
+            <ImageFormGroup eRef={imageRef} label='Imagen' col='col-sm-4 col-xs-12' aspect={1} />
             <div className='col-sm-8 col-xs-12'>
               <InputFormGroup eRef={nameRef} label='Autor' rows={2} required />
               <SelectFormGroup eRef={countryRef} label='Pais' required dropdownParent='#testimony-container'>

@@ -53,11 +53,12 @@ const Events = () => {
     for (const key in request) {
       formData.append(key, request[key])
     }
-    
+
     const file = imageRef.current.files[0]
     if (file) {
-      const { full, type } = await File.compress(file)
-      formData.append('image', await File.fromURL(`data:${type};base64,${full}`))
+      // const { full, type } = await File.compress(file)
+      // formData.append('image', await File.fromURL(`data:${type};base64,${full}`))
+      formData.append('image', file)
     }
 
     const result = await eventsRest.save(formData)
@@ -115,7 +116,7 @@ const Events = () => {
           caption: 'ID',
           visible: false
         },
-        
+
         {
           dataField: 'date_time',
           caption: 'Fecha evento',

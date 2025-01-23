@@ -47,9 +47,6 @@ const Benefits = ({ icons }) => {
   const onModalSubmit = async (e) => {
     e.preventDefault()
 
-    const file = imageRef.current.files[0]
-    const { full, type } = await File.compress(file, { square: false })
-
     const request = {
       id: idRef.current.value || undefined,
       icon: $(iconRef.current).val(),
@@ -61,7 +58,11 @@ const Benefits = ({ icons }) => {
     for (const key in request) {
       formData.append(key, request[key])
     }
-    formData.append('image', await File.fromURL(`data:${type};base64,${full}`))
+
+    const file = imageRef.current.files[0]
+    if (file) {
+      formData.append('image', file)
+    }
 
     const result = await benefitsRest.save(formData)
     if (!result) return

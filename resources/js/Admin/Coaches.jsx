@@ -36,9 +36,6 @@ const Coaches = ({ }) => {
   const [isEditing, setIsEditing] = useState(false)
 
   const onModalOpen = async (data) => {
-
-
-
     if (data?.id) setIsEditing(true)
     else setIsEditing(false)
 

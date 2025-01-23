@@ -51,9 +51,6 @@ const Sliders = () => {
   const onModalSubmit = async (e) => {
     e.preventDefault()
 
-    const file = imageRef.current.files[0]
-    const { full, type } = await File.compress(file, { square: false })
-
     const request = {
       id: idRef.current.value || undefined,
       name: nameRef.current.value,
@@ -68,7 +65,13 @@ const Sliders = () => {
     for (const key in request) {
       formData.append(key, request[key])
     }
-    formData.append('image', await File.fromURL(`data:${type};base64,${full}`))
+
+    const file = imageRef.current.files[0]
+    if (file) {
+      // const { full, type } = await File.compress(file, { square: false })
+      // formData.append('image', await File.fromURL(`data:${type};base64,${full}`))
+      formData.append('image', file)
+    }
 
     const result = await slidersRest.save(formData)
     if (!result) return
