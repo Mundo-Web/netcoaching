@@ -11,8 +11,6 @@ import Global from './Utils/Global'
 
 const Login = ({ PUBLIC_RSA_KEY, token, APP_DOMAIN, APP_PROTOCOL }) => {
 
-  document.title = 'Login | NetCoaching'
-
   const jsEncrypt = new JSEncrypt()
   jsEncrypt.setPublicKey(PUBLIC_RSA_KEY)
 

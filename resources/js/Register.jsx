@@ -13,8 +13,6 @@ import logo from './Svg/logo.svg'
 
 const Register = ({ PUBLIC_RSA_KEY, RECAPTCHA_SITE_KEY, token, terms = 'Terminos y condiciones', roles = [], specialties }) => {
 
-  document.title = 'Registro | NetCoaching'
-
   const jsEncrypt = new JSEncrypt()
   jsEncrypt.setPublicKey(PUBLIC_RSA_KEY)
 
