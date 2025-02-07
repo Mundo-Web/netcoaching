@@ -14,6 +14,7 @@ class ScheduleController extends BasicController
 
     public function setPaginationInstance(string $model)
     {
-        return $model::with(['agreement']);
+        return $model::with(['agreement'])
+            ->withCount(['notes']);
     }
 }

@@ -6,12 +6,6 @@ import Table from '@Adminto/Table';
 import ReactAppend from '@Utils/ReactAppend';
 import SchedulesRest from '../Actions/Coachee/SchedulesRest';
 import DxButton from '@Adminto/Dx/DxButton';
-import Modal from '@Adminto/Modal';
-import InputFormGroup from '@Adminto/form/InputFormGroup';
-import SelectFormGroup from '@Adminto/form/SelectFormGroup';
-import QuillFormGroup from '@Adminto/form/QuillFormGroup';
-import TextareaFormGroup from '../Components/Adminto/form/TextareaFormGroup';
-import FileFormGroup from '../Components/Adminto/form/FileFormGroup';
 
 const schdulesRest = new SchedulesRest()
 
@@ -98,6 +92,8 @@ const Schedules = () => {
             }))
             container.append(DxButton({
               className: 'btn btn-xs btn-soft-primary',
+              badgeClass: 'bg-danger',
+              badge: data.notes_count,
               title: 'Notas',
               icon: 'fa fa-sticky-note',
               onClick: () => {
@@ -112,13 +108,13 @@ const Schedules = () => {
         }
       ]} />
 
-    <Modal modalRef={modalReportRef} title={<div className='d-flex gap-2 flex-wrap align-items-center justify-content-between'>
+    {/* <Modal modalRef={modalReportRef} title={<div className='d-flex gap-2 flex-wrap align-items-center justify-content-between'>
       <span className='d-block'>
         {
           ({ report: 'REPORTE', logbook: 'BITACORA', notes: 'NOTAS' })[modalLoaded]
         }: Sesión #{String(dataLoaded?.id).padStart(3, '0')}
       </span>
-      <div className="d-flex gap-1">
+      <div className="d-flex gap-1 pe-4">
         {
           modalLoaded != 'report' &&
           <button className="btn btn-xs btn-light" type='button' onClick={() => setModalLoaded('report')}>
@@ -144,7 +140,9 @@ const Schedules = () => {
     </div>} size='lg' position='right' bodyClass='p-0' btnSubmitText='Guardar'>
       <div style={{
         padding: '1rem',
-        minHeight: 'calc(100vh - 190px)',
+        height: 'calc(100vh - 126px)',
+        overflowY: 'auto',
+        // minHeight: 'calc(100vh - 190px)',
         maxWidth: '480px',
         width: '100%'
       }}>
@@ -199,12 +197,14 @@ const Schedules = () => {
         }
         {
           modalLoaded == 'notes' && <div id='notes-modal' className='row'>
-            <TextareaFormGroup label='Comentario' rows={4} />
-            <FileFormGroup label='Adjunto' multiple/>
+            <TextareaFormGroup label='Comentario' rows={2} />
+            <FileFormGroup label='Adjunto' multiple />
           </div>
         }
       </div>
-    </Modal>
+    </Modal> */}
+
+    <AnnotationModal modalRef={modalReportRef} dataLoaded={dataLoaded} setModalLoaded={setModalLoaded} modalLoaded={modalLoaded} />
   </>
   )
 }

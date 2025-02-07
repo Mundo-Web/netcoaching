@@ -11,10 +11,9 @@ class ScheduleController extends BasicController
     public $model = Schedule::class;
     public $reactView = 'Coach/Schedules';
 
-    public function setReactViewProperties(Request $request)
+    public function setPaginationInstance(string $model)
     {
-        return [
-            'Hola' => 'Mundo'
-        ];
+        return $model::with(['agreement'])
+            ->withCount(['notes']);
     }
 }

@@ -1,3 +1,4 @@
+import Tippy from "@tippyjs/react";
 import React, { useEffect, useRef, useState } from "react";
 import { Clipboard } from "sode-extend-react";
 
@@ -9,20 +10,34 @@ const FileFormGroup = ({ id, col, label, eRef, required = false, onChange = () =
   const labelId = `lbl-${uuid}`
   if (!eRef) eRef = useRef()
 
-  const imageRef = useRef()
+  eRef.setFiles = (files) => setFiles(files)
 
-  const onDropFiles = async (files) => {
-    setFiles(files); // Actualiza el estado local con los archivos
-    onChange(files); // Llama a la función onChange con los archivos
+  const fileRef = useRef()
+
+  const onDropFiles = async (newFiles) => {
+    if (multiple) {
+      setFiles(old => [
+        ...old.filter(a => !newFiles.find(b => a.name == b.name)),
+        ...newFiles
+      ]);
+    } else {
+      setFiles(newFiles)
+    }
   }
 
   useEffect(() => {
-    eRef.image = imageRef.current
+    eRef.image = fileRef.current
     const element = document.getElementById(labelId)
     Clipboard.paste(element, (files) => {
-      console.log(files)
+      if (!files || files?.length == 0) return
+      onDropFiles(multiple ? files : [files[0]])
     })
   }, [null])
+
+  useEffect(() => {
+    onChange(files);
+    eRef.files = files
+  }, [files]);
 
   return <div className={`form-group ${col} mb-2`}>
     <label htmlFor={id} className="mb-1 form-label d-block">
@@ -34,32 +49,24 @@ const FileFormGroup = ({ id, col, label, eRef, required = false, onChange = () =
       border: '1px dashed #ced4da',
       borderRadius: '0.2rem',
       cursor: 'pointer'
-    }} className="d-flex align-items-center justify-content-center" onDropCapture={e => {
-      e.preventDefault();
-      if (e.dataTransfer.items) {
-        var items = [...e.dataTransfer.items];
-        if (items.length == 0) {
-          onDropFiles([]);
-          return;
-        }
-        items = items.filter((item) => item.kind === "file");
-        if (items.length == 0) {
-          onDropFiles([]);
-          return;
-        }
-        onDropFiles(items.map((item) => item.getAsFile()));
-      }
-    }}>
+    }} className="d-flex align-items-center justify-content-center">
       <span className="d-block text-muted">- Arrastra o sube tus archivos aqui -</span>
     </label>
     <input ref={eRef} id={id} type="file" hidden onChange={e => onDropFiles([...e.target.files])} multiple={multiple} />
     <div className="d-flex flex-column gap-1 mt-2">
       {
-        files.map(file => {
-          return <button className="btn btn-block btn-sm btn-dark text-start text-truncate">
-            <i className={`mdi ${file.type.startsWith('image') ? 'mdi-image' : 'mdi-file'} me-1`}></i>
-            {file.name}
-          </button>
+        files.map((file, index) => {
+          return <div key={index} className="btn-group">
+            <button className="btn btn-sm btn-dark text-start text-truncate w-100" type="button">
+              <i className={`mdi ${file.type.startsWith('image') ? 'mdi-image' : 'mdi-file'} me-1`}></i>
+              {file.name}
+            </button>
+            <Tippy content='Quitar adjunto'>
+              <button className="btn btn-sm btn-danger" type="button" onClick={() => setFiles(old => old.filter(x => x.name != file.name))}>
+                <i className="mdi mdi-delete"></i>
+              </button>
+            </Tippy>
+          </div>
         })
       }
     </div>

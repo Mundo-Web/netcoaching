@@ -35,6 +35,7 @@ use App\Http\Controllers\CoachController;
 use App\Http\Controllers\CoverController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\NoteController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RequestController;
 use App\Http\Controllers\ResourceController;
@@ -73,6 +74,10 @@ Route::post('/requests', [RequestController::class, 'save']);
 Route::middleware('auth')->group(function () {
     Route::delete('logout', [AuthController::class, 'destroy'])
         ->name('logout');
+
+    Route::get('/notes/schedule/{id}', [NoteController::class, 'bySchedule']);
+    Route::post('/notes', [NoteController::class, 'save']);
+    Route::delete('/notes/{id}', [NoteController::class, 'delete']);
 
     Route::get('/dashboard/{range}', [DashboardController::class, 'revenue']);
 

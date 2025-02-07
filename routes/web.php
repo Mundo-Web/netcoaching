@@ -92,7 +92,7 @@ Route::middleware(['can:Coach', 'auth'])->prefix('coach')->group(function () {
     Route::get('/requests', [CoachRequestController::class, 'reactView'])->name('Coach/Requests.jsx');
 
     Route::get('/agreements', [CoachAgreementController::class, 'reactView'])->name('Coach/Agreements.jsx');
-    Route::get('/schedules', [CoachScheduleController::class, 'reactView'])->name('Coach/Schedules.jsx');
+    Route::get('/sessions', [CoachScheduleController::class, 'reactView'])->name('Coach/Schedules.jsx');
 
     // Route::get('/coaches', [CoachController::class, 'reactView'])->name('Coach/Home.jsx');
     // Route::get('/businesses', [BusinessController::class, 'reactView'])->name('Businesses.jsx');
@@ -107,4 +107,5 @@ Route::middleware(['can:Coachee', 'auth'])->prefix('coachee')->group(function ()
     Route::get('/requests', [CoacheeRequestController::class, 'reactView'])->name('Coachee/Requests.jsx');
     Route::get('/agreements', [CoacheeAgreementController::class, 'reactView'])->name('Coachee/Agreements.jsx');
     Route::get('/sessions', [CoacheeScheduleController::class, 'reactView'])->name('Coachee/Schedules.jsx');
+
 });
