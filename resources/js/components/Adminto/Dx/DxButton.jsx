@@ -6,7 +6,7 @@ const DxButton = ({ className, title, icon, onClick, badge, badgeClass, ...props
     template: (element, content) => {
       content.addClass(`${icon} d-block`)
       if (badge) {
-        content.append(renderToString(<span class={`position-absolute top-0 start-100 translate-middle badge rounded-pill ${badgeClass}`}>
+        content.append(renderToString(<span className={`position-absolute top-0 start-100 translate-middle badge rounded-pill ${badgeClass}`}>
           {badge}
         </span>))
       }

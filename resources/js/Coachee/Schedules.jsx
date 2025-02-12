@@ -6,10 +6,11 @@ import Table from '@Adminto/Table';
 import ReactAppend from '@Utils/ReactAppend';
 import SchedulesRest from '../Actions/Coachee/SchedulesRest';
 import DxButton from '@Adminto/Dx/DxButton';
+import AnnotationModal from '../Reutilizables/Annotations/AnnotationModal';
 
 const schdulesRest = new SchedulesRest()
 
-const Schedules = () => {
+const Schedules = ({ session, hasRole }) => {
   const gridRef = useRef()
   const modalReportRef = useRef()
 
@@ -108,103 +109,7 @@ const Schedules = () => {
         }
       ]} />
 
-    {/* <Modal modalRef={modalReportRef} title={<div className='d-flex gap-2 flex-wrap align-items-center justify-content-between'>
-      <span className='d-block'>
-        {
-          ({ report: 'REPORTE', logbook: 'BITACORA', notes: 'NOTAS' })[modalLoaded]
-        }: Sesión #{String(dataLoaded?.id).padStart(3, '0')}
-      </span>
-      <div className="d-flex gap-1 pe-4">
-        {
-          modalLoaded != 'report' &&
-          <button className="btn btn-xs btn-light" type='button' onClick={() => setModalLoaded('report')}>
-            <i className='fa fa-clipboard-check me-1'></i>
-            Reporte
-          </button>
-        }
-        {
-          modalLoaded != 'logbook' &&
-          <button className="btn btn-xs btn-light" type='button' onClick={() => setModalLoaded('logbook')}>
-            <i className='fa fa-journal-whills me-1'></i>
-            Bitácora
-          </button>
-        }
-        {
-          modalLoaded != 'notes' &&
-          <button className="btn btn-xs btn-light" type='button' onClick={() => setModalLoaded('notes')}>
-            <i className='fa fa-sticky-note me-1'></i>
-            Notas
-          </button>
-        }
-      </div>
-    </div>} size='lg' position='right' bodyClass='p-0' btnSubmitText='Guardar'>
-      <div style={{
-        padding: '1rem',
-        height: 'calc(100vh - 126px)',
-        overflowY: 'auto',
-        // minHeight: 'calc(100vh - 190px)',
-        maxWidth: '480px',
-        width: '100%'
-      }}>
-        <p className='mb-1'>
-          <b>Título</b>: {dataLoaded?.name}
-        </p>
-        <p className='mb-1'>
-          <b>Fecha</b>: {moment(dataLoaded?.session_date).format('LL')} {dataLoaded?.agreement?.time}
-        </p>
-        <hr className='my-2' />
-        <div className='mb-2'>
-          <h4 className='mb-1'>Acuerdo C{String(dataLoaded?.agreement?.contract_number).padStart(3, '0')}</h4>
-          <b>{dataLoaded?.agreement?.process_topic}</b>
-          <p>
-            <b>Lugar:</b> {dataLoaded?.agreement?.location}
-          </p>
-        </div>
-        <button className='btn btn-sm btn-soft-primary rounded-pill'>
-          <i className='fa fa-eye me-1'></i>
-          Ver acuerdo
-        </button>
-        <hr className='my-2' />
-        {
-          modalLoaded == 'report' && <>
-            <div id='report-modal' className="row">
-              <InputFormGroup label='Duración (horas)' col='col-md-6' />
-              <InputFormGroup label='Reprogramó (Nº veces)' col='col-md-6' />
-              <SelectFormGroup label='Puntualidad' col='col-md-6' dropdownParent='#report-modal' minimumResultsForSearch={-1}>
-                <option value="SI">SI</option>
-                <option value="NO">No</option>
-              </SelectFormGroup>
-              <SelectFormGroup label='Espacio' col='col-md-6' dropdownParent='#report-modal' minimumResultsForSearch={-1}>
-                <option>Adecuado</option>
-                <option>Inadecuado</option>
-              </SelectFormGroup>
-              <SelectFormGroup label='Actividades (realizó)' col='col-md-6' dropdownParent='#report-modal' minimumResultsForSearch={-1} >
-                <option value="SI">SI</option>
-                <option value="NO">No</option>
-              </SelectFormGroup>
-            </div>
-            <QuillFormGroup label='Comentarios' col='col-12' />
-          </>
-        }
-        {
-          modalLoaded == 'logbook' && <div id='logbook-modal' className='row'>
-            <TextareaFormGroup label='1. Tema' />
-            <TextareaFormGroup label='2. Lo que deseo es ...' />
-            <TextareaFormGroup label='3. Me di cuenta de ...' />
-            <TextareaFormGroup label='4. Acciones a las cuales me comprometo' />
-            <TextareaFormGroup label='5. Avance o estatus' />
-          </div>
-        }
-        {
-          modalLoaded == 'notes' && <div id='notes-modal' className='row'>
-            <TextareaFormGroup label='Comentario' rows={2} />
-            <FileFormGroup label='Adjunto' multiple />
-          </div>
-        }
-      </div>
-    </Modal> */}
-
-    <AnnotationModal modalRef={modalReportRef} dataLoaded={dataLoaded} setModalLoaded={setModalLoaded} modalLoaded={modalLoaded} />
+    <AnnotationModal modalRef={modalReportRef} dataLoaded={dataLoaded} setDataLoaded={setDataLoaded} setModalLoaded={setModalLoaded} modalLoaded={modalLoaded} />
   </>
   )
 }

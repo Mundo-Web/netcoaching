@@ -29,7 +29,11 @@ class BasicController extends Controller
   public function media(Request $request, string $uuid)
   {
     try {
-      $content = Storage::get('images/' . $uuid . '.img');
+      $name = $uuid . '.img';
+      if (str_contains($uuid, '.')) {
+        $name = $uuid;
+      }
+      $content = Storage::get('images/' . $name);
       if (!$content) throw new Exception('Imagen no encontrado');
       return response($content, 200, [
         'Content-Type' => 'application/octet-stream'
@@ -47,7 +51,8 @@ class BasicController extends Controller
     return $model::select();
   }
 
-  public function setPaginationSummary(string $model) {
+  public function setPaginationSummary(string $model)
+  {
     return [];
   }
 
@@ -166,9 +171,10 @@ class BasicController extends Controller
         if (!$request->hasFile($field)) continue;
         $full = $request->file($field);
         $uuid = Crypto::randomUUID();
-        $path = 'images/' . $uuid . '.img';
+        $ext = $full->getClientOriginalExtension();
+        $path = 'images/' . $uuid . '.' . $ext;
         Storage::put($path, file_get_contents($full));
-        $body[$field] = $uuid;
+        $body[$field] = $uuid . '.' . $ext;
       }
 
       $jpa = $this->model::find(isset($body['id']) ? $body['id'] : null);

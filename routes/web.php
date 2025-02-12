@@ -28,6 +28,7 @@ use App\Http\Controllers\Coachee\HomeController as CoacheeHomeController;
 use App\Http\Controllers\Coachee\RequestController as CoacheeRequestController;
 use App\Http\Controllers\Coachee\AgreementController as CoacheeAgreementController;
 use App\Http\Controllers\Coachee\ScheduleController as CoacheeScheduleController;
+use App\Http\Controllers\Coachee\PaymentController as CoacheePaymentController;
 
 // Public 
 use App\Http\Controllers\CoachController;
@@ -107,5 +108,5 @@ Route::middleware(['can:Coachee', 'auth'])->prefix('coachee')->group(function ()
     Route::get('/requests', [CoacheeRequestController::class, 'reactView'])->name('Coachee/Requests.jsx');
     Route::get('/agreements', [CoacheeAgreementController::class, 'reactView'])->name('Coachee/Agreements.jsx');
     Route::get('/sessions', [CoacheeScheduleController::class, 'reactView'])->name('Coachee/Schedules.jsx');
-
+    Route::get('/payments', [CoacheePaymentController::class, 'reactView'])->name('Coachee/Payments.jsx');
 });

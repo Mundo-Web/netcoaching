@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Note;
+use App\Models\Schedule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use SoDe\Extend\Response;
@@ -23,7 +24,16 @@ class NoteController extends BasicController
     public function bySchedule(Request $request, string $schedule_id)
     {
         $response = Response::simpleTryCatch(function () use ($schedule_id) {
+            $schedule = Schedule::find($schedule_id);
+
+            dump($schedule->toArray());
+
             $notes = Note::with(['user'])
+                ->where(function ($query) use ($schedule) {
+                    return $query
+                        ->where('user_id', $schedule->coach_id)
+                        ->orWhere('user_id', $schedule->coachee_id);
+                })
                 ->where('schedule_id', $schedule_id)
                 ->orderBy('created_at', 'DESC')
                 ->get();

@@ -109,7 +109,7 @@ const Schedules = () => {
         }
       ]} />
 
-    <AnnotationModal modalRef={modalReportRef} dataLoaded={dataLoaded} setModalLoaded={setModalLoaded} modalLoaded={modalLoaded} />
+    <AnnotationModal modalRef={modalReportRef} dataLoaded={dataLoaded} setDataLoaded={setDataLoaded} setModalLoaded={setModalLoaded} modalLoaded={modalLoaded} />
   </>
   )
 }

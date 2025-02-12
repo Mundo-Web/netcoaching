@@ -1,3 +1,4 @@
+import Tippy from "@tippyjs/react"
 import React, { useEffect, useRef, useState } from "react"
 import NotesRest from "../../Actions/NotesRest"
 import Modal from "../../Components/Adminto/Modal"
@@ -6,11 +7,11 @@ import InputFormGroup from "../../Components/Adminto/form/InputFormGroup"
 import QuillFormGroup from "../../Components/Adminto/form/QuillFormGroup"
 import SelectFormGroup from "../../Components/Adminto/form/SelectFormGroup"
 import TextareaFormGroup from "../../Components/Adminto/form/TextareaFormGroup"
-import Tippy from "@tippyjs/react"
+import LaravelSession from "../../Utils/LaravelSession"
 
 const notesRest = new NotesRest()
 
-const AnnotationModal = ({ modalRef, dataLoaded, modalLoaded, setModalLoaded }) => {
+const AnnotationModal = ({ modalRef, dataLoaded, setDataLoaded, modalLoaded, setModalLoaded }) => {
 
   const quillRef = useRef()
 
@@ -89,42 +90,58 @@ const AnnotationModal = ({ modalRef, dataLoaded, modalLoaded, setModalLoaded }) 
         getLogbook()
         break;
       case 'notes':
-        setNotes([])
         getNotes()
         break;
     }
   }, [modalLoaded, dataLoaded])
 
-  return <Modal modalRef={modalRef} title={<div className='d-flex gap-2 flex-wrap align-items-center justify-content-between'>
-    <span className='d-block'>
-      {
-        ({ report: 'REPORTE', logbook: 'BITACORA', notes: 'NOTAS' })[modalLoaded]
-      }: Sesión #{String(dataLoaded?.id).padStart(3, '0')}
-    </span>
-    <div className="d-flex gap-1 pe-4">
-      {
-        modalLoaded != 'report' &&
-        <button className="btn btn-xs btn-light" type='button' onClick={() => setModalLoaded('report')}>
-          <i className='fa fa-clipboard-check me-1'></i>
-          Reporte
-        </button>
-      }
-      {
-        modalLoaded != 'logbook' &&
-        <button className="btn btn-xs btn-light" type='button' onClick={() => setModalLoaded('logbook')}>
-          <i className='fa fa-journal-whills me-1'></i>
-          Bitácora
-        </button>
-      }
-      {
-        modalLoaded != 'notes' &&
-        <button className="btn btn-xs btn-light" type='button' onClick={() => setModalLoaded('notes')}>
-          <i className='fa fa-sticky-note me-1'></i>
-          Notas
-        </button>
-      }
+  const onModalHide = () => {
+    console.log('El modal se ha cerado')
+    setNotes([])
+    setDataLoaded(null)
+    setModalLoaded(null)
+  }
+
+  useEffect(() => {
+    const modalElement = modalRef.current;
+    modalElement.addEventListener('hide.bs.modal', onModalHide);
+    return () => {
+      modalElement.removeEventListener('hide.bs.modal', onModalHide);
+    };
+  }, [null])
+
+  return <Modal modalRef={modalRef} title={<>
+    <div className='d-flex gap-2 flex-wrap align-items-center justify-content-between'>
+      <span className='d-block'>
+        {
+          ({ report: 'REPORTE', logbook: 'BITACORA', notes: 'NOTAS' })[modalLoaded]
+        }: Sesión #{String(dataLoaded?.id).padStart(3, '0')}
+      </span>
+      <div className="d-flex gap-1 pe-4">
+        {
+          modalLoaded != 'report' &&
+          <button className="btn btn-xs btn-light" type='button' onClick={() => setModalLoaded('report')}>
+            <i className='fa fa-clipboard-check me-1'></i>
+            Reporte
+          </button>
+        }
+        {
+          modalLoaded != 'logbook' &&
+          <button className="btn btn-xs btn-light" type='button' onClick={() => setModalLoaded('logbook')}>
+            <i className='fa fa-journal-whills me-1'></i>
+            Bitácora
+          </button>
+        }
+        {
+          modalLoaded != 'notes' &&
+          <button className="btn btn-xs btn-light" type='button' onClick={() => setModalLoaded('notes')}>
+            <i className='fa fa-sticky-note me-1'></i>
+            Notas
+          </button>
+        }
+      </div>
     </div>
-  </div>} size='lg' position='right' bodyClass='p-0' btnSubmitText='Guardar' onSubmit={onAnnotationSubmit}>
+  </>} size='lg' position='right' bodyClass='p-0' btnSubmitText='Guardar' onSubmit={onAnnotationSubmit} hideButtonSubmit={modalLoaded == 'notes'}>
     <div style={{
       padding: '1rem',
       height: 'calc(100vh - 128px)',
@@ -185,19 +202,24 @@ const AnnotationModal = ({ modalRef, dataLoaded, modalLoaded, setModalLoaded }) 
         <InputFormGroup eRef={nameRef} label='Titulo' required={modalLoaded == 'notes'} />
         <TextareaFormGroup eRef={descriptionRef} label='Comentario' rows={2} required={modalLoaded == 'notes'} />
         <FileFormGroup eRef={attachmentRef} label='Adjunto' />
+        <div className="d-flex justify-content-end w-100">
+          <button className='btn btn-sm btn-success' type="submit">Guardar</button>
+        </div>
         {
           notes.length > 0 && <>
             <hr className="my-2" />
             <div className="inbox-widget d-flex flex-column gap-1">
               {
                 notes.map((note, index) => {
-                  return <div key={index} class="d-flex border p-2 gap-2">
-                    <img src={`/api/profile/thumbnail/${note.user.uuid}`} class="avatar-sm rounded-circle" alt={`${note.user.name} ${note.user.lastname}`} />
+                  const itsMe = LaravelSession.uuid == note.user.uuid
+                  const shortName = `${note.user.name?.split(' ')?.[0]} ${note.user.lastname?.split(' ')?.[0]}`
+                  return <div key={index} className="d-flex border p-2 gap-2">
+                    <img src={`/api/profile/thumbnail/${note.user.uuid}`} className="avatar-sm rounded-circle" alt={`${note.user.name} ${note.user.lastname}`} />
                     <div className="w-100">
-                      <h5 class="inbox-item-author mt-0 mb-1 d-flex align-items-center justify-content-between">
-                        <span>{note.user.name?.split(' ')?.[0]} {note.user.lastname?.split(' ')?.[0]}</span>
+                      <h5 className="inbox-item-author mt-0 mb-1 d-flex align-items-center justify-content-between">
+                        <span>{itsMe ? `Tú (${shortName})` : shortName}</span>
                         <Tippy content={moment(note.created_at).format('LLL')}>
-                        <small className="text-muted">{moment(note.created_at).fromNow()}</small>
+                          <small className="text-muted">{moment(note.created_at).fromNow()}</small>
                         </Tippy>
                       </h5>
                       <b className="d-block">{note.name}</b>

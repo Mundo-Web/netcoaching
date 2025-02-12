@@ -27,7 +27,6 @@ const Agreements = () => {
   }
 
   const onObservationsClicked = (data) => {
-    console.log(data)
     setObservations(data.observations)
     $(observationsModalRef.current).modal('show')
   }

@@ -25,4 +25,17 @@ class Payment extends Model
         'status_message',
         'status',
     ];
+
+    public function agreement()
+    {
+        return $this->hasOne(Agreement::class, 'id', 'agreement_id');
+    }
+    public function coach()
+    {
+        return $this->hasOne(User::class, 'id', 'coach_id');
+    }
+    public function coachee()
+    {
+        return $this->hasOne(User::class, 'id', 'coachee_id');
+    }
 }

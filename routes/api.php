@@ -26,6 +26,7 @@ use App\Http\Controllers\Coachee\RequestController as CoacheeRequestController;
 use App\Http\Controllers\Coachee\AgreementController as CoacheeAgreementController;
 use App\Http\Controllers\Coachee\ObservationController as CoacheeObservationController;
 use App\Http\Controllers\Coachee\ScheduleController as CoacheeScheduleController;
+use App\Http\Controllers\Coachee\PaymentController as CoacheePaymentController;
 
 
 // Public
@@ -174,6 +175,10 @@ Route::middleware('auth')->group(function () {
         Route::post('/observations', [CoacheeObservationController::class, 'save']);
 
         Route::post('/schedules/paginate', [CoacheeScheduleController::class, 'paginate']);
+
+        // Payment routes
+        Route::post('/payments/paginate', [CoacheePaymentController::class, 'paginate']);
+
     });
 
     Route::post('/profile', [ProfileController::class, 'saveProfile']);

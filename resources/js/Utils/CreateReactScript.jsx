@@ -3,6 +3,7 @@ import { Cookies, FetchParams } from 'sode-extend-react'
 import Global from './Global';
 import 'swiper/css'
 import 'tippy.js/dist/tippy.css'
+import LaravelSession from './LaravelSession';
 
 const CreateReactScript = (render) => {
 
@@ -10,11 +11,17 @@ const CreateReactScript = (render) => {
     resolve: name => `/${name}.jsx`,
     setup: ({ el, props }) => {
       const properties = props.initialPage.props
-      if (properties?.global) {
-        for (const name in properties.global) {
-          Global.set(name, properties.global[name])
-        }
+
+      const global = { ...properties?.global }
+      for (const name in global) {
+        Global.set(name, global[name])
       }
+
+      const session = { ...properties?.session }
+      for (const key in session) {
+        LaravelSession.set(`${key}`, session[key])
+      }
+
       const can = (page, ...keys) => {
         const keys2validate = []
         if (Array.isArray(page)) {
