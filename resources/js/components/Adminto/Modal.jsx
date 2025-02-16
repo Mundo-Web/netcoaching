@@ -6,7 +6,7 @@ const Modal = ({ modalRef, title = 'Modal', isStatic = false, size = 'md', posit
     <div className={`modal-dialog modal-${position} modal-${size ?? 'md'}`}>
       <div className='modal-content ' style={{ boxShadow: position == 'dialog-centered' && '0 0 10px rgba(0,0,0,0.25)' }}>
         <div className='modal-header'>
-          <h4 className='modal-title' style={{width: '100%'}}>{title}</h4>
+          <h4 className='modal-title' style={{ width: '100%' }}>{title}</h4>
           <button type='button' className='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
         </div>
         <div className={`modal-body ${bodyClass ?? ''}`} >

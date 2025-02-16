@@ -14,6 +14,7 @@ import AdminCoachesRest from "@Rest/Admin/CoachesRest";
 import DxBox from "@Adminto/Dx/DxBox";
 import ReactAppend from "@Utils/ReactAppend";
 import DxButton from "@Adminto/Dx/DxButton";
+import { renderToString } from "react-dom/server";
 
 const coachesRest = new AdminCoachesRest();
 
@@ -112,7 +113,8 @@ const Coaches = ({ }) => {
           dataField: 'id',
           caption: 'ID',
           dataType: 'number',
-          sortOrder: 'asc'
+          sortOrder: 'asc',
+          visible: false
         },
         {
           dataField: 'name',
@@ -126,15 +128,24 @@ const Coaches = ({ }) => {
           dataField: 'email',
           caption: 'Correo',
           dataType: 'email',
-          cellTemplate: (container, { data }) => {
-            container.append(DxBox([
-              <img
-                className='avatar-xs rounded-circle'
-                src={`/api/profile/thumbnail/${data.uuid}`}
-                alt={data.name}
-              />,
-              <p className='mb-0' style={{ fontSize: "14px" }}>{data.email}</p>
-            ], false))
+          // cellTemplate: (container, { data }) => {
+          //   container.append(DxBox([
+          //     <img
+          //       className='avatar-xs rounded-circle'
+          //       src={`/api/profile/thumbnail/${data.uuid}`}
+          //       alt={data.name}
+          //     />,
+          //     <p className='mb-0' style={{ fontSize: "14px" }}>{data.email}</p>
+          //   ], false))
+          // }
+        },
+        {
+          dataField: 'resources_count',
+          caption: 'Recursos',
+          dataType: 'number',
+          allowFiltering: false,
+          cellTemplate: (container, { data, value }) => {
+            container.text(value == 1 ? '1 recurso' : `${value} recursos`)
           }
         },
         {

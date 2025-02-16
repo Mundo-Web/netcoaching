@@ -3,64 +3,42 @@
 namespace App\Http\Controllers;
 
 use App\Models\Logbook;
-use App\Http\Requests\StoreLogbookRequest;
-use App\Http\Requests\UpdateLogbookRequest;
+use App\Models\Schedule;
+use Exception;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class LogbookController extends Controller
+class LogbookController extends BasicController
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public $model = Logbook::class;
+
+    public function beforeSave(Request $request)
     {
-        //
+        $body = $request->all();
+        $scheduleJpa = Schedule::select(['id', 'agreement_id'])
+            ->where('id', $request->schedule_id)
+            ->where(function ($query) {
+                return $query
+                    ->where('coach_id', Auth::user()->id)
+                    ->orWhere('coachee_id', Auth::user()->id);
+            })
+            ->first();
+
+        if (!$scheduleJpa) throw new Exception('No existe un acuerdo para esta bitacora');
+
+        $reportJpa = Logbook::select('id')
+            ->where('schedule_id', $scheduleJpa->id)
+            ->first();
+
+        if ($reportJpa) $body['id'] = $reportJpa->id;
+
+        $body['agreement_id'] = $scheduleJpa->agreement_id;
+
+        return $body;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function afterSave(Request $request, object $jpa)
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreLogbookRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Logbook $logbook)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Logbook $logbook)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateLogbookRequest $request, Logbook $logbook)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Logbook $logbook)
-    {
-        //
+        return $jpa;
     }
 }

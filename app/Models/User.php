@@ -85,4 +85,8 @@ class User extends Authenticatable
     public function specialties () {
         return $this->hasManyThrough(Specialty::class, SpecialtiesByUser::class, 'user_id', 'id', 'id', 'specialty_id');
     }
+
+    public function resources () {
+        return $this->hasMany(Resource::class, 'owner_id', 'id');
+    }
 }

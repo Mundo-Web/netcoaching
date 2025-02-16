@@ -2,10 +2,34 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Report extends Model
 {
-    use HasFactory;
+    use HasFactory, HasUuids;
+
+    public $incrementing = false;
+    protected $keyType = 'string';
+
+    protected $fillable = [
+        'schedule_id',
+        'agreement_id',
+        'duration',
+        'reprogrammed',
+        'was_attended',
+        'was_comfortable',
+        'was_performed',
+        'comment'
+    ];
+
+    public function schedule()
+    {
+        return $this->hasOne(Schedule::class, 'id', 'schedule_id');
+    }
+
+    public function agreement() {
+        return $this->hasOne(Agreement::class, 'id', 'agreement_id');
+    }
 }

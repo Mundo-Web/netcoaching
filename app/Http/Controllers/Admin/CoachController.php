@@ -24,6 +24,7 @@ class CoachController extends BasicController
             'users.*'
         ])
             ->with(['specialties'])
+            ->withCount(['resources'])
             ->join('model_has_roles AS mhr', 'mhr.model_id', 'users.id')
             ->where('mhr.role_id', 2);
     }

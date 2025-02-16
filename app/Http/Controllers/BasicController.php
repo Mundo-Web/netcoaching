@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use SoDe\Extend\Crypto;
+use SoDe\Extend\File;
 use SoDe\Extend\Response;
 
 class BasicController extends Controller
@@ -24,7 +25,18 @@ class BasicController extends Controller
   public $softDeletion = true;
   public $reactView = 'Home';
   public $reactRootView = 'admin';
-  public $imageFields = [];
+  public $imageFields = ['attachment'];
+  public $with4get = [];
+
+  public function get(Request $request, string $id)
+  {
+    $response = Response::simpleTryCatch(function () use ($request, $id) {
+      $jpa  = $this->model::with($this->with4get)->find($id);
+      if (!$jpa) throw new Exception('El registro que buscas no existe');
+      return $jpa;
+    });
+    return \response($response->toArray(), $response->status);
+  }
 
   public function media(Request $request, string $uuid)
   {
@@ -35,6 +47,7 @@ class BasicController extends Controller
       }
       $content = Storage::get('images/' . $name);
       if (!$content) throw new Exception('Imagen no encontrado');
+
       return response($content, 200, [
         'Content-Type' => 'application/octet-stream'
       ]);

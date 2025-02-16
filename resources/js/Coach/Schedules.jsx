@@ -10,7 +10,7 @@ import AnnotationModal from '../Reutilizables/Annotations/AnnotationModal';
 
 const schdulesRest = new SchedulesRest()
 
-const Schedules = () => {
+const Schedules = ({ hasRole }) => {
   const gridRef = useRef()
   const modalReportRef = useRef()
 
@@ -109,7 +109,7 @@ const Schedules = () => {
         }
       ]} />
 
-    <AnnotationModal modalRef={modalReportRef} dataLoaded={dataLoaded} setDataLoaded={setDataLoaded} setModalLoaded={setModalLoaded} modalLoaded={modalLoaded} />
+    <AnnotationModal modalRef={modalReportRef} dataLoaded={dataLoaded} setDataLoaded={setDataLoaded} setModalLoaded={setModalLoaded} modalLoaded={modalLoaded} hasRole={hasRole} onChange={() => $(gridRef.current).dxDataGrid('instance').refresh()} />
   </>
   )
 }

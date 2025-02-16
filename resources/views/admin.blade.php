@@ -54,6 +54,10 @@
     .dx-datagrid-content .dx-datagrid-table .dx-row>td {
       vertical-align: middle;
     }
+
+    .modal.modal-static .modal-dialog {
+      transform: scale(1.02) !important;
+    }
   </style>
 </head>
 

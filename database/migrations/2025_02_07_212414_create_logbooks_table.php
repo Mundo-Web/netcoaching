@@ -14,6 +14,16 @@ return new class extends Migration
     {
         Schema::create('logbooks', function (Blueprint $table) {
             $table->uuid('id')->default(DB::raw('(UUID())'))->primary();
+
+            $table->longText('topic')->nullable(); // Tema
+            $table->longText('goal')->nullable(); // Lo que deseo es ...
+            $table->longText('insight')->nullable(); // Me di cuenta de ...
+            $table->longText('commitments')->nullable(); // Acciones a las cuales me comprometo
+            $table->longText('status')->nullable(); // Avance o estatus
+
+            $table->foreignId('schedule_id')->constrained('schedules');
+            $table->foreignUuid('agreement_id')->constrained('agreements');
+
             $table->timestamps();
         });
     }

@@ -8,14 +8,33 @@ import QuillFormGroup from "../../Components/Adminto/form/QuillFormGroup"
 import SelectFormGroup from "../../Components/Adminto/form/SelectFormGroup"
 import TextareaFormGroup from "../../Components/Adminto/form/TextareaFormGroup"
 import LaravelSession from "../../Utils/LaravelSession"
+import CoachReportsRest from "../../Actions/Coach/ReportsRest"
+import ReportsRest from "../../Actions/ReportsRest"
+import LogbooksRest from "../../Actions/LogbooksRest"
 
 const notesRest = new NotesRest()
 
-const AnnotationModal = ({ modalRef, dataLoaded, setDataLoaded, modalLoaded, setModalLoaded }) => {
+const coachReportsRest = new CoachReportsRest()
+const reportsRest = new ReportsRest()
 
-  const quillRef = useRef()
+const logbooksRest = new LogbooksRest()
 
+const AnnotationModal = ({ modalRef, dataLoaded, setDataLoaded, modalLoaded, setModalLoaded, hasRole, onChange = () => { } }) => {
+
+  // Report Refs
   const durationRef = useRef()
+  const reprogrammedRef = useRef()
+  const wasAttendedRef = useRef()
+  const wasConfortableRef = useRef()
+  const wasPerformedRef = useRef()
+  const commentRef = useRef()
+
+  // Logbook Refs
+  const topicRef = useRef();
+  const goalRef = useRef();
+  const insightRef = useRef();
+  const commitmentsRef = useRef();
+  const statusRef = useRef();
 
   // Notes Refs
   const nameRef = useRef()
@@ -29,8 +48,11 @@ const AnnotationModal = ({ modalRef, dataLoaded, setDataLoaded, modalLoaded, set
   const onAnnotationSubmit = (e) => {
     e.preventDefault()
 
+    console.log('Guardando en:', modalLoaded)
+
     switch (modalLoaded) {
       case 'report':
+        if (!hasRole('Coach')) return
         onReportSave()
         break;
       case 'logbook':
@@ -40,15 +62,39 @@ const AnnotationModal = ({ modalRef, dataLoaded, setDataLoaded, modalLoaded, set
         onNoteSave()
         break;
     }
-
   }
 
   const onReportSave = async () => {
+    const request = {
+      schedule_id: dataLoaded.id,
+      duration: durationRef.current.value,
+      reprogrammed: reprogrammedRef.current.value,
+      was_attended: wasAttendedRef.current.value == 'true',
+      was_comfortable: wasConfortableRef.current.value == 'true',
+      was_performed: wasPerformedRef.current.value == 'true',
+      comment: commentRef.current.value
+    }
 
+    const result = await coachReportsRest.save(request)
+    if (!result) return
+    setReport(result.data)
+    setDataLoaded(old => ({ ...old, report: { id: result.data.id } }))
+    onChange()
   }
 
   const onLogbookSave = async () => {
-
+    const request = {
+      schedule_id: dataLoaded.id,
+      topic: topicRef.current.value,
+      goal: goalRef.current.value,
+      insight: insightRef.current.value,
+      commitments: commitmentsRef.current.value,
+      status: statusRef.current.value,
+    }
+    const result = await logbooksRest.save(request)
+    if (!result) return
+    setLogbook(result.data)
+    setDataLoaded(old => ({ ...old, logbook: { id: result.data.id } }))
   }
 
   const onNoteSave = async () => {
@@ -60,6 +106,8 @@ const AnnotationModal = ({ modalRef, dataLoaded, setDataLoaded, modalLoaded, set
       formData.append('attachment', attachmentRef.files?.[0])
     }
 
+    console.log('saving note', formData);
+
     const result = await notesRest.save(formData)
     if (!result) return
     nameRef.current.value = ''
@@ -69,10 +117,16 @@ const AnnotationModal = ({ modalRef, dataLoaded, setDataLoaded, modalLoaded, set
   }
 
   const getReport = async () => {
-
+    if (!dataLoaded?.report?.id) return
+    const result = await reportsRest.get(dataLoaded?.report?.id)
+    if (!result) return
+    setReport(result)
   }
   const getLogbook = async () => {
-
+    if (!dataLoaded?.logbook?.id) return
+    const result = await logbooksRest.get(dataLoaded?.logbook?.id)
+    if (!result) return
+    setLogbook(result)
   }
   const getNotes = async () => {
     const result = await notesRest.bySchedule(dataLoaded.id)
@@ -82,11 +136,9 @@ const AnnotationModal = ({ modalRef, dataLoaded, setDataLoaded, modalLoaded, set
   useEffect(() => {
     switch (modalLoaded) {
       case 'report':
-        setReport(null)
         getReport()
         break;
       case 'logbook':
-        setLogbook(null)
         getLogbook()
         break;
       case 'notes':
@@ -96,7 +148,8 @@ const AnnotationModal = ({ modalRef, dataLoaded, setDataLoaded, modalLoaded, set
   }, [modalLoaded, dataLoaded])
 
   const onModalHide = () => {
-    console.log('El modal se ha cerado')
+    setLogbook(null)
+    setReport(null)
     setNotes([])
     setDataLoaded(null)
     setModalLoaded(null)
@@ -109,6 +162,24 @@ const AnnotationModal = ({ modalRef, dataLoaded, setDataLoaded, modalLoaded, set
       modalElement.removeEventListener('hide.bs.modal', onModalHide);
     };
   }, [null])
+
+  useEffect(() => {
+    durationRef.current.value = report?.duration ?? ''
+    reprogrammedRef.current.value = report?.reprogrammed ?? ''
+    $(wasAttendedRef.current).val((report?.was_attended ?? true) ? 'true' : 'false').trigger('change')
+    $(wasConfortableRef.current).val((report?.was_comfortable ?? true) ? 'true' : 'false').trigger('change')
+    $(wasPerformedRef.current).val((report?.was_performed ?? true) ? 'true' : 'false').trigger('change')
+    commentRef.editor.setHTML(report?.comment ?? '')
+  }, [report])
+
+  useEffect(() => {
+    console.log('Pintando logbook: ', JSON.stringify(logbook, null, 2))
+    topicRef.current.value = logbook?.topic ?? ''
+    goalRef.current.value = logbook?.goal ?? ''
+    insightRef.current.value = logbook?.insight ?? ''
+    commitmentsRef.current.value = logbook?.commitments ?? ''
+    statusRef.current.value = logbook?.status ?? ''
+  }, [logbook])
 
   return <Modal modalRef={modalRef} title={<>
     <div className='d-flex gap-2 flex-wrap align-items-center justify-content-between'>
@@ -141,7 +212,7 @@ const AnnotationModal = ({ modalRef, dataLoaded, setDataLoaded, modalLoaded, set
         }
       </div>
     </div>
-  </>} size='lg' position='right' bodyClass='p-0' btnSubmitText='Guardar' onSubmit={onAnnotationSubmit} hideButtonSubmit={modalLoaded == 'notes'}>
+  </>} size='lg' position='right' bodyClass='p-0' btnSubmitText='Guardar' onSubmit={onAnnotationSubmit} hideButtonSubmit={modalLoaded == 'notes' || (modalLoaded == 'report' && !hasRole('Coach'))} isStatic>
     <div style={{
       padding: '1rem',
       height: 'calc(100vh - 128px)',
@@ -171,32 +242,32 @@ const AnnotationModal = ({ modalRef, dataLoaded, setDataLoaded, modalLoaded, set
       <hr className='my-2' />
       <div hidden={modalLoaded != 'report'}>
         <div id='report-modal' className="row">
-          <InputFormGroup label='Duración (horas)' col='col-md-6' />
-          <InputFormGroup label='Reprogramó (Nº veces)' col='col-md-6' />
-          <SelectFormGroup label='Puntualidad' col='col-md-6' dropdownParent='#report-modal' minimumResultsForSearch={-1}>
-            <option value="SI">SI</option>
-            <option value="NO">No</option>
+          <InputFormGroup eRef={durationRef} label='Duración (horas)' col='col-md-6' required={modalLoaded == 'report'} disabled={!hasRole('Coach')} />
+          <InputFormGroup eRef={reprogrammedRef} label='Reprogramó (Nº veces)' col='col-md-6' required={modalLoaded == 'report'} disabled={!hasRole('Coach')} />
+          <SelectFormGroup eRef={wasAttendedRef} label='Puntualidad' col='col-md-6' dropdownParent='#report-modal' minimumResultsForSearch={-1} required={modalLoaded == 'report'} disabled={!hasRole('Coach')}>
+            <option value={true}>SI</option>
+            <option value={false}>No</option>
           </SelectFormGroup>
-          <SelectFormGroup label='Espacio' col='col-md-6' dropdownParent='#report-modal' minimumResultsForSearch={-1}>
-            <option>Adecuado</option>
-            <option>Inadecuado</option>
+          <SelectFormGroup eRef={wasConfortableRef} label='Espacio' col='col-md-6' dropdownParent='#report-modal' minimumResultsForSearch={-1} required={modalLoaded == 'report'} disabled={!hasRole('Coach')}>
+            <option value={true}>Adecuado</option>
+            <option value={false}>Inadecuado</option>
           </SelectFormGroup>
-          <SelectFormGroup label='Actividades (realizó)' col='col-md-6' dropdownParent='#report-modal' minimumResultsForSearch={-1} >
-            <option value="SI">SI</option>
-            <option value="NO">No</option>
+          <SelectFormGroup eRef={wasPerformedRef} label='Actividades (realizó)' col='col-md-6' dropdownParent='#report-modal' minimumResultsForSearch={-1} required={modalLoaded == 'report'} disabled={!hasRole('Coach')} >
+            <option value={true}>SI</option>
+            <option value={false}>No</option>
           </SelectFormGroup>
         </div>
-        <QuillFormGroup eRef={quillRef} label='Comentarios' col='col-12' />
+        <QuillFormGroup eRef={commentRef} label='Comentarios' col='col-12' required={modalLoaded == 'report'} disabled={!hasRole('Coach')} />
       </div>
       <div>
 
       </div>
       <div id='logbook-modal' className='row' hidden={modalLoaded != 'logbook'}>
-        <TextareaFormGroup label='1. Tema' />
-        <TextareaFormGroup label='2. Lo que deseo es ...' />
-        <TextareaFormGroup label='3. Me di cuenta de ...' />
-        <TextareaFormGroup label='4. Acciones a las cuales me comprometo' />
-        <TextareaFormGroup label='5. Avance o estatus' />
+        <TextareaFormGroup eRef={topicRef} label='1. Tema' required={modalLoaded == 'logbook'} />
+        <TextareaFormGroup eRef={goalRef} label='2. Lo que deseo es ...' required={modalLoaded == 'logbook'} />
+        <TextareaFormGroup eRef={insightRef} label='3. Me di cuenta de ...' required={modalLoaded == 'logbook'} />
+        <TextareaFormGroup eRef={commitmentsRef} label='4. Acciones a las cuales me comprometo' required={modalLoaded == 'logbook'} />
+        <TextareaFormGroup eRef={statusRef} label='5. Avance o estatus' required={modalLoaded == 'logbook'} />
       </div>
       <div id='notes-modal' className='row' hidden={modalLoaded != 'notes'}>
         <InputFormGroup eRef={nameRef} label='Titulo' required={modalLoaded == 'notes'} />
@@ -224,6 +295,19 @@ const AnnotationModal = ({ modalRef, dataLoaded, setDataLoaded, modalLoaded, set
                       </h5>
                       <b className="d-block">{note.name}</b>
                       {note.description}
+                      {
+                        note.attachment && <div className="btn-group w-100 mt-1">
+                          <a href={`/api/notes/media/${note.attachment}`} className="btn btn-xs btn-dark text-start text-truncate w-100" target="_blank">
+                            <i className="mdi mdi-paperclip me-1"></i>
+                            Archivo adjunto
+                          </a>
+                          <Tippy content='Descargar archivo'>
+                            <a href={`/api/notes/media/${note.attachment}`} download={`Archivo adjunto ${note.attachment}`} className="btn btn-xs btn-dark">
+                              <i className="mdi mdi-download"></i>
+                            </a>
+                          </Tippy>
+                        </div>
+                      }
                     </div>
                   </div>
                 })

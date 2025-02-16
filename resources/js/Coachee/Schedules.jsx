@@ -109,7 +109,7 @@ const Schedules = ({ session, hasRole }) => {
         }
       ]} />
 
-    <AnnotationModal modalRef={modalReportRef} dataLoaded={dataLoaded} setDataLoaded={setDataLoaded} setModalLoaded={setModalLoaded} modalLoaded={modalLoaded} />
+    <AnnotationModal modalRef={modalReportRef} dataLoaded={dataLoaded} setDataLoaded={setDataLoaded} setModalLoaded={setModalLoaded} modalLoaded={modalLoaded} hasRole={hasRole} onChange={() => $(gridRef.current).dxDataGrid('instance').refresh()} />
   </>
   )
 }

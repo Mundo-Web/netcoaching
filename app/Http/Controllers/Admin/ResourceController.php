@@ -4,10 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\BasicController;
 use App\Models\Resource;
-use App\Models\Specialty;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use SoDe\Extend\Text;
 
 class ResourceController extends BasicController
 {
@@ -21,13 +18,13 @@ class ResourceController extends BasicController
 
     public function setPaginationInstance(string $model)
     {
-        return $model::with('specialty');
+        return $model::with(['specialty', 'owner']);
     }
 
     public function beforeSave(Request $request)
     {
         $body = $request->all();
-        $body['owner_id'] = Auth::user()->id;
+        // $body['owner_id'] = Auth::user()->id;
         return $body;
     }
 }

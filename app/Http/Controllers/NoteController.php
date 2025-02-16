@@ -26,8 +26,6 @@ class NoteController extends BasicController
         $response = Response::simpleTryCatch(function () use ($schedule_id) {
             $schedule = Schedule::find($schedule_id);
 
-            dump($schedule->toArray());
-
             $notes = Note::with(['user'])
                 ->where(function ($query) use ($schedule) {
                     return $query

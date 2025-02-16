@@ -36,4 +36,14 @@ class Schedule extends Model
     {
         return $this->hasMany(Note::class, 'schedule_id', 'id');
     }
+
+    public function report()
+    {
+        return $this->hasOne(Report::class, 'schedule_id', 'id');
+    }
+
+    public function logbook()
+    {
+        return $this->hasOne(Logbook::class, 'schedule_id', 'id');
+    }
 }

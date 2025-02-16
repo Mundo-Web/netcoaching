@@ -37,7 +37,7 @@ const Resources = ({ specialties }) => {
   }
 
   const onDeleteClicked = async (id) => {
-    const {isConfirmed} = await Swal.fire({
+    const { isConfirmed } = await Swal.fire({
       title: 'Eliminar recurso',
       text: '¿Estas seguro de eliminar este recurso?',
       icon: 'warning',
@@ -71,11 +71,20 @@ const Resources = ({ specialties }) => {
         },
         {
           dataField: 'specialty.name',
-          caption: 'Especialidad',
+          caption: 'Recurso',
+          cellTemplate: (container, { data }) => {
+            ReactAppend(container, <>
+              <b>{data.specialty.name}</b>
+              <span className="d-block text-muted">{data.name}</span>
+            </>)
+          }
         },
         {
-          dataField: 'name',
-          caption: 'Titulo'
+          dataField: 'owner.name',
+          caption: 'Coach',
+          cellTemplate: (container, { data }) => {
+            container.text(`${data.owner.name?.split(' ')?.[0]} ${data.owner.lastname?.split(' ')?.[0]}`)
+          }
         },
         {
           dataField: 'id',

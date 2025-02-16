@@ -20,6 +20,7 @@ use App\Http\Controllers\Coach\ResourceController as CoachResourceController;
 use App\Http\Controllers\Coach\RequestController as CoachRequestController;
 use App\Http\Controllers\Coach\AgreementController as CoachAgreementController;
 use App\Http\Controllers\Coach\ScheduleController as CoachScheduleController;
+use App\Http\Controllers\Coach\ReportController as CoachReportController;
 
 // Coachee
 use App\Http\Controllers\Coachee\RequestController as CoacheeRequestController;
@@ -35,6 +36,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CoachController;
 use App\Http\Controllers\CoverController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LogbookController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\ProfileController;
@@ -59,6 +61,7 @@ Route::get('/sliders/media/{uuid}', [AdminSliderController::class, 'media']);
 Route::get('/benefits/media/{uuid}', [AdminBenefitController::class, 'media']);
 Route::get('/testimonies/media/{uuid}', [AdminTestimonyController::class, 'media']);
 Route::get('/events/media/{uuid}', [AdminEventController::class, 'media']);
+Route::get('/notes/media/{uuid}', [NoteController::class, 'media']);
 
 Route::get('/profile/{uuid}', [ProfileController::class, 'full']);
 Route::get('/profile/thumbnail/{uuid}', [ProfileController::class, 'thumbnail']);
@@ -81,6 +84,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/notes/{id}', [NoteController::class, 'delete']);
 
     Route::get('/dashboard/{range}', [DashboardController::class, 'revenue']);
+
+    Route::get('/reports/{id}', [CoachReportController::class, 'get']);
+    
+    Route::get('/logbooks/{id}', [LogbookController::class, 'get']);
+    Route::post('/logbooks', [LogbookController::class, 'save']);
 
     Route::middleware('can:Admin')->prefix('admin')->group(function () {
         Route::post('/coaches/paginate', [AdminCoachController::class, 'paginate']);
@@ -163,6 +171,8 @@ Route::middleware('auth')->group(function () {
         Route::post('/schedules/paginate', [CoachScheduleController::class, 'paginate']);
         Route::patch('/schedules/status', [CoachScheduleController::class, 'status']);
         Route::delete('/schedules/{id}', [CoachScheduleController::class, 'delete']);
+
+        Route::post('/reports', [CoachReportController::class, 'save']);
     });
 
     Route::middleware('can:Coachee')->prefix('coachee')->group(function () {
@@ -178,7 +188,6 @@ Route::middleware('auth')->group(function () {
 
         // Payment routes
         Route::post('/payments/paginate', [CoacheePaymentController::class, 'paginate']);
-
     });
 
     Route::post('/profile', [ProfileController::class, 'saveProfile']);
