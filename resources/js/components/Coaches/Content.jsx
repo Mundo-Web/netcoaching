@@ -41,7 +41,8 @@ const Content = ({ countries, filter, setFilter }) => {
       filter,
       take: 12,
       sort: [{ selector: 'price', desc: order == 'desc' }],
-      skip: 12 * (currentPage - 1)
+      skip: 12 * (currentPage - 1),
+      requireTotalCount: true
     })
     const newCoaches = result?.data ?? []
     setPages(Math.ceil(result.totalCount / 12))
