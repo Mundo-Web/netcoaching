@@ -10,7 +10,7 @@ const FilterPagination = ({ current, setCurrent, pages }) => {
   }
 
   const onNextPageClicked = () => {
-    const page = current--
+    const page = current++
     setCurrent(page > pages ? pages : page)
   }
 

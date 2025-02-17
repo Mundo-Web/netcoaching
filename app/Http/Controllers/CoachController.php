@@ -23,7 +23,7 @@ class CoachController extends BasicController
             'specialties.id',
             'specialties.name'
         ])
-            ->leftJoin('specialties', 'specialties.id', 'specialties_by_users.specialty_id')
+            ->join('specialties', 'specialties.id', 'specialties_by_users.specialty_id')
             ->where('status', true)
             ->get();
 
