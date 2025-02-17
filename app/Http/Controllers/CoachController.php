@@ -41,10 +41,10 @@ class CoachController extends BasicController
     public function setPaginationInstance(string $model)
     {
         return $this->model::select([
-            DB::raw('DISTINCT(users.id)'),
             'users.*'
         ])
             ->with(['specialties'])
+            ->distinct()
             ->join('model_has_roles AS mhr', 'mhr.model_id', 'users.id')
             ->leftJoin('specialties_by_users AS sbu', 'sbu.user_id', 'users.id')        // cambiar a solo join
             ->leftJoin('specialties AS specialty', 'specialty.id', 'sbu.specialty_id')  // cambiar a solo join
