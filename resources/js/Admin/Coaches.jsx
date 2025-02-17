@@ -157,7 +157,7 @@ const Coaches = ({ }) => {
             ReactAppend(container, <>
               {[1, 2, 3, 4, 5].map((star) => (<Tippy key={star} content={`${star} estrellas`}><i
                 key={star}
-                className={`mdi mdi-star${star <= data.score ? '' : '-outline'}`}
+                className={`mdi mdi-18px mdi-star${star <= data.score ? '' : '-outline'}`}
                 style={{ color: star <= data.score ? '#05455A' : '#6c757d', cursor: 'pointer' }}
                 onClick={() => handleRatingClick(data.id, star)}
               ></i></Tippy>))}
