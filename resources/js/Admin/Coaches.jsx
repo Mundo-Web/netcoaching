@@ -11,10 +11,8 @@ import BaseAdminto from "@Adminto/Base";
 import JSEncrypt from "jsencrypt";
 import Global from "@Utils/Global";
 import AdminCoachesRest from "@Rest/Admin/CoachesRest";
-import DxBox from "@Adminto/Dx/DxBox";
 import ReactAppend from "@Utils/ReactAppend";
 import DxButton from "@Adminto/Dx/DxButton";
-import { renderToString } from "react-dom/server";
 
 const coachesRest = new AdminCoachesRest();
 
@@ -108,6 +106,7 @@ const Coaches = ({ }) => {
         //   }
         // });
       }}
+      pageSize={20}
       columns={[
         {
           dataField: 'id',
@@ -127,17 +126,7 @@ const Coaches = ({ }) => {
         {
           dataField: 'email',
           caption: 'Correo',
-          dataType: 'email',
-          // cellTemplate: (container, { data }) => {
-          //   container.append(DxBox([
-          //     <img
-          //       className='avatar-xs rounded-circle'
-          //       src={`/api/profile/thumbnail/${data.uuid}`}
-          //       alt={data.name}
-          //     />,
-          //     <p className='mb-0' style={{ fontSize: "14px" }}>{data.email}</p>
-          //   ], false))
-          // }
+          dataType: 'email'
         },
         {
           dataField: 'resources_count',

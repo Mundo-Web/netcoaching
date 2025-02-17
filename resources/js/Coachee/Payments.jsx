@@ -1,93 +1,82 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import BaseAdminto from '@Adminto/Base';
 import CreateReactScript from '@Utils/CreateReactScript';
 import Table from '@Adminto/Table';
 import ReactAppend from '@Utils/ReactAppend';
 import DxButton from '@Adminto/Dx/DxButton';
-import AgreementsRest from '../Actions/Coachee/AgreementsRest';
-import Modal from '../Components/Coach/Agreements/Modal';
-import AdmintoModal from '@Adminto/Modal'
-import Details from '../Components/Coach/Agreements/Details';
 import Swal from 'sweetalert2';
-import ObservationsRest from '../Actions/Coachee/ObservationsRest';
-import { renderToString } from 'react-dom/server';
 import Number2Currency from '../Utils/Number2Currency';
 import PaymentsRest from '../Actions/Coachee/PaymentsRest';
+import Global from '../Utils/Global';
+import Tippy from '@tippyjs/react';
+import LaravelSession from '../Utils/LaravelSession';
+import { Clipboard, Notify } from 'sode-extend-react';
 
-const agreementsRest = new AgreementsRest()
-const observationsRest = new ObservationsRest()
 const paymentsRest = new PaymentsRest()
 
 const Payments = () => {
   const gridRef = useRef()
-  const modalRef = useRef()
+  const [selectedPaymentId, setSelectedPaymentId] = useState(null);
 
-  const [dataLoaded, setDataLoaded] = useState(null)
-  const [agreementLoaded, setAgreementLoaded] = useState(null);
+  const handleCulqiPayment = (paymentData) => {
+    setSelectedPaymentId(paymentData.id);
 
-  const onModalOpen = (data) => {
-    setAgreementLoaded(data)
-    $(modalRef.current).modal('show');
-  }
-
-  const handleObserveContract = async () => {
-    $(modalRef.current).modal('hide')
-    const { value: reason } = await Swal.fire({
-      title: 'Observar contrato',
-      html: renderToString(<div style={{ fontSize: 'medium' }}>
-        <div className='form-group'>
-          <label htmlFor="observation-reason" style={{ marginBottom: '4px' }}>Motivo de la observación</label>
-          <textarea id='observation-reason' className="form-control" placeholder="Ingrese el motivo de la observación aquí..." style={{
-            minHeight: '27px',
-            fieldSizing: 'content'
-          }}></textarea>
-        </div>
-      </div>),
-      showCancelButton: true,
-      confirmButtonText: 'Observar',
-      cancelButtonText: 'Cancelar',
-      preConfirm: () => {
-        const otherReason = $('#observation-reason').val();
-        if (!otherReason.trim()) {
-          Swal.showValidationMessage('Por favor, ingrese el motivo de la observación');
-          return false;
-        }
-        return otherReason;
-      }
+    Culqi.publicKey = Global.CULQI_PUBLIC_KEY;
+    Culqi.options({
+      style: {
+        logo: `${location.origin}/assets/img/favicon.png`,
+        bannerColor: '#05455A',
+        buttonBackground: '#ef4444',
+        menuColor: '#ef4444',
+        linksColor: '#ef4444',
+        priceColor: '#ef4444',
+      },
+      customerEmail: LaravelSession.email,
     });
-
-    if (!reason) return $(modalRef.current).modal('show');
-
-    const result = await observationsRest.save({
-      agreement_id: agreementLoaded?.id,
-      description: reason
+    Culqi.settings({
+      icon: `${Global.APP_URL}/assets/img/favicon.png`,
+      title: `${Global.APP_NAME} - Pago de cuota`,
+      currency: 'PEN',
+      amount: paymentData.amount * 100,
+      description: `Pago de cuota ${paymentData.name}`,
     });
-
-    if (!result) return
-
-    $(modalRef.current).modal('hide')
-    $(gridRef.current).dxDataGrid('instance').refresh()
+    Culqi.open();
   };
 
-  const handleAcceptContract = async () => {
-    const { isConfirmed } = await Swal.fire({
-      title: 'Aceptar contrato',
-      text: '¿Estas seguro de aceptar este contrato?',
-      icon: 'info',
-      showCancelButton: true,
-      confirmButtonText: 'Si, aceptar',
-      cancelButtonText: 'Cancelar'
-    })
-    if (!isConfirmed) return
-    const result = await agreementsRest.save({
-      id: agreementLoaded.id,
-      status: true,
-    })
-    if (!result) return
-    $(modalRef.current).modal('hide')
-    $(gridRef.current).dxDataGrid('instance').refresh()
+  const handleCopyCulqiCodeClicked = (culqiCode) => {
+    Clipboard.copy(culqiCode, () => Notify.add({
+      icon: '/assets/img/logo-login.svg',
+      title: 'Código copiado',
+      body: 'El código de Culqi ha sido copiado al portapapeles',
+      type: 'success'
+    }));
   }
+
+  useEffect(() => {
+    window.culqi = async () => {
+      if (Culqi.token) {
+        try {
+          const result = await paymentsRest.save({
+            payment_id: selectedPaymentId,
+            token: Culqi.token.id,
+            email: Culqi.token.email,
+          });
+
+          console.log(result)
+
+          if (!result) return $(gridRef.current).dxDataGrid('instance').refresh()
+
+          Swal.fire('¡Éxito!', 'El pago se ha procesado correctamente', 'success');
+          $(gridRef.current).dxDataGrid('instance').refresh();
+          Culqi.close();
+        } catch (error) {
+          console.log(error)
+          Swal.fire('Error', 'Hubo un error al procesar el pago', 'error');
+        }
+      }
+    };
+  }, [selectedPaymentId]);
 
   return (<>
     <Table gridRef={gridRef} title='Pagos' rest={paymentsRest}
@@ -142,21 +131,16 @@ const Payments = () => {
           caption: 'Estado',
           dataType: 'boolean',
           cellTemplate: (container, { data }) => {
-            switch (data.status) {
-              case 1:
-                ReactAppend(container, <span className='badge bg-success rounded-pill'>Pagado</span>)
-                break
-              case 0:
-                ReactAppend(container, <div>
-                  <span className='badge bg-danger rounded-pill'>
-                    Pendiente
-                    <i className='mdi mdi-arrow-top-right ms-1'></i>
-                  </span>
-                </div>)
-                break
-              default:
-                ReactAppend(container, <span className='badge bg-dark rounded-pill'>Pendiente</span>)
-                break
+            if (data.status == 1) {
+              ReactAppend(container, <Tippy content={`Codigo de pago: ${data.payment_code} (Clic para copiar)`}>
+                <span className='badge bg-success rounded-pill' onClick={() => handleCopyCulqiCodeClicked(data.payment_code)} style={{ cursor: 'pointer' }}>Pagado</span>
+              </Tippy>)
+            } else if (data.status == 0) {
+              ReactAppend(container, <span className='badge bg-danger rounded-pill'>Pendiente</span>)
+            } else {
+              ReactAppend(container, <Tippy content={data.status_message}>
+                <span className='badge bg-dark rounded-pill'>Rechazado</span>
+              </Tippy>)
             }
           }
         },
@@ -164,72 +148,18 @@ const Payments = () => {
           caption: 'Acciones',
           cellTemplate: (container, { data }) => {
             container.css('text-overflow', 'unset')
-            container.append(DxButton({
-              className: 'btn btn-xs btn-soft-dark',
-              title: 'Ver acuerdo',
-              icon: 'fas fa-file-invoice',
-              onClick: () => onModalOpen(data)
-            }))
-            container.append(DxButton({
-              className: 'btn btn-xs btn-soft-success',
-              title: 'Ver pagos',
-              icon: ' fas fa-money-check-alt',
-              onClick: () => location.href = `/coachee/payments?agreement=${data.id}`
-            }))
+            if (data.status == 1) return
             container.append(DxButton({
               className: 'btn btn-xs btn-soft-primary',
-              title: 'Ver sesiones',
-              icon: 'fas fa-th-list',
-              onClick: () => location.href = `/coachee/sessions?agreement=${data.id}`
+              title: 'Pagar ahora',
+              icon: 'fas fa-credit-card',
+              onClick: () => handleCulqiPayment(data)
             }))
           },
           allowFiltering: false,
           allowExporting: false
         }
       ]} />
-    <Modal dataLoaded={dataLoaded} setDataLoaded={setDataLoaded} onSave={() => $(gridRef.current).dxDataGrid('instance').refresh()} />
-    <AdmintoModal modalRef={modalRef} title={`Acuerdo C${String(agreementLoaded?.contract_number).padStart(3, '0')}`} size='lg' hideButtonSubmit isStatic>
-      <Details {...agreementLoaded} />
-      <hr />
-      {
-        agreementLoaded?.status == 1
-          ? <>
-            <h4>Pagos del contrato:</h4>
-            <p>Para poder pagar las cuotas debes dirigirte a <a href="/coachee/payments">Pagos <span className='mdi mdi-arrow-top-right'></span></a> en el menú.</p>
-            <table className='table table-sm table-striped'>
-              <thead>
-                <tr>
-                  <td>Monto</td>
-                  <td>Fecha pago</td>
-                  <td>Pagar antes de</td>
-                  <td>Cargo</td>
-                  <td>Estado</td>
-                </tr>
-              </thead>
-              <tbody>
-                {
-                  agreementLoaded?.payments?.map((payment, index) => (<tr key={index}>
-                    <td>USD {Number2Currency(payment.amount)}</td>
-                    <td>{payment.payment_date}</td>
-                    <td>{moment(payment.due_date).format('LL')}</td>
-                    <td></td>
-                    <td>{
-                      payment.status
-                        ? <span className='badge bg-success'>Pagado</span>
-                        : <span className='badge bg-warning'>Pendiente</span>}</td>
-                  </tr>))
-                }
-              </tbody>
-            </table>
-          </>
-          : agreementLoaded?.status == 0
-            ? <p className='text-center text-danger'>Has observado el contrato, espere a que el coach lo corrija y se ponga en contacto contigo</p>
-            : <div className='d-flex justify-content-center gap-2'>
-              <button className='btn btn-sm btn-warning' type='button' onClick={handleObserveContract}>Observar contrato</button>
-              <button className='btn btn-sm btn-primary' type='button' onClick={handleAcceptContract}>Aceptar contrato</button>
-            </div>
-      }
-    </AdmintoModal>
   </>
   )
 }

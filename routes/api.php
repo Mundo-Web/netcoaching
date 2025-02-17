@@ -187,6 +187,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/schedules/paginate', [CoacheeScheduleController::class, 'paginate']);
 
         // Payment routes
+        Route::post('/payments', [CoacheePaymentController::class, 'save']);
         Route::post('/payments/paginate', [CoacheePaymentController::class, 'paginate']);
     });
 

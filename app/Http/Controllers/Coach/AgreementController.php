@@ -6,6 +6,7 @@ use App\Http\Controllers\BasicController;
 use App\Models\Agreement;
 use App\Models\Request;
 use Illuminate\Http\Request as HttpRequest;
+use Illuminate\Support\Facades\Auth;
 use SoDe\Extend\Response;
 
 class AgreementController extends BasicController
@@ -14,7 +15,8 @@ class AgreementController extends BasicController
 
     public function setPaginationInstance(string $model)
     {
-        return $model::with(['coach', 'coachee', 'observations', 'observations.observer']);
+        return $model::with(['coach', 'coachee', 'observations', 'observations.observer'])
+            ->where('coach_id', Auth::user()->id);
     }
 
     public function beforeSave(HttpRequest $request)

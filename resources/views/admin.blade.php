@@ -76,6 +76,8 @@
 
   @if ($route == 'home')
     <script src="/lte/assets/libs/jquery-knob/jquery.knob.min.js"></script>
+  @elseif ($route == 'Coachee/Payments.jsx')
+    <script src="https://checkout.culqi.com/js/v4"></script>
   @endif
   <script src="/lte/assets/libs/quill/quill.min.js"></script>
   <script src="/lte/assets/libs/mohithg-switchery/switchery.min.js"></script>

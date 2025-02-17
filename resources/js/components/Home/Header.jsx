@@ -13,7 +13,18 @@ const Header = ({ sliders = [] }) => {
       loop={true}>
       {sliders.map((slider, i) => {
         return <SwiperSlide key={i}>
-          <img className='absolute size-full object-cover object-center z-10 opacity-50' src={`/api/sliders/media/${slider.image}`} alt="" onError={e => e.target.src = Banner} />
+          {/* Original image */}
+          {/* <img className='absolute size-full object-cover object-center z-10 opacity-50' src={`/api/sliders/media/${slider.image}`} alt="" onError={e => e.target.src = Banner} /> */}
+          
+          <video 
+            className='absolute size-full object-cover object-center z-10 opacity-50'
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src="/assets/img/home/bg-video.mp4" type="video/mp4" />
+          </video>
           <div className='z-20 relative flex flex-col items-center justify-center px-20 pt-40 pb-40 w-full h-full max-md:px-5 max-md:py-24 max-md:max-w-full'>
             <div className="flex flex-col mb-0 w-full max-w-[1062px] max-md:mb-2.5 max-md:max-w-full">
               <div className="flex flex-col w-full text-center max-md:max-w-full">
@@ -47,7 +58,7 @@ const Header = ({ sliders = [] }) => {
       })}
     </Swiper>
     <section className="-mt-40 flex relative z-10 flex-col items-center self-center px-20 py-10 w-11/12 max-w-[720px] max-md:px-5 ">
-      <img loading="lazy" src="/assets/img/home/laptop-cover.png" alt="" className="object-contain inset-0 size-full" />
+      <img loading="lazy" src="/assets/img/home/laptop-cover.png" alt="" className="object-contain inset-0 size-full aspect-[643/375]" />
     </section>
   </>
 }

@@ -87,11 +87,6 @@ const Register = ({ PUBLIC_RSA_KEY, RECAPTCHA_SITE_KEY, token, terms = 'Terminos
     setLoading(false)
   }
 
-  const onDocumentTypeChange = (e) => {
-    documentNumberRef.current.value = ''
-    setFound(false)
-  }
-
   return (<>
     <div className="account-pages mt-5 mb-5">
       <div className="container">
@@ -113,10 +108,10 @@ const Register = ({ PUBLIC_RSA_KEY, RECAPTCHA_SITE_KEY, token, terms = 'Terminos
                     <div className="row justify-content-center">
                       <div className="col-sm-6 mb-2">
                         <label htmlFor="role" className="form-label">Tipo de usuario <b className="text-danger">*</b></label>
-                        <SelectFormGroup eRef={roleRef} onChange={onDocumentTypeChange} required>
+                        <SelectFormGroup eRef={roleRef} required>
                           {
-                            roles.map((role, i) => {
-                              return <option value={role.relative_id}>{role.name}</option>
+                            roles.map((role, index) => {
+                              return <option key={index} value={role.relative_id}>{role.name}</option>
                             })
                           }
                         </SelectFormGroup>

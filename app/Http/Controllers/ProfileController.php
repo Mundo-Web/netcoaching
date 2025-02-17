@@ -95,6 +95,7 @@ class ProfileController extends BasicController
   {
     try {
       $content = Storage::get('profile/thumbnail/' . $uuid . '.img');
+      if (!$content) $content = Storage::get('profile/' . $uuid . '.img');
       if (!$content) throw new Exception('Perfil no encontrado');
       return response($content, 200, [
         'Content-Type' => 'application/octet-stream'

@@ -4,6 +4,7 @@ class Global {
   static APP_URL = null;
   static APP_DOMAIN = null;
   static APP_PROTOCOL = null;
+  static CULQI_PUBLIC_KEY = null;
 
   static set = (name, value) => {
     Global[name] = value;

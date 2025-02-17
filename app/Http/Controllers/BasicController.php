@@ -89,6 +89,7 @@ class BasicController extends Controller
         'APP_URL' => env('APP_URL'),
         'APP_DOMAIN' => env('APP_DOMAIN'),
         'APP_PROTOCOL' => env('APP_PROTOCOL', 'https'),
+        'CULQI_PUBLIC_KEY' => env('CULQI_PUBLIC_KEY')
       ],
     ];
     foreach ($this->setReactViewProperties($request) as $key => $value) {

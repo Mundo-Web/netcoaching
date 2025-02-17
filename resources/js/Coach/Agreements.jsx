@@ -1,14 +1,14 @@
+import BaseAdminto from '@Adminto/Base';
+import AdmintoModal from '@Adminto/Modal';
+import Table from '@Adminto/Table';
+import CreateReactScript from '@Utils/CreateReactScript';
+import ReactAppend from '@Utils/ReactAppend';
 import React, { useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import BaseAdminto from '@Adminto/Base';
-import CreateReactScript from '@Utils/CreateReactScript';
-import Table from '@Adminto/Table';
-import ReactAppend from '@Utils/ReactAppend';
-import DxButton from '../Components/dx/DxButton';
 import AgreementsRest from '../Actions/Coach/AgreementsRest';
-import Modal from '../Components/Coach/Agreements/Modal';
-import AdmintoModal from '@Adminto/Modal'
+import DxButton from '../Components/Adminto/Dx/DxButton';
 import Details from '../Components/Coach/Agreements/Details';
+import Modal from '../Components/Coach/Agreements/Modal';
 
 const agreementsRest = new AgreementsRest()
 

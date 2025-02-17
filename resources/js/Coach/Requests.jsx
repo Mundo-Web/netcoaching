@@ -1,14 +1,14 @@
+import BaseAdminto from '@Adminto/Base';
+import Table from '@Adminto/Table';
+import Tippy from '@tippyjs/react';
+import CreateReactScript from '@Utils/CreateReactScript';
+import ReactAppend from '@Utils/ReactAppend';
 import React, { useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import BaseAdminto from '@Adminto/Base';
-import CreateReactScript from '@Utils/CreateReactScript';
-import Table from '@Adminto/Table';
-import ReactAppend from '@Utils/ReactAppend';
-import DxButton from '../Components/dx/DxButton';
-import RequestsRest from '../Actions/Coach/RequestsRest';
-import Swal from 'sweetalert2';
 import { renderToString } from 'react-dom/server';
-import Tippy from '@tippyjs/react';
+import Swal from 'sweetalert2';
+import RequestsRest from '../Actions/Coach/RequestsRest';
+import DxButton from '../Components/Adminto/Dx/DxButton';
 import Modal from '../Components/Coach/Agreements/Modal';
 
 const requestsRest = new RequestsRest
@@ -147,7 +147,7 @@ const Requests = () => {
           caption: 'Telefono',
           cellTemplate: (container, { data }) => {
             if (data?.coachee?.phone) {
-              container.text(`${data?.coachee?.phone_prefix || '51'}${data?.coachee?.phone || ''}`)
+              container.html(data?.coachee?.phone || '<i className="text-muted">- Sin telefono -</i>')
             } else {
               ReactAppend(container, <i className='text-muted'>- Sin telefono -</i>)
             }
@@ -178,7 +178,7 @@ const Requests = () => {
                 break
             }
             if (data.status == null) ReactAppend(container, <Tippy content={data.status_message}>
-              <p className='mb-0 text-truncate text-muted'>{data.status_message}</p>
+              <p className='mt-1 mb-0 text-truncate text-muted'>{data.status_message}</p>
             </Tippy>)
           }
         },
