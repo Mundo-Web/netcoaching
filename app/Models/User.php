@@ -39,6 +39,9 @@ class User extends Authenticatable
         'address',
         'summary',
         'description',
+        'price',
+        'max_price',
+        'score',
         'status',
     ];
 

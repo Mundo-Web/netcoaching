@@ -53,8 +53,8 @@
       "resources/js/Components/Tailwind/Base.jsx"
     ]
   },
-  "_CoachCard-Dj0SZhk-.js": {
-    "file": "assets/CoachCard-Dj0SZhk-.js",
+  "_CoachCard-Dvv1QnWf.js": {
+    "file": "assets/CoachCard-Dvv1QnWf.js",
     "name": "CoachCard",
     "imports": [
       "resources/js/Components/About/StatisticCard.jsx",
@@ -410,7 +410,7 @@
     ]
   },
   "resources/js/Admin/Coaches.jsx": {
-    "file": "assets/Coaches-BZnD09Ew.js",
+    "file": "assets/Coaches-BwwHGqYZ.js",
     "name": "Coaches",
     "src": "resources/js/Admin/Coaches.jsx",
     "isEntry": true,
@@ -428,10 +428,11 @@
       "_JSEncrypt-D3I3x59l.js",
       "resources/js/Components/Coaches/Content.jsx",
       "_DxButton-DHPSEtz1.js",
+      "_sweetalert2.all-DCeKQPlA.js",
+      "_tippy-react.esm-BVvHiWwH.js",
       "_index-DgyC5pTR.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
       "_index.esm-B502ZfUP.js",
-      "_tippy-react.esm-BVvHiWwH.js",
       "_server.browser-C05jTTsN.js"
     ],
     "css": [
@@ -1037,7 +1038,7 @@
     ]
   },
   "resources/js/Coaches.jsx": {
-    "file": "assets/Coaches-B0TEOWvP.js",
+    "file": "assets/Coaches-I1L4WHOJ.js",
     "name": "Coaches",
     "src": "resources/js/Coaches.jsx",
     "isEntry": true,
@@ -1049,7 +1050,7 @@
       "_Base-YTsBexA-.js",
       "_hoist-non-react-statics.cjs-CgXjTu_P.js",
       "_index-DgyC5pTR.js",
-      "_CoachCard-Dj0SZhk-.js",
+      "_CoachCard-Dvv1QnWf.js",
       "resources/js/Components/Coaches/Content.jsx",
       "_ArrayJoin-2k6ba35P.js",
       "_EventCard-CtJ3h8DV.js",
@@ -1251,7 +1252,7 @@
     ]
   },
   "resources/js/Components/Adminto/form/CheckboxFormGroup.jsx": {
-    "file": "assets/CheckboxFormGroup-C08uxN3-.js",
+    "file": "assets/CheckboxFormGroup-CgKqWWsy.js",
     "name": "CheckboxFormGroup",
     "src": "resources/js/Components/Adminto/form/CheckboxFormGroup.jsx",
     "isEntry": true,
@@ -1293,7 +1294,7 @@
     ]
   },
   "resources/js/Components/Adminto/form/PasswordFormGroup.jsx": {
-    "file": "assets/PasswordFormGroup-C08uxN3-.js",
+    "file": "assets/PasswordFormGroup-CgKqWWsy.js",
     "name": "PasswordFormGroup",
     "src": "resources/js/Components/Adminto/form/PasswordFormGroup.jsx",
     "isEntry": true,
@@ -1303,7 +1304,7 @@
     ]
   },
   "resources/js/Components/Adminto/form/QuillFormGroup.jsx": {
-    "file": "assets/QuillFormGroup-C08uxN3-.js",
+    "file": "assets/QuillFormGroup-CgKqWWsy.js",
     "name": "QuillFormGroup",
     "src": "resources/js/Components/Adminto/form/QuillFormGroup.jsx",
     "isEntry": true,
@@ -1313,7 +1314,7 @@
     ]
   },
   "resources/js/Components/Adminto/form/SelectAPIFormGroup.jsx": {
-    "file": "assets/SelectAPIFormGroup-BwBpJXq9.js",
+    "file": "assets/SelectAPIFormGroup-BdwIDiZM.js",
     "name": "SelectAPIFormGroup",
     "src": "resources/js/Components/Adminto/form/SelectAPIFormGroup.jsx",
     "isEntry": true,
@@ -1325,7 +1326,7 @@
     ]
   },
   "resources/js/Components/Adminto/form/SelectFormGroup.jsx": {
-    "file": "assets/SelectFormGroup-C08uxN3-.js",
+    "file": "assets/SelectFormGroup-CgKqWWsy.js",
     "name": "SelectFormGroup",
     "src": "resources/js/Components/Adminto/form/SelectFormGroup.jsx",
     "isEntry": true,
@@ -1444,7 +1445,7 @@
     ]
   },
   "resources/js/Components/Coaches/Header.jsx": {
-    "file": "assets/Header-CvgOrvrg.js",
+    "file": "assets/Header-C08uxN3-.js",
     "name": "Header",
     "src": "resources/js/Components/Coaches/Header.jsx",
     "isEntry": true,
@@ -1564,7 +1565,7 @@
     ]
   },
   "resources/js/Components/Resources/Header.jsx": {
-    "file": "assets/Header-C08uxN3-.js",
+    "file": "assets/Header-CgKqWWsy.js",
     "name": "Header",
     "src": "resources/js/Components/Resources/Header.jsx",
     "isEntry": true,
@@ -1622,7 +1623,7 @@
     ]
   },
   "resources/js/Components/Tailwind/Header.jsx": {
-    "file": "assets/Header-CgKqWWsy.js",
+    "file": "assets/Header-CvgOrvrg.js",
     "name": "Header",
     "src": "resources/js/Components/Tailwind/Header.jsx",
     "isEntry": true,
@@ -1682,7 +1683,7 @@
     ]
   },
   "resources/js/Components/form/CheckboxFormGroup.jsx": {
-    "file": "assets/CheckboxFormGroup-CgKqWWsy.js",
+    "file": "assets/CheckboxFormGroup-C08uxN3-.js",
     "name": "CheckboxFormGroup",
     "src": "resources/js/Components/form/CheckboxFormGroup.jsx",
     "isEntry": true,
@@ -1702,7 +1703,7 @@
     ]
   },
   "resources/js/Components/form/PasswordFormGroup.jsx": {
-    "file": "assets/PasswordFormGroup-CgKqWWsy.js",
+    "file": "assets/PasswordFormGroup-C08uxN3-.js",
     "name": "PasswordFormGroup",
     "src": "resources/js/Components/form/PasswordFormGroup.jsx",
     "isEntry": true,
@@ -1712,7 +1713,7 @@
     ]
   },
   "resources/js/Components/form/QuillFormGroup.jsx": {
-    "file": "assets/QuillFormGroup-CgKqWWsy.js",
+    "file": "assets/QuillFormGroup-C08uxN3-.js",
     "name": "QuillFormGroup",
     "src": "resources/js/Components/form/QuillFormGroup.jsx",
     "isEntry": true,
@@ -1722,7 +1723,7 @@
     ]
   },
   "resources/js/Components/form/SelectAPIFormGroup.jsx": {
-    "file": "assets/SelectAPIFormGroup-BdwIDiZM.js",
+    "file": "assets/SelectAPIFormGroup-BwBpJXq9.js",
     "name": "SelectAPIFormGroup",
     "src": "resources/js/Components/form/SelectAPIFormGroup.jsx",
     "isEntry": true,
@@ -1734,7 +1735,7 @@
     ]
   },
   "resources/js/Components/form/SelectFormGroup.jsx": {
-    "file": "assets/SelectFormGroup-CgKqWWsy.js",
+    "file": "assets/SelectFormGroup-C08uxN3-.js",
     "name": "SelectFormGroup",
     "src": "resources/js/Components/form/SelectFormGroup.jsx",
     "isEntry": true,
@@ -1890,7 +1891,7 @@
     ]
   },
   "resources/js/Profile.jsx": {
-    "file": "assets/Profile-DRaSgWEg.js",
+    "file": "assets/Profile-BXAdeng6.js",
     "name": "Profile",
     "src": "resources/js/Profile.jsx",
     "isEntry": true,
@@ -1901,7 +1902,7 @@
       "_CreateReactScript-CzUO6zj-.js",
       "_Base-YTsBexA-.js",
       "_HtmlContent-BY9uANKo.js",
-      "_CoachCard-Dj0SZhk-.js",
+      "_CoachCard-Dvv1QnWf.js",
       "_html2string-CfCixsO3.js",
       "_tippy-react.esm-BVvHiWwH.js",
       "_sweetalert2.all-DCeKQPlA.js",

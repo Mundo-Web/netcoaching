@@ -13,6 +13,8 @@ import Global from "@Utils/Global";
 import AdminCoachesRest from "@Rest/Admin/CoachesRest";
 import ReactAppend from "@Utils/ReactAppend";
 import DxButton from "@Adminto/Dx/DxButton";
+import Swal from "sweetalert2";
+import Tippy from "@tippyjs/react";
 
 const coachesRest = new AdminCoachesRest();
 
@@ -38,7 +40,7 @@ const Coaches = ({ }) => {
     if (data?.id) setIsEditing(true)
     else setIsEditing(false)
 
-    const roles = await RolesRest.byUser(data?.id)
+    const roles = []
 
     idRef.current.value = data?.id || null
     nameRef.current.value = data?.name || null
@@ -81,10 +83,29 @@ const Coaches = ({ }) => {
   }
 
   const onDeleteClicked = async (id) => {
+    const isConfirmed = await Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'No podrás revertir esto!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, eliminar!',
+      cancelButtonText: 'Cancelar'
+    })
+    if (!isConfirmed) return
     const result = await coachesRest.delete(id)
     if (!result) return
     $(gridRef.current).dxDataGrid('instance').refresh()
   }
+
+  const handleRatingClick = async (userId, newScore) => {
+    const result = await coachesRest.save({
+      id: userId,
+      score: newScore
+    });
+    if (result) {
+      $(gridRef.current).dxDataGrid('instance').refresh();
+    }
+  };
 
   return (<>
     <Table gridRef={gridRef} title='Coaches' rest={coachesRest}
@@ -129,6 +150,21 @@ const Coaches = ({ }) => {
           dataType: 'email'
         },
         {
+          dataField: 'score',
+          caption: 'Calificacion',
+          dataType: 'number',
+          cellTemplate: (container, { data }) => {
+            ReactAppend(container, <>
+              {[1, 2, 3, 4, 5].map((star) => (<Tippy key={star} content={`${star} estrellas`}><i
+                key={star}
+                className={`mdi mdi-star${star <= data.score ? '' : '-outline'}`}
+                style={{ color: star <= data.score ? '#05455A' : '#6c757d', cursor: 'pointer' }}
+                onClick={() => handleRatingClick(data.id, star)}
+              ></i></Tippy>))}
+            </>)
+          }
+        },
+        {
           dataField: 'resources_count',
           caption: 'Recursos',
           dataType: 'number',
@@ -158,13 +194,19 @@ const Coaches = ({ }) => {
         {
           caption: 'Acciones',
           cellTemplate: (container, { data }) => {
+            // container.append(DxButton({
+            //   className: 'btn btn-xs btn-soft-primary',
+            //   title: 'Modificar datos',
+            //   icon: 'fa fa-pen',
+            //   onClick: () => onModalOpen(data)
+            // }))
             container.append(DxButton({
               className: 'btn btn-xs btn-light',
               title: data.status === null ? 'Restaurar' : 'Cambiar estado',
               icon: data.status === 1 ? 'fa fa-toggle-on text-success' : data.status === 0 ? 'fa fa-toggle-off text-danger' : 'fas fa-trash-restore',
               onClick: () => onStatusChange(data)
             }))
-            container.append(DxButton({
+            data.status != null && container.append(DxButton({
               className: 'btn btn-xs btn-soft-danger',
               title: 'Eliminar',
               icon: 'fa fa-trash-alt',

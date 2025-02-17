@@ -37,11 +37,36 @@ const Content = ({ countries, filter, setFilter }) => {
   }, [filter, currentPage])
 
   const refreshCoaches = async (filter, order) => {
+    let sort = [];
+
+    switch (order) {
+      case 'price_asc':
+        sort = [{ selector: 'price', desc: false }];
+        break;
+      case 'price_desc':
+        sort = [{ selector: 'max_price', desc: true }];
+        break;
+      case 'name_asc':
+        sort = [{ selector: 'users.name', desc: false }];
+        break;
+      case 'name_desc':
+        sort = [{ selector: 'users.name', desc: true }];
+        break;
+      case 'score_desc':
+        sort = [{ selector: 'score', desc: true }];
+        break;
+      case 'score_asc':
+        sort = [{ selector: 'score', desc: false }];
+        break;
+    }
+
+    setCoaches([])
+
     const result = await coachesRest.paginate({
       filter,
       take: 12,
-      sort: [{ selector: 'price', desc: order == 'desc' }],
-      skip: 12 * (currentPage - 1),
+      sort,
+      skip: 12 * ((currentPage || 1) - 1),
       requireTotalCount: true
     })
     const newCoaches = result?.data ?? []
@@ -53,14 +78,18 @@ const Content = ({ countries, filter, setFilter }) => {
     <section className='p-[5%] min-h-[75vh] block md:flex items-start gap-5'>
       <form className="flex flex-col w-full md:w-4/12 lg:w-3/12">
         <div className='w-full lg:w-full'>
-          <label className="text-lg font-semibold text-gray-800 mb-2">Ordenar por precio</label>
+          <label className="text-lg font-semibold text-gray-800 mb-2">Ordenar por</label>
           <Select
             className='block text-black'
             options={[
-              { value: 'asc', label: 'De menor a mayor' },
-              { value: 'desc', label: 'De mayor a menor' }
+              { value: 'price_asc', label: 'Precio: De menor a mayor' },
+              { value: 'price_desc', label: 'Precio: De mayor a menor' },
+              { value: 'name_asc', label: 'Nombre: A-Z' },
+              { value: 'name_desc', label: 'Nombre: Z-A' },
+              { value: 'score_desc', label: 'Calificación: Mayor primero' },
+              { value: 'score_asc', label: 'Calificación: Menor primero' },
             ]}
-            defaultValue={{ value: 'asc', label: 'De menor a mayor' }}
+            defaultValue={{ value: 'price_asc', label: 'Precio: De menor a mayor' }}
             styles={{
               control: (base) => ({
                 ...base,
@@ -104,8 +133,9 @@ const Content = ({ countries, filter, setFilter }) => {
         </div>
       </form>
       <div className=" w-full md:w-8/12 lg:w-9/12">
-        <section className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8'>
+        <section className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8 min-h-80'>
           {coaches.map((coach, i) => {
+            if (!coach) return <div key={i} className='placeholder h-40 w-full bg-gray-100'></div>
             const country = countries.find((x) => x.id == coach.country)
             return <CoachCard key={i} {...coach} country={country} />;
           })}

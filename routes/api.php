@@ -86,13 +86,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard/{range}', [DashboardController::class, 'revenue']);
 
     Route::get('/reports/{id}', [CoachReportController::class, 'get']);
-    
+
     Route::get('/logbooks/{id}', [LogbookController::class, 'get']);
     Route::post('/logbooks', [LogbookController::class, 'save']);
 
     Route::middleware('can:Admin')->prefix('admin')->group(function () {
+        Route::post('/coaches', [AdminCoachController::class, 'save']);
         Route::post('/coaches/paginate', [AdminCoachController::class, 'paginate']);
         Route::patch('/coaches/status', [AdminCoachController::class, 'status']);
+        Route::delete('/coaches/{id}', [AdminCoachController::class, 'delete']);
 
         Route::post('/resources/paginate', [AdminResourceController::class, 'paginate']);
         Route::patch('/resources/status', [AdminResourceController::class, 'status']);
