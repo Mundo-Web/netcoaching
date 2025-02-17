@@ -5,12 +5,12 @@ const FilterPagination = ({ current, setCurrent, pages }) => {
   array.fill(null)
 
   const onPrevPageClicked = () => {
-    const page = current--
+    const page = current - 1
     setCurrent(page < 1 ? 1 : page)
   }
 
   const onNextPageClicked = () => {
-    const page = current++
+    const page = current + 1
     setCurrent(page > pages ? pages : page)
   }
 
