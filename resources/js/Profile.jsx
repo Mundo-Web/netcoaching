@@ -9,6 +9,7 @@ import html2string from './Utils/html2string';
 import Tippy from '@tippyjs/react';
 import Swal from 'sweetalert2';
 import RequestsRest from './Actions/RequestsRest';
+import Number2Currency from './Utils/Number2Currency';
 
 const requestsRest = new RequestsRest();
 
@@ -102,6 +103,15 @@ const Profile = ({ coach, country, countries, resources, coaches, session, hasRo
                       : <i>- Sin especialidad -</i>
                   }
                 </div>
+                <div className="flex items-center gap-1 justify-start">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <i
+                      key={star}
+                      className={`mdi mdi-18px mdi-star${star <= (coach.score || 0) ? '' : '-outline'}`}
+                      style={{ color: star <= (coach.score || 0) ? '#ffc107' : '#6c757d', fontSize: '14px' }}
+                    ></i>
+                  ))}
+                </div>
               </div>
             </div>
             <div className="prose ql-editor" style={{ all: 'revert' }}>
@@ -167,7 +177,7 @@ const Profile = ({ coach, country, countries, resources, coaches, session, hasRo
 
           </div>
           <div className="md:w-1/3 block md:sticky top-[15%] h-max">
-            <h2 className='text-2xl mb-4 font-bold'>S/. {Number(coach.price).toFixed(2)}</h2>
+            <h2 className='text-2xl mb-4 font-bold'>S/. {Number2Currency(coach.price)} {coach.max_price && <>- {Number2Currency(coach.max_price)}</>}</h2>
             <p className='mb-2'>
               <i className='fas fa-globe-americas w-6'></i>
               <b>Nacionalidad</b>: {country.name} - {coach.city}
