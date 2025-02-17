@@ -19,10 +19,10 @@ class CoachController extends BasicController
     public function setReactViewProperties(Request $request)
     {
         $specialties = SpecialtiesByUser::select([
-            DB::raw('DISTINCT(specialties.id)'),
             'specialties.id',
             'specialties.name'
         ])
+            ->distinct()
             ->join('specialties', 'specialties.id', 'specialties_by_users.specialty_id')
             ->where('status', true)
             ->get();
