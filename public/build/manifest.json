@@ -1303,7 +1303,7 @@
     ]
   },
   "resources/js/Components/Adminto/form/QuillFormGroup.jsx": {
-    "file": "assets/QuillFormGroup-C08uxN3-.js",
+    "file": "assets/QuillFormGroup-CgKqWWsy.js",
     "name": "QuillFormGroup",
     "src": "resources/js/Components/Adminto/form/QuillFormGroup.jsx",
     "isEntry": true,
@@ -1313,7 +1313,7 @@
     ]
   },
   "resources/js/Components/Adminto/form/SelectAPIFormGroup.jsx": {
-    "file": "assets/SelectAPIFormGroup-BwBpJXq9.js",
+    "file": "assets/SelectAPIFormGroup-BdwIDiZM.js",
     "name": "SelectAPIFormGroup",
     "src": "resources/js/Components/Adminto/form/SelectAPIFormGroup.jsx",
     "isEntry": true,
@@ -1444,7 +1444,7 @@
     ]
   },
   "resources/js/Components/Coaches/Header.jsx": {
-    "file": "assets/Header-C08uxN3-.js",
+    "file": "assets/Header-CgKqWWsy.js",
     "name": "Header",
     "src": "resources/js/Components/Coaches/Header.jsx",
     "isEntry": true,
@@ -1564,7 +1564,7 @@
     ]
   },
   "resources/js/Components/Resources/Header.jsx": {
-    "file": "assets/Header-CgKqWWsy.js",
+    "file": "assets/Header-C08uxN3-.js",
     "name": "Header",
     "src": "resources/js/Components/Resources/Header.jsx",
     "isEntry": true,
@@ -1712,7 +1712,7 @@
     ]
   },
   "resources/js/Components/form/QuillFormGroup.jsx": {
-    "file": "assets/QuillFormGroup-CgKqWWsy.js",
+    "file": "assets/QuillFormGroup-C08uxN3-.js",
     "name": "QuillFormGroup",
     "src": "resources/js/Components/form/QuillFormGroup.jsx",
     "isEntry": true,
@@ -1722,7 +1722,7 @@
     ]
   },
   "resources/js/Components/form/SelectAPIFormGroup.jsx": {
-    "file": "assets/SelectAPIFormGroup-BdwIDiZM.js",
+    "file": "assets/SelectAPIFormGroup-BwBpJXq9.js",
     "name": "SelectAPIFormGroup",
     "src": "resources/js/Components/form/SelectAPIFormGroup.jsx",
     "isEntry": true,

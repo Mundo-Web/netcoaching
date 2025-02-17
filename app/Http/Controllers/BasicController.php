@@ -148,7 +148,7 @@ class BasicController extends Controller
           $totalCount = $instance4count->distinct()->count(DB::raw($selector));
         } else {
           // When not grouping, use the original count logic
-          $totalCount = $instance4count->distinct()->count('id');
+          $totalCount = $instance4count->distinct()->count((new $this->model())->getTable() . '.id');
         }
       }
 
