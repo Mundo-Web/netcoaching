@@ -29,7 +29,7 @@
         "react-modal": "^3.16.1",
         "react-select": "^5.8.0",
         "slick-carousel": "^1.8.1",
-        "sode-extend-react": "^1.1.111",
+        "sode-extend-react": "1.2.5",
         "sweetalert2": "^11.11.1",
         "swiper": "^11.1.12"
     }
