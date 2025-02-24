@@ -8,6 +8,11 @@ const Benefits = ({ benefits }) => {
         <h1 className="w-full text-4xl leading-10 text-teal-950">
           Descubre cómo Net Coaching puede ser tu aliado en el camino hacia el éxito
         </h1>
+        <p className="mt-4 text-lg text-gray-600 leading-relaxed">
+          Conectamos coaches profesionales certificados con personas y organizaciones que buscan transformación y crecimiento. 
+          A través de nuestra plataforma, facilitamos sesiones personalizadas que te ayudarán a alcanzar tus metas personales 
+          y profesionales de manera efectiva.
+        </p>
         <a href='/login' className='w-max flex gap-2 justify-center items-center px-6 py-4 text-base font-bold leading-tight bg-red-500 rounded-lg text-zinc-100 self-start mt-10'>
           <span className="self-stretch my-auto">Iniciar</span>
           <i className='ms-1 fas fa-sign-in-alt'></i>
