@@ -21,6 +21,7 @@ const coacheesRest = new CoacheesRest();
 const Coachees = ({ }) => {
   const gridRef = useRef()
   const modalRef = useRef()
+  const pwdModalRef = useRef()
 
   // Form elements ref
   const idRef = useRef()
@@ -30,6 +31,9 @@ const Coachees = ({ }) => {
   const rolesRef = useRef()
   const passwordRef = useRef()
   const confirmRef = useRef()
+
+  const pwdIdRef = useRef()
+  const pwdPasswordRef = useRef()
 
   const jsEncrypt = new JSEncrypt()
   jsEncrypt.setPublicKey(Global.PUBLIC_RSA_KEY)
@@ -53,6 +57,12 @@ const Coachees = ({ }) => {
     $(modalRef.current).modal('show')
   }
 
+  const onPwdModalOpen = (data) => {
+    pwdIdRef.current.value = data?.id || null
+    pwdPasswordRef.current.value = null
+    $(pwdModalRef.current).modal('show')
+  }
+
   const onModalSubmit = async (e) => {
     e.preventDefault()
 
@@ -74,6 +84,23 @@ const Coachees = ({ }) => {
 
     $(gridRef.current).dxDataGrid('instance').refresh()
     $(modalRef.current).modal('hide')
+  }
+
+  const onPwdModalSubmit = async (e) => {
+    e.preventDefault()
+
+    const password = pwdPasswordRef.current.value
+
+    const request = {
+      id: pwdIdRef.current.value,
+      password
+    }
+
+    const result = await coacheesRest.save(request)
+    if (!result) return
+
+    $(gridRef.current).dxDataGrid('instance').refresh()
+    $(pwdModalRef.current).modal('hide')
   }
 
   const onStatusChange = async ({ id, status }) => {
@@ -200,6 +227,12 @@ const Coachees = ({ }) => {
             //   onClick: () => onModalOpen(data)
             // }))
             container.append(DxButton({
+              className: 'btn btn-xs btn-soft-dark',
+              title: 'Restablecer contraseña',
+              icon: 'fa fa-key',
+              onClick: () => onPwdModalOpen(data)
+            }))
+            container.append(DxButton({
               className: 'btn btn-xs btn-light',
               title: data.status === null ? 'Restaurar' : 'Cambiar estado',
               icon: data.status === 1 ? 'fa fa-toggle-on text-success' : data.status === 0 ? 'fa fa-toggle-off text-danger' : 'fas fa-trash-restore',
@@ -226,6 +259,11 @@ const Coachees = ({ }) => {
         <PasswordFormGroup eRef={passwordRef} label='Contraseña' col='col-md-6' required={!isEditing} />
         <PasswordFormGroup eRef={confirmRef} label='Repetir contraseña' col='col-md-6' required={!isEditing} />
       </div>
+    </Modal>
+
+    <Modal modalRef={pwdModalRef} title='Restablecer contraseña' onSubmit={onPwdModalSubmit} size='sm'>
+      <input ref={pwdIdRef} type='hidden' />
+      <PasswordFormGroup eRef={pwdPasswordRef} label='Ingrese nueva contraseña' />
     </Modal>
   </>
   )
