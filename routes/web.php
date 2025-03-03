@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\ResourceController as AdminResourceController;
 use App\Http\Controllers\Admin\SliderController as AdminSliderController;
 use App\Http\Controllers\Admin\TestimonyController as AdminTestimonyController;
 use App\Http\Controllers\Admin\SubscriptionController as AdminSubscriptionController;
+use App\Http\Controllers\Admin\CoacheeController as AdminCoacheeController;
 
 // Coach
 use App\Http\Controllers\Coach\HomeController as CoachHomeController;
@@ -70,6 +71,7 @@ Route::middleware(['can:Admin', 'auth'])->prefix('admin')->group(function () {
     Route::get('/', fn() => redirect('Admin/Home.jsx'));
     Route::get('/home', [AdminHomeController::class, 'reactView'])->name('Admin/Home.jsx');
     Route::get('/coaches', [AdminCoachController::class, 'reactView'])->name('Admin/Coaches.jsx');
+    Route::get('/coachees', [AdminCoacheeController::class, 'reactView'])->name('Admin/Coachees.jsx');
     Route::get('/resources', [AdminResourceController::class, 'reactView'])->name('Admin/Resources.jsx');
     Route::get('/messages', [AdminSubscriptionController::class, 'reactView'])->name('Admin/Messages.jsx');
     Route::get('/subscriptions', [AdminSubscriptionController::class, 'reactView'])->name('Admin/Subscriptions.jsx');

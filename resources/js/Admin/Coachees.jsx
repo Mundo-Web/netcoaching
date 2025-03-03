@@ -10,15 +10,15 @@ import SetSelectValue from "@Utils/SetSelectValue";
 import BaseAdminto from "@Adminto/Base";
 import JSEncrypt from "jsencrypt";
 import Global from "@Utils/Global";
-import AdminCoachesRest from "@Rest/Admin/CoachesRest";
 import ReactAppend from "@Utils/ReactAppend";
 import DxButton from "@Adminto/Dx/DxButton";
 import Swal from "sweetalert2";
 import Tippy from "@tippyjs/react";
+import CoacheesRest from "../Actions/Admin/CoacheesRest";
 
-const coachesRest = new AdminCoachesRest();
+const coacheesRest = new CoacheesRest();
 
-const Coaches = ({ }) => {
+const Coachees = ({ }) => {
   const gridRef = useRef()
   const modalRef = useRef()
 
@@ -69,7 +69,7 @@ const Coaches = ({ }) => {
       confirm: confirm ? jsEncrypt.encrypt(confirm) : undefined
     }
 
-    const result = await coachesRest.save(request)
+    const result = await coacheesRest.save(request)
     if (!result) return
 
     $(gridRef.current).dxDataGrid('instance').refresh()
@@ -77,7 +77,7 @@ const Coaches = ({ }) => {
   }
 
   const onStatusChange = async ({ id, status }) => {
-    const result = await coachesRest.status({ id, status })
+    const result = await coacheesRest.status({ id, status })
     if (!result) return
     $(gridRef.current).dxDataGrid('instance').refresh()
   }
@@ -92,13 +92,13 @@ const Coaches = ({ }) => {
       cancelButtonText: 'Cancelar'
     })
     if (!isConfirmed) return
-    const result = await coachesRest.delete(id)
+    const result = await coacheesRest.delete(id)
     if (!result) return
     $(gridRef.current).dxDataGrid('instance').refresh()
   }
 
   const handleRatingClick = async (userId, newScore) => {
-    const result = await coachesRest.save({
+    const result = await coacheesRest.save({
       id: userId,
       score: newScore
     });
@@ -108,7 +108,7 @@ const Coaches = ({ }) => {
   };
 
   return (<>
-    <Table gridRef={gridRef} title='Coaches' rest={coachesRest}
+    <Table gridRef={gridRef} title='Coachees' rest={coacheesRest}
       toolBar={(container) => {
         container.unshift({
           widget: 'dxButton', location: 'after',
@@ -148,30 +148,30 @@ const Coaches = ({ }) => {
           dataField: 'email',
           caption: 'Correo'
         },
-        {
-          dataField: 'score',
-          caption: 'Calificacion',
-          dataType: 'number',
-          cellTemplate: (container, { data }) => {
-            ReactAppend(container, <>
-              {[1, 2, 3, 4, 5].map((star) => (<Tippy key={star} content={`${star} estrellas`}><i
-                key={star}
-                className={`mdi mdi-18px mdi-star${star <= data.score ? '' : '-outline'}`}
-                style={{ color: star <= data.score ? '#05455A' : '#6c757d', cursor: 'pointer' }}
-                onClick={() => handleRatingClick(data.id, star)}
-              ></i></Tippy>))}
-            </>)
-          }
-        },
-        {
-          dataField: 'resources_count',
-          caption: 'Recursos',
-          dataType: 'number',
-          allowFiltering: false,
-          cellTemplate: (container, { data, value }) => {
-            container.text(value == 1 ? '1 recurso' : `${value} recursos`)
-          }
-        },
+        // {
+        //   dataField: 'score',
+        //   caption: 'Calificacion',
+        //   dataType: 'number',
+        //   cellTemplate: (container, { data }) => {
+        //     ReactAppend(container, <>
+        //       {[1, 2, 3, 4, 5].map((star) => (<Tippy key={star} content={`${star} estrellas`}><i
+        //         key={star}
+        //         className={`mdi mdi-18px mdi-star${star <= data.score ? '' : '-outline'}`}
+        //         style={{ color: star <= data.score ? '#05455A' : '#6c757d', cursor: 'pointer' }}
+        //         onClick={() => handleRatingClick(data.id, star)}
+        //       ></i></Tippy>))}
+        //     </>)
+        //   }
+        // },
+        // {
+        //   dataField: 'resources_count',
+        //   caption: 'Recursos',
+        //   dataType: 'number',
+        //   allowFiltering: false,
+        //   cellTemplate: (container, { data, value }) => {
+        //     container.text(value == 1 ? '1 recurso' : `${value} recursos`)
+        //   }
+        // },
         {
           dataField: 'status',
           caption: 'Estado',
@@ -232,7 +232,7 @@ const Coaches = ({ }) => {
 }
 
 CreateReactScript((el, properties) => {
-  createRoot(el).render(<BaseAdminto {...properties} title='Coaches'>
-    <Coaches {...properties} />
+  createRoot(el).render(<BaseAdminto {...properties} title='Coachees'>
+    <Coachees {...properties} />
   </BaseAdminto>);
 })

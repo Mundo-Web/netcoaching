@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\ResourceController as AdminResourceController;
 use App\Http\Controllers\Admin\SliderController as AdminSliderController;
 use App\Http\Controllers\Admin\TestimonyController as AdminTestimonyController;
 use App\Http\Controllers\Admin\SubscriptionController as AdminSubscriptionController;
+use App\Http\Controllers\Admin\CoacheeController as AdminCoacheeController;
 
 // Coach
 use App\Http\Controllers\Coach\ResourceController as CoachResourceController;
@@ -95,6 +96,11 @@ Route::middleware('auth')->group(function () {
         Route::post('/coaches/paginate', [AdminCoachController::class, 'paginate']);
         Route::patch('/coaches/status', [AdminCoachController::class, 'status']);
         Route::delete('/coaches/{id}', [AdminCoachController::class, 'delete']);
+
+        Route::post('/coachees', [AdminCoacheeController::class, 'save']);
+        Route::post('/coachees/paginate', [AdminCoacheeController::class, 'paginate']);
+        Route::patch('/coachees/status', [AdminCoacheeController::class, 'status']);
+        Route::delete('/coachees/{id}', [AdminCoacheeController::class, 'delete']);
 
         Route::post('/resources/paginate', [AdminResourceController::class, 'paginate']);
         Route::patch('/resources/status', [AdminResourceController::class, 'status']);

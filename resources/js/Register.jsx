@@ -40,8 +40,6 @@ const Register = ({ PUBLIC_RSA_KEY, RECAPTCHA_SITE_KEY, token, terms = 'Terminos
 
   const onRegisterSubmit = async (e) => {
     e.preventDefault()
-    setLoading(true)
-
 
     const password = passwordRef.current.value
     const confirmation = confirmationRef.current.value
@@ -80,6 +78,7 @@ const Register = ({ PUBLIC_RSA_KEY, RECAPTCHA_SITE_KEY, token, terms = 'Terminos
       captcha: captchaValue,
       specialties: $(specialtyRef.current).val()
     }
+    setLoading(true)
     const result = await AuthRest.signup(request)
     if (!result) return setLoading(false)
 
