@@ -46,9 +46,6 @@ class AgreementsBKSeeder extends Seeder
             $coachJpa = User::where('email', $agreementBK['coach_email'])->first() ?? null;
             $coacheeJpa = User::where('email', $agreementBK['coachee_email'])->first() ?? null;
 
-            if ($key == 0) dump('ping ' . $key);
-            if ($coachJpa || !$coacheeJpa) dump($agreementBK);
-
             $agreement_status = null;
             if ($agreementBK['estado'] == 'aprobado' || $agreementBK['estado'] == 'terminado') {
                 $agreement_status = 1;

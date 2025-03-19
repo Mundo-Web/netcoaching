@@ -3,17 +3,15 @@
 namespace App\Http\Controllers\Coachee;
 
 use App\Http\Controllers\BasicController;
-use App\Http\Controllers\Controller;
 use App\Models\Agreement;
 use App\Models\Payment;
-use App\Models\Request;
 use App\Models\Schedule;
 use DateInterval;
 use DateTime;
 use Exception;
 use Illuminate\Http\Request as HttpRequest;
+use Illuminate\Support\Facades\Auth;
 use SoDe\Extend\Math;
-use SoDe\Extend\Response;
 
 class AgreementController extends BasicController
 {
@@ -22,7 +20,8 @@ class AgreementController extends BasicController
 
     public function setPaginationInstance(string $model)
     {
-        return $model::with(['coach', 'coachee', 'observations', 'payments']);
+        return $model::with(['coach', 'coachee', 'observations', 'payments'])
+            ->where('coachee_id', Auth::id());
     }
 
     public function afterSave(HttpRequest $request, object $jpa)

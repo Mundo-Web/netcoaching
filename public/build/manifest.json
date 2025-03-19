@@ -1,19 +1,19 @@
 {
-  "_AnnotationModal-BxTIlFdq.js": {
-    "file": "assets/AnnotationModal-BxTIlFdq.js",
+  "_AnnotationModal-CRuobmnz.js": {
+    "file": "assets/AnnotationModal-CRuobmnz.js",
     "name": "AnnotationModal",
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_index-DFv2mRv-.js",
       "_main-rZoj-gSW.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_Modal-DK-QXr2H.js",
       "_InputFormGroup-mlGH8S_Q.js",
       "_QuillFormGroup-BdVmqQwU.js",
       "_SelectFormGroup-zdEBadcZ.js",
       "_TextareaFormGroup-LqQ2U8Qb.js",
-      "_CreateReactScript-CUMqdtXr.js"
+      "_CreateReactScript-CtGA_jb7.js"
     ]
   },
   "_ArrayJoin-2k6ba35P.js": {
@@ -27,46 +27,46 @@
       "_main-rZoj-gSW.js"
     ]
   },
-  "_Base-B_hia5Ud.js": {
-    "file": "assets/Base-B_hia5Ud.js",
+  "_Base-ChgXDiHa.js": {
+    "file": "assets/Base-ChgXDiHa.js",
     "name": "Base",
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_main-rZoj-gSW.js",
-      "_index.esm-sSnp8gJX.js",
-      "_CreateReactScript-CUMqdtXr.js"
+      "_index.esm-BrMLCXn2.js",
+      "_CreateReactScript-CtGA_jb7.js"
     ],
     "css": [
       "tippy.css"
     ]
   },
-  "_Base-Dzns7jCj.js": {
-    "file": "assets/Base-Dzns7jCj.js",
+  "_Base-YH4mQVv7.js": {
+    "file": "assets/Base-YH4mQVv7.js",
     "name": "Base",
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "_logo-BjQK9OLG.js",
-      "_CreateReactScript-CUMqdtXr.js",
-      "resources/js/Components/Tailwind/Base.jsx"
+      "_CreateReactScript-CtGA_jb7.js",
+      "resources/js/components/Tailwind/Base.jsx"
     ]
   },
   "_CoachCard-C7ishWcU.js": {
     "file": "assets/CoachCard-C7ishWcU.js",
     "name": "CoachCard",
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_index-DFv2mRv-.js"
     ]
   },
-  "_CreateReactScript-CUMqdtXr.js": {
-    "file": "assets/CreateReactScript-CUMqdtXr.js",
+  "_CreateReactScript-CtGA_jb7.js": {
+    "file": "assets/CreateReactScript-CtGA_jb7.js",
     "name": "CreateReactScript",
     "imports": [
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "_main-rZoj-gSW.js"
     ],
     "css": [
@@ -78,7 +78,7 @@
     "file": "assets/Details-q0otqLNV.js",
     "name": "Details",
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js"
     ]
   },
@@ -86,7 +86,7 @@
     "file": "assets/DxButton-Dg4Y_djx.js",
     "name": "DxButton",
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_server.browser-D9g_Vj5o.js"
     ]
   },
@@ -94,7 +94,7 @@
     "file": "assets/EventCard-G9F3fBbP.js",
     "name": "EventCard",
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js"
     ]
   },
@@ -102,7 +102,7 @@
     "file": "assets/HtmlContent-ChrcnoQm.js",
     "name": "HtmlContent",
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js"
     ]
   },
@@ -110,7 +110,7 @@
     "file": "assets/ImageFormGroup-CJnxmV4s.js",
     "name": "ImageFormGroup",
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js"
     ]
   },
@@ -118,7 +118,7 @@
     "file": "assets/InputFormGroup-mlGH8S_Q.js",
     "name": "InputFormGroup",
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js"
     ]
   },
@@ -130,21 +130,21 @@
     "file": "assets/Modal-CULcxfMd.js",
     "name": "Modal",
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "_InputFormGroup-mlGH8S_Q.js",
       "_SelectFormGroup-zdEBadcZ.js",
       "_Modal-DK-QXr2H.js",
       "_sweetalert2.esm.all-B0Dix5B2.js",
       "_main-rZoj-gSW.js",
-      "resources/js/Components/Coaches/Content.jsx"
+      "resources/js/components/Coaches/Content.jsx"
     ]
   },
   "_Modal-DK-QXr2H.js": {
     "file": "assets/Modal-DK-QXr2H.js",
     "name": "Modal",
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js"
     ]
   },
@@ -156,7 +156,7 @@
     "file": "assets/PasswordFormGroup-DQq5zd0G.js",
     "name": "PasswordFormGroup",
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js"
     ]
   },
@@ -164,7 +164,7 @@
     "file": "assets/QuillFormGroup-BdVmqQwU.js",
     "name": "QuillFormGroup",
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js"
     ]
   },
@@ -172,7 +172,7 @@
     "file": "assets/ReactAppend-B2yHrbEd.js",
     "name": "ReactAppend",
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "_main-rZoj-gSW.js",
       "resources/js/Utils/ReactAppend.jsx"
@@ -182,7 +182,7 @@
     "file": "assets/SelectAPIFormGroup-4c-exIaC.js",
     "name": "SelectAPIFormGroup",
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "_main-rZoj-gSW.js"
     ]
@@ -191,7 +191,7 @@
     "file": "assets/SelectFormGroup-zdEBadcZ.js",
     "name": "SelectFormGroup",
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js"
     ]
   },
@@ -199,7 +199,7 @@
     "file": "assets/SwitchFormGroup-C6yW7n-0.js",
     "name": "SwitchFormGroup",
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js"
     ]
   },
@@ -207,7 +207,7 @@
     "file": "assets/TextareaFormGroup-LqQ2U8Qb.js",
     "name": "TextareaFormGroup",
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js"
     ]
   },
@@ -247,8 +247,8 @@
       "_index-DFv2mRv-.js"
     ]
   },
-  "_index.esm-sSnp8gJX.js": {
-    "file": "assets/index.esm-sSnp8gJX.js",
+  "_index.esm-BrMLCXn2.js": {
+    "file": "assets/index.esm-BrMLCXn2.js",
     "name": "index.esm",
     "imports": [
       "_index-DFv2mRv-.js",
@@ -303,22 +303,22 @@
     "isEntry": true
   },
   "resources/js/About.jsx": {
-    "file": "assets/About-CtSWnHYE.js",
+    "file": "assets/About-C0ZwlvvI.js",
     "name": "About",
     "src": "resources/js/About.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_Base-Dzns7jCj.js",
-      "_index.esm-sSnp8gJX.js",
+      "_Base-YH4mQVv7.js",
+      "_index.esm-BrMLCXn2.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
       "_main-rZoj-gSW.js",
       "_index-Sd7so-oN.js",
       "_logo-BjQK9OLG.js",
-      "resources/js/Components/Tailwind/Base.jsx",
+      "resources/js/components/Tailwind/Base.jsx",
       "_index-Cevqm-zP.js"
     ],
     "css": [
@@ -327,23 +327,23 @@
     ]
   },
   "resources/js/Account.jsx": {
-    "file": "assets/Account-BquVhAGi.js",
+    "file": "assets/Account-RUObqSRb.js",
     "name": "Account",
     "src": "resources/js/Account.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_Base-B_hia5Ud.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_Base-ChgXDiHa.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_InputFormGroup-mlGH8S_Q.js",
       "_PasswordFormGroup-DQq5zd0G.js",
       "_main-rZoj-gSW.js",
       "_JSEncrypt-D3I3x59l.js",
       "_index-Sd7so-oN.js",
       "_tippy-react.esm-CGYKl-Jd.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
     ],
     "css": [
@@ -352,29 +352,29 @@
     ]
   },
   "resources/js/Admin/About.jsx": {
-    "file": "assets/About-CqC8sbDs.js",
+    "file": "assets/About-LQZF92ck.js",
     "name": "About",
     "src": "resources/js/Admin/About.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_Base-B_hia5Ud.js",
+      "resources/js/components/About/StatisticCard.jsx",
+      "_Base-ChgXDiHa.js",
       "_SwitchFormGroup-C6yW7n-0.js",
       "_TextareaFormGroup-LqQ2U8Qb.js",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_Modal-DK-QXr2H.js",
       "_ReactAppend-B2yHrbEd.js",
       "_DxButton-Dg4Y_djx.js",
       "_InputFormGroup-mlGH8S_Q.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_sweetalert2.esm.all-B0Dix5B2.js",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_index-Sd7so-oN.js",
       "_main-rZoj-gSW.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "_server.browser-D9g_Vj5o.js"
     ],
     "css": [
@@ -383,22 +383,22 @@
     ]
   },
   "resources/js/Admin/Benefits.jsx": {
-    "file": "assets/Benefits-xDDg_GTg.js",
+    "file": "assets/Benefits-B38St1KB.js",
     "name": "Benefits",
     "src": "resources/js/Admin/Benefits.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_Base-B_hia5Ud.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_Base-ChgXDiHa.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_ReactAppend-B2yHrbEd.js",
       "_Modal-DK-QXr2H.js",
       "_InputFormGroup-mlGH8S_Q.js",
       "_SelectFormGroup-zdEBadcZ.js",
       "_DxButton-Dg4Y_djx.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_TextareaFormGroup-LqQ2U8Qb.js",
       "_server.browser-D9g_Vj5o.js",
       "_SwitchFormGroup-C6yW7n-0.js",
@@ -408,7 +408,7 @@
       "_tippy-react.esm-CGYKl-Jd.js",
       "_main-rZoj-gSW.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
-      "_index.esm-sSnp8gJX.js"
+      "_index.esm-BrMLCXn2.js"
     ],
     "css": [
       "tippy.css",
@@ -416,12 +416,12 @@
     ]
   },
   "resources/js/Admin/Coachees.jsx": {
-    "file": "assets/Coachees-6sNEp82V.js",
+    "file": "assets/Coachees-D9N3n3j8.js",
     "name": "Coachees",
     "src": "resources/js/Admin/Coachees.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
       "_Modal-DK-QXr2H.js",
@@ -429,16 +429,16 @@
       "_InputFormGroup-mlGH8S_Q.js",
       "_SelectAPIFormGroup-4c-exIaC.js",
       "_PasswordFormGroup-DQq5zd0G.js",
-      "_CreateReactScript-CUMqdtXr.js",
-      "_Base-B_hia5Ud.js",
+      "_CreateReactScript-CtGA_jb7.js",
+      "_Base-ChgXDiHa.js",
       "_JSEncrypt-D3I3x59l.js",
       "_DxButton-Dg4Y_djx.js",
       "_sweetalert2.esm.all-B0Dix5B2.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_index-Sd7so-oN.js",
       "_main-rZoj-gSW.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_server.browser-D9g_Vj5o.js"
     ],
@@ -448,12 +448,12 @@
     ]
   },
   "resources/js/Admin/Coaches.jsx": {
-    "file": "assets/Coaches-JBCGwt44.js",
+    "file": "assets/Coaches-DMo-IgiL.js",
     "name": "Coaches",
     "src": "resources/js/Admin/Coaches.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
       "_Modal-DK-QXr2H.js",
@@ -461,17 +461,17 @@
       "_InputFormGroup-mlGH8S_Q.js",
       "_SelectAPIFormGroup-4c-exIaC.js",
       "_PasswordFormGroup-DQq5zd0G.js",
-      "_CreateReactScript-CUMqdtXr.js",
-      "_Base-B_hia5Ud.js",
+      "_CreateReactScript-CtGA_jb7.js",
+      "_Base-ChgXDiHa.js",
       "_JSEncrypt-D3I3x59l.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_DxButton-Dg4Y_djx.js",
       "_sweetalert2.esm.all-B0Dix5B2.js",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_index-Sd7so-oN.js",
       "_main-rZoj-gSW.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "_server.browser-D9g_Vj5o.js"
     ],
     "css": [
@@ -480,29 +480,29 @@
     ]
   },
   "resources/js/Admin/Events.jsx": {
-    "file": "assets/Events-WAwDIv2U.js",
+    "file": "assets/Events-5E86m16A.js",
     "name": "Events",
     "src": "resources/js/Admin/Events.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_Base-B_hia5Ud.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_Base-ChgXDiHa.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_ReactAppend-B2yHrbEd.js",
       "_Modal-DK-QXr2H.js",
       "_DxButton-Dg4Y_djx.js",
       "_TextareaFormGroup-LqQ2U8Qb.js",
       "_SwitchFormGroup-C6yW7n-0.js",
       "_ImageFormGroup-CJnxmV4s.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_sweetalert2.esm.all-B0Dix5B2.js",
       "_index-Sd7so-oN.js",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_main-rZoj-gSW.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "_server.browser-D9g_Vj5o.js"
     ],
     "css": [
@@ -511,28 +511,28 @@
     ]
   },
   "resources/js/Admin/Faqs.jsx": {
-    "file": "assets/Faqs-gX_o0Lyi.js",
+    "file": "assets/Faqs-DxPifEiR.js",
     "name": "Faqs",
     "src": "resources/js/Admin/Faqs.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_Base-B_hia5Ud.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_Base-ChgXDiHa.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_ReactAppend-B2yHrbEd.js",
       "_Modal-DK-QXr2H.js",
       "_DxButton-Dg4Y_djx.js",
       "_TextareaFormGroup-LqQ2U8Qb.js",
       "_SwitchFormGroup-C6yW7n-0.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_sweetalert2.esm.all-B0Dix5B2.js",
       "_index-Sd7so-oN.js",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_main-rZoj-gSW.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "_server.browser-D9g_Vj5o.js"
     ],
     "css": [
@@ -541,18 +541,18 @@
     ]
   },
   "resources/js/Admin/Home.jsx": {
-    "file": "assets/Home-DJ5mRKEs.js",
+    "file": "assets/Home-l9BJj2IZ.js",
     "name": "Home",
     "src": "resources/js/Admin/Home.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_CreateReactScript-CUMqdtXr.js",
-      "_Base-B_hia5Ud.js",
+      "_CreateReactScript-CtGA_jb7.js",
+      "_Base-ChgXDiHa.js",
       "_index-Sd7so-oN.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
       "_main-rZoj-gSW.js",
       "_tippy-react.esm-CGYKl-Jd.js"
@@ -563,29 +563,29 @@
     ]
   },
   "resources/js/Admin/Indicators.jsx": {
-    "file": "assets/Indicators-Cp5NmPxb.js",
+    "file": "assets/Indicators-CuPULEZF.js",
     "name": "Indicators",
     "src": "resources/js/Admin/Indicators.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_Base-B_hia5Ud.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_Base-ChgXDiHa.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_ReactAppend-B2yHrbEd.js",
       "_Modal-DK-QXr2H.js",
       "_InputFormGroup-mlGH8S_Q.js",
       "_DxButton-Dg4Y_djx.js",
       "_TextareaFormGroup-LqQ2U8Qb.js",
       "_SwitchFormGroup-C6yW7n-0.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_sweetalert2.esm.all-B0Dix5B2.js",
       "_index-Sd7so-oN.js",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_main-rZoj-gSW.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "_server.browser-D9g_Vj5o.js"
     ],
     "css": [
@@ -594,26 +594,26 @@
     ]
   },
   "resources/js/Admin/Messages.jsx": {
-    "file": "assets/Messages-wBY-4v3F.js",
+    "file": "assets/Messages-GDXLv9WH.js",
     "name": "Messages",
     "src": "resources/js/Admin/Messages.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_Base-B_hia5Ud.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_Base-ChgXDiHa.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_ReactAppend-B2yHrbEd.js",
       "_DxButton-Dg4Y_djx.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_Modal-DK-QXr2H.js",
       "_sweetalert2.esm.all-B0Dix5B2.js",
       "_index-Sd7so-oN.js",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_main-rZoj-gSW.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "_server.browser-D9g_Vj5o.js"
     ],
     "css": [
@@ -622,22 +622,22 @@
     ]
   },
   "resources/js/Admin/Profile.jsx": {
-    "file": "assets/Profile-CVjVFNnl.js",
+    "file": "assets/Profile-D0hmxaVQ.js",
     "name": "Profile",
     "src": "resources/js/Admin/Profile.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
       "_main-rZoj-gSW.js",
-      "_Base-B_hia5Ud.js",
+      "_Base-ChgXDiHa.js",
       "_InputFormGroup-mlGH8S_Q.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_index-Sd7so-oN.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
-      "_index.esm-sSnp8gJX.js"
+      "_index.esm-BrMLCXn2.js"
     ],
     "css": [
       "tippy.css",
@@ -645,24 +645,24 @@
     ]
   },
   "resources/js/Admin/Resources.jsx": {
-    "file": "assets/Resources-szQh0nzv.js",
+    "file": "assets/Resources-3Zhdvupj.js",
     "name": "Resources",
     "src": "resources/js/Admin/Resources.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
       "_ReactAppend-B2yHrbEd.js",
-      "_CreateReactScript-CUMqdtXr.js",
-      "_Base-B_hia5Ud.js",
+      "_CreateReactScript-CtGA_jb7.js",
+      "_Base-ChgXDiHa.js",
       "_DxButton-Dg4Y_djx.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_sweetalert2.esm.all-B0Dix5B2.js",
       "_index-Sd7so-oN.js",
       "_main-rZoj-gSW.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_server.browser-D9g_Vj5o.js"
     ],
@@ -672,30 +672,30 @@
     ]
   },
   "resources/js/Admin/Sliders.jsx": {
-    "file": "assets/Sliders-BLltxAdG.js",
+    "file": "assets/Sliders-DgDT4_rv.js",
     "name": "Sliders",
     "src": "resources/js/Admin/Sliders.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_Base-B_hia5Ud.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_Base-ChgXDiHa.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_ReactAppend-B2yHrbEd.js",
       "_Modal-DK-QXr2H.js",
       "_InputFormGroup-mlGH8S_Q.js",
       "_DxButton-Dg4Y_djx.js",
       "_TextareaFormGroup-LqQ2U8Qb.js",
       "_SwitchFormGroup-C6yW7n-0.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_ImageFormGroup-CJnxmV4s.js",
       "_sweetalert2.esm.all-B0Dix5B2.js",
       "_index-Sd7so-oN.js",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_main-rZoj-gSW.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "_server.browser-D9g_Vj5o.js"
     ],
     "css": [
@@ -704,25 +704,25 @@
     ]
   },
   "resources/js/Admin/Subscriptions.jsx": {
-    "file": "assets/Subscriptions-WTXXw3fJ.js",
+    "file": "assets/Subscriptions-9ugwGJ74.js",
     "name": "Subscriptions",
     "src": "resources/js/Admin/Subscriptions.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_Base-B_hia5Ud.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_Base-ChgXDiHa.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_ReactAppend-B2yHrbEd.js",
       "_DxButton-Dg4Y_djx.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_sweetalert2.esm.all-B0Dix5B2.js",
       "_index-Sd7so-oN.js",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_main-rZoj-gSW.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "_server.browser-D9g_Vj5o.js"
     ],
     "css": [
@@ -731,16 +731,16 @@
     ]
   },
   "resources/js/Admin/Testimonies.jsx": {
-    "file": "assets/Testimonies-DViv6vdM.js",
+    "file": "assets/Testimonies-uFMl5VGZ.js",
     "name": "Testimonies",
     "src": "resources/js/Admin/Testimonies.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_Base-B_hia5Ud.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_Base-ChgXDiHa.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_ReactAppend-B2yHrbEd.js",
       "_Modal-DK-QXr2H.js",
       "_InputFormGroup-mlGH8S_Q.js",
@@ -749,14 +749,14 @@
       "_SwitchFormGroup-C6yW7n-0.js",
       "_ImageFormGroup-CJnxmV4s.js",
       "_SelectFormGroup-zdEBadcZ.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_server.browser-D9g_Vj5o.js",
       "_sweetalert2.esm.all-B0Dix5B2.js",
       "_index-Sd7so-oN.js",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_main-rZoj-gSW.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
-      "_index.esm-sSnp8gJX.js"
+      "_index.esm-BrMLCXn2.js"
     ],
     "css": [
       "tippy.css",
@@ -764,16 +764,16 @@
     ]
   },
   "resources/js/Coach/Agreements.jsx": {
-    "file": "assets/Agreements-C9EZCvt5.js",
+    "file": "assets/Agreements-Dr3bwrzC.js",
     "name": "Agreements",
     "src": "resources/js/Coach/Agreements.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_Base-B_hia5Ud.js",
+      "resources/js/components/About/StatisticCard.jsx",
+      "_Base-ChgXDiHa.js",
       "_Modal-DK-QXr2H.js",
       "_ReactAppend-B2yHrbEd.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
       "_Modal-CULcxfMd.js",
@@ -783,11 +783,11 @@
       "_index-Sd7so-oN.js",
       "_main-rZoj-gSW.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "_InputFormGroup-mlGH8S_Q.js",
       "_SelectFormGroup-zdEBadcZ.js",
       "_sweetalert2.esm.all-B0Dix5B2.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_server.browser-D9g_Vj5o.js"
     ],
     "css": [
@@ -796,18 +796,18 @@
     ]
   },
   "resources/js/Coach/Home.jsx": {
-    "file": "assets/Home-dzHofL7c.js",
+    "file": "assets/Home-DN9btDWP.js",
     "name": "Home",
     "src": "resources/js/Coach/Home.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_CreateReactScript-CUMqdtXr.js",
-      "_Base-B_hia5Ud.js",
+      "_CreateReactScript-CtGA_jb7.js",
+      "_Base-ChgXDiHa.js",
       "_index-Sd7so-oN.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
       "_main-rZoj-gSW.js",
       "_tippy-react.esm-CGYKl-Jd.js"
@@ -818,24 +818,24 @@
     ]
   },
   "resources/js/Coach/Profile.jsx": {
-    "file": "assets/Profile-D6nRoE71.js",
+    "file": "assets/Profile-C8QKwWz2.js",
     "name": "Profile",
     "src": "resources/js/Coach/Profile.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_InputFormGroup-mlGH8S_Q.js",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_main-rZoj-gSW.js",
       "_SelectFormGroup-zdEBadcZ.js",
       "_TextareaFormGroup-LqQ2U8Qb.js",
       "_QuillFormGroup-BdVmqQwU.js",
-      "_Base-B_hia5Ud.js",
+      "_Base-ChgXDiHa.js",
       "_index-Sd7so-oN.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
     ],
     "css": [
@@ -844,26 +844,26 @@
     ]
   },
   "resources/js/Coach/Requests.jsx": {
-    "file": "assets/Requests-QdUWcmMZ.js",
+    "file": "assets/Requests-BtcwesWt.js",
     "name": "Requests",
     "src": "resources/js/Coach/Requests.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_Base-B_hia5Ud.js",
+      "resources/js/components/About/StatisticCard.jsx",
+      "_Base-ChgXDiHa.js",
       "_ReactAppend-B2yHrbEd.js",
       "_tippy-react.esm-CGYKl-Jd.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
       "_server.browser-D9g_Vj5o.js",
       "_sweetalert2.esm.all-B0Dix5B2.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_DxButton-Dg4Y_djx.js",
       "_Modal-CULcxfMd.js",
       "_main-rZoj-gSW.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "_index-Sd7so-oN.js",
       "_InputFormGroup-mlGH8S_Q.js",
       "_SelectFormGroup-zdEBadcZ.js",
@@ -875,17 +875,17 @@
     ]
   },
   "resources/js/Coach/Resources.jsx": {
-    "file": "assets/Resources-NEol6X2a.js",
+    "file": "assets/Resources-BPH246lJ.js",
     "name": "Resources",
     "src": "resources/js/Coach/Resources.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_Base-B_hia5Ud.js",
-      "_CreateReactScript-CUMqdtXr.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "_Base-ChgXDiHa.js",
+      "_CreateReactScript-CtGA_jb7.js",
+      "resources/js/components/Coaches/Content.jsx",
       "_ReactAppend-B2yHrbEd.js",
       "_Modal-DK-QXr2H.js",
       "_InputFormGroup-mlGH8S_Q.js",
@@ -897,7 +897,7 @@
       "_tippy-react.esm-CGYKl-Jd.js",
       "_main-rZoj-gSW.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "_server.browser-D9g_Vj5o.js"
     ],
     "css": [
@@ -906,25 +906,25 @@
     ]
   },
   "resources/js/Coach/Schedules.jsx": {
-    "file": "assets/Schedules-ybW37gDV.js",
+    "file": "assets/Schedules-CYm-tZEm.js",
     "name": "Schedules",
     "src": "resources/js/Coach/Schedules.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_Base-B_hia5Ud.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_Base-ChgXDiHa.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_ReactAppend-B2yHrbEd.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_DxButton-Dg4Y_djx.js",
-      "_AnnotationModal-BxTIlFdq.js",
+      "_AnnotationModal-CRuobmnz.js",
       "_index-Sd7so-oN.js",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_main-rZoj-gSW.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "_server.browser-D9g_Vj5o.js",
       "_Modal-DK-QXr2H.js",
       "_InputFormGroup-mlGH8S_Q.js",
@@ -938,19 +938,19 @@
     ]
   },
   "resources/js/Coachee/Agreements.jsx": {
-    "file": "assets/Agreements-CTn8p7jo.js",
+    "file": "assets/Agreements-ChXZ3SBW.js",
     "name": "Agreements",
     "src": "resources/js/Coachee/Agreements.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_Base-B_hia5Ud.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_Base-ChgXDiHa.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_ReactAppend-B2yHrbEd.js",
       "_DxButton-Dg4Y_djx.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_Modal-CULcxfMd.js",
       "_Modal-DK-QXr2H.js",
       "_Details-q0otqLNV.js",
@@ -961,7 +961,7 @@
       "_tippy-react.esm-CGYKl-Jd.js",
       "_main-rZoj-gSW.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "_InputFormGroup-mlGH8S_Q.js",
       "_SelectFormGroup-zdEBadcZ.js"
     ],
@@ -971,18 +971,18 @@
     ]
   },
   "resources/js/Coachee/Home.jsx": {
-    "file": "assets/Home-BJblqmZD.js",
+    "file": "assets/Home-C9Q0n6Ut.js",
     "name": "Home",
     "src": "resources/js/Coachee/Home.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_CreateReactScript-CUMqdtXr.js",
-      "_Base-B_hia5Ud.js",
+      "_CreateReactScript-CtGA_jb7.js",
+      "_Base-ChgXDiHa.js",
       "_index-Sd7so-oN.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
       "_main-rZoj-gSW.js",
       "_tippy-react.esm-CGYKl-Jd.js"
@@ -993,25 +993,25 @@
     ]
   },
   "resources/js/Coachee/Payments.jsx": {
-    "file": "assets/Payments-DKkI-q7-.js",
+    "file": "assets/Payments-Cpb8FsFV.js",
     "name": "Payments",
     "src": "resources/js/Coachee/Payments.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_Base-B_hia5Ud.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_Base-ChgXDiHa.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_ReactAppend-B2yHrbEd.js",
       "_DxButton-Dg4Y_djx.js",
       "_sweetalert2.esm.all-B0Dix5B2.js",
       "_Number2Currency-e57Tgsuk.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_main-rZoj-gSW.js",
       "_index-Sd7so-oN.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
       "_server.browser-D9g_Vj5o.js"
     ],
@@ -1021,23 +1021,23 @@
     ]
   },
   "resources/js/Coachee/Requests.jsx": {
-    "file": "assets/Requests-BOQrKpy_.js",
+    "file": "assets/Requests-C8Z3vdso.js",
     "name": "Requests",
     "src": "resources/js/Coachee/Requests.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_Base-B_hia5Ud.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_Base-ChgXDiHa.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_ReactAppend-B2yHrbEd.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_index-Sd7so-oN.js",
       "_main-rZoj-gSW.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
-      "_index.esm-sSnp8gJX.js"
+      "_index.esm-BrMLCXn2.js"
     ],
     "css": [
       "tippy.css",
@@ -1045,25 +1045,25 @@
     ]
   },
   "resources/js/Coachee/Schedules.jsx": {
-    "file": "assets/Schedules-Daa_TGGt.js",
+    "file": "assets/Schedules-DhdQzq1Y.js",
     "name": "Schedules",
     "src": "resources/js/Coachee/Schedules.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_Base-B_hia5Ud.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_Base-ChgXDiHa.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_ReactAppend-B2yHrbEd.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_DxButton-Dg4Y_djx.js",
-      "_AnnotationModal-BxTIlFdq.js",
+      "_AnnotationModal-CRuobmnz.js",
       "_index-Sd7so-oN.js",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_main-rZoj-gSW.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "_server.browser-D9g_Vj5o.js",
       "_Modal-DK-QXr2H.js",
       "_InputFormGroup-mlGH8S_Q.js",
@@ -1077,27 +1077,27 @@
     ]
   },
   "resources/js/Coaches.jsx": {
-    "file": "assets/Coaches-DaYozFMV.js",
+    "file": "assets/Coaches-Cl0u6Iaa.js",
     "name": "Coaches",
     "src": "resources/js/Coaches.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_Base-Dzns7jCj.js",
+      "_Base-YH4mQVv7.js",
       "_hoist-non-react-statics.cjs-CgXjTu_P.js",
       "_index-Sd7so-oN.js",
       "_CoachCard-C7ishWcU.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_ArrayJoin-2k6ba35P.js",
       "_EventCard-G9F3fBbP.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
       "_main-rZoj-gSW.js",
       "_logo-BjQK9OLG.js",
-      "resources/js/Components/Tailwind/Base.jsx",
+      "resources/js/components/Tailwind/Base.jsx",
       "_index-Cevqm-zP.js",
       "_tippy-react.esm-CGYKl-Jd.js"
     ],
@@ -1106,743 +1106,17 @@
       "tippy.css"
     ]
   },
-  "resources/js/Components/About/StatisticCard.jsx": {
-    "file": "assets/StatisticCard-ClKiNAEV.js",
-    "name": "StatisticCard",
-    "src": "resources/js/Components/About/StatisticCard.jsx",
-    "isEntry": true,
-    "imports": [
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/About/StatisticItem.jsx": {
-    "file": "assets/StatisticItem-G8Uv5tTk.js",
-    "name": "StatisticItem",
-    "src": "resources/js/Components/About/StatisticItem.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/About/StatisticsSection.jsx": {
-    "file": "assets/StatisticsSection-G8Uv5tTk.js",
-    "name": "StatisticsSection",
-    "src": "resources/js/Components/About/StatisticsSection.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/About/VissionMissionSection.jsx": {
-    "file": "assets/VissionMissionSection-G8Uv5tTk.js",
-    "name": "VissionMissionSection",
-    "src": "resources/js/Components/About/VissionMissionSection.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Adminto/Base.jsx": {
-    "file": "assets/Base-DIarDfdK.js",
-    "name": "Base",
-    "src": "resources/js/Components/Adminto/Base.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js",
-      "_main-rZoj-gSW.js",
-      "_index.esm-sSnp8gJX.js",
-      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
-    ],
-    "css": [
-      "tippy.css"
-    ]
-  },
-  "resources/js/Components/Adminto/DataGrid.jsx": {
-    "file": "assets/DataGrid-BLgX_Cbc.js",
-    "name": "DataGrid",
-    "src": "resources/js/Components/Adminto/DataGrid.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js",
-      "_main-rZoj-gSW.js",
-      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
-    ]
-  },
-  "resources/js/Components/Adminto/Dx/DxBox.jsx": {
-    "file": "assets/DxBox-VfW-eA6M.js",
-    "name": "DxBox",
-    "src": "resources/js/Components/Adminto/Dx/DxBox.jsx",
-    "isEntry": true,
-    "imports": [
-      "_index-DFv2mRv-.js",
-      "resources/js/Utils/ReactAppend.jsx",
-      "_server.browser-D9g_Vj5o.js",
-      "_index-Sd7so-oN.js"
-    ]
-  },
-  "resources/js/Components/Adminto/Dx/DxButton.jsx": {
-    "file": "assets/DxButton-BO1WENnq.js",
-    "name": "DxButton",
-    "src": "resources/js/Components/Adminto/Dx/DxButton.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_server.browser-D9g_Vj5o.js",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Adminto/Footer.jsx": {
-    "file": "assets/Footer-G8Uv5tTk.js",
-    "name": "Footer",
-    "src": "resources/js/Components/Adminto/Footer.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Adminto/Menu.jsx": {
-    "file": "assets/Menu-BkMalkeR.js",
-    "name": "Menu",
-    "src": "resources/js/Components/Adminto/Menu.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js",
-      "_main-rZoj-gSW.js",
-      "_index.esm-sSnp8gJX.js",
-      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
-    ],
-    "css": [
-      "tippy.css"
-    ]
-  },
-  "resources/js/Components/Adminto/Menu/MenuItem.jsx": {
-    "file": "assets/MenuItem-DDOWif55.js",
-    "name": "MenuItem",
-    "src": "resources/js/Components/Adminto/Menu/MenuItem.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js",
-      "_index.esm-sSnp8gJX.js",
-      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
-    ]
-  },
-  "resources/js/Components/Adminto/Menu/MenuItemContainer.jsx": {
-    "file": "assets/MenuItemContainer-G8Uv5tTk.js",
-    "name": "MenuItemContainer",
-    "src": "resources/js/Components/Adminto/Menu/MenuItemContainer.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Adminto/Modal.jsx": {
-    "file": "assets/Modal-G8Uv5tTk.js",
-    "name": "Modal",
-    "src": "resources/js/Components/Adminto/Modal.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Adminto/NavBar.jsx": {
-    "file": "assets/NavBar-BLgX_Cbc.js",
-    "name": "NavBar",
-    "src": "resources/js/Components/Adminto/NavBar.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js",
-      "_main-rZoj-gSW.js",
-      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
-    ]
-  },
-  "resources/js/Components/Adminto/RightBar.jsx": {
-    "file": "assets/RightBar-BLgX_Cbc.js",
-    "name": "RightBar",
-    "src": "resources/js/Components/Adminto/RightBar.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js",
-      "_main-rZoj-gSW.js",
-      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
-    ]
-  },
-  "resources/js/Components/Adminto/Table.jsx": {
-    "file": "assets/Table-BLgX_Cbc.js",
-    "name": "Table",
-    "src": "resources/js/Components/Adminto/Table.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js",
-      "_main-rZoj-gSW.js",
-      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
-    ]
-  },
-  "resources/js/Components/Adminto/form/CheckboxFormGroup.jsx": {
-    "file": "assets/CheckboxFormGroup-G8Uv5tTk.js",
-    "name": "CheckboxFormGroup",
-    "src": "resources/js/Components/Adminto/form/CheckboxFormGroup.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Adminto/form/FileFormGroup.jsx": {
-    "file": "assets/FileFormGroup-BLgX_Cbc.js",
-    "name": "FileFormGroup",
-    "src": "resources/js/Components/Adminto/form/FileFormGroup.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js",
-      "_main-rZoj-gSW.js",
-      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
-    ]
-  },
-  "resources/js/Components/Adminto/form/ImageFormGroup.jsx": {
-    "file": "assets/ImageFormGroup-G8Uv5tTk.js",
-    "name": "ImageFormGroup",
-    "src": "resources/js/Components/Adminto/form/ImageFormGroup.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Adminto/form/InputFormGroup.jsx": {
-    "file": "assets/InputFormGroup-G8Uv5tTk.js",
-    "name": "InputFormGroup",
-    "src": "resources/js/Components/Adminto/form/InputFormGroup.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Adminto/form/PasswordFormGroup.jsx": {
-    "file": "assets/PasswordFormGroup-G8Uv5tTk.js",
-    "name": "PasswordFormGroup",
-    "src": "resources/js/Components/Adminto/form/PasswordFormGroup.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Adminto/form/QuillFormGroup.jsx": {
-    "file": "assets/QuillFormGroup-G8Uv5tTk.js",
-    "name": "QuillFormGroup",
-    "src": "resources/js/Components/Adminto/form/QuillFormGroup.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Adminto/form/SelectAPIFormGroup.jsx": {
-    "file": "assets/SelectAPIFormGroup-BLgX_Cbc.js",
-    "name": "SelectAPIFormGroup",
-    "src": "resources/js/Components/Adminto/form/SelectAPIFormGroup.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js",
-      "_main-rZoj-gSW.js",
-      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
-    ]
-  },
-  "resources/js/Components/Adminto/form/SelectFormGroup.jsx": {
-    "file": "assets/SelectFormGroup-G8Uv5tTk.js",
-    "name": "SelectFormGroup",
-    "src": "resources/js/Components/Adminto/form/SelectFormGroup.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Adminto/form/SwitchFormGroup.jsx": {
-    "file": "assets/SwitchFormGroup-G8Uv5tTk.js",
-    "name": "SwitchFormGroup",
-    "src": "resources/js/Components/Adminto/form/SwitchFormGroup.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Adminto/form/TextareaFormGroup.jsx": {
-    "file": "assets/TextareaFormGroup-G8Uv5tTk.js",
-    "name": "TextareaFormGroup",
-    "src": "resources/js/Components/Adminto/form/TextareaFormGroup.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Adminto/form/TippyButton.jsx": {
-    "file": "assets/TippyButton-Bj1P2YOf.js",
-    "name": "TippyButton",
-    "src": "resources/js/Components/Adminto/form/TippyButton.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ],
-    "css": [
-      "tippy.css"
-    ]
-  },
-  "resources/js/Components/Coach/Agreements/Details.jsx": {
-    "file": "assets/Details-G8Uv5tTk.js",
-    "name": "Details",
-    "src": "resources/js/Components/Coach/Agreements/Details.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Coach/Agreements/Modal.jsx": {
-    "file": "assets/Modal-JqazuYUu.js",
-    "name": "Modal",
-    "src": "resources/js/Components/Coach/Agreements/Modal.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js",
-      "_sweetalert2.esm.all-B0Dix5B2.js",
-      "_main-rZoj-gSW.js",
-      "resources/js/Components/Coaches/Content.jsx",
-      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
-    ]
-  },
-  "resources/js/Components/Coaches/CoachCard.jsx": {
-    "file": "assets/CoachCard-G8Uv5tTk.js",
-    "name": "CoachCard",
-    "src": "resources/js/Components/Coaches/CoachCard.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Coaches/Content.jsx": {
-    "file": "assets/Content-BpL_PU-L.js",
-    "name": "Content",
-    "src": "resources/js/Components/Coaches/Content.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js",
-      "_main-rZoj-gSW.js",
-      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
-    ]
-  },
-  "resources/js/Components/Coaches/Events.jsx": {
-    "file": "assets/Events-G8Uv5tTk.js",
-    "name": "Events",
-    "src": "resources/js/Components/Coaches/Events.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Coaches/FAQItem.jsx": {
-    "file": "assets/FAQItem-G8Uv5tTk.js",
-    "name": "FAQItem",
-    "src": "resources/js/Components/Coaches/FAQItem.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Coaches/FAQSection.jsx": {
-    "file": "assets/FAQSection-G8Uv5tTk.js",
-    "name": "FAQSection",
-    "src": "resources/js/Components/Coaches/FAQSection.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Coaches/Header.jsx": {
-    "file": "assets/Header-G8Uv5tTk.js",
-    "name": "Header",
-    "src": "resources/js/Components/Coaches/Header.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Counter/SimpleCounter.jsx": {
-    "file": "assets/SimpleCounter-G8Uv5tTk.js",
-    "name": "SimpleCounter",
-    "src": "resources/js/Components/Counter/SimpleCounter.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Events/Content.jsx": {
-    "file": "assets/Content-G8Uv5tTk.js",
-    "name": "Content",
-    "src": "resources/js/Components/Events/Content.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Events/EventCard.jsx": {
-    "file": "assets/EventCard-G8Uv5tTk.js",
-    "name": "EventCard",
-    "src": "resources/js/Components/Events/EventCard.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Home/Banner.jsx": {
-    "file": "assets/Banner-DGJDOz_9.js",
-    "name": "Banner",
-    "src": "resources/js/Components/Home/Banner.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js",
-      "resources/js/Components/Coaches/Content.jsx",
-      "_sweetalert2.esm.all-B0Dix5B2.js",
-      "_main-rZoj-gSW.js",
-      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
-    ]
-  },
-  "resources/js/Components/Home/Banner.svg": {
-    "file": "Banner.svg",
-    "src": "resources/js/Components/Home/Banner.svg"
-  },
-  "resources/js/Components/Home/Benefits.jsx": {
-    "file": "assets/Benefits-DugJU9Ud.js",
-    "name": "Benefits",
-    "src": "resources/js/Components/Home/Benefits.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Home/Blogs.jsx": {
-    "file": "assets/Blogs-G8Uv5tTk.js",
-    "name": "Blogs",
-    "src": "resources/js/Components/Home/Blogs.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Home/Contact.jsx": {
-    "file": "assets/Contact-DGJDOz_9.js",
-    "name": "Contact",
-    "src": "resources/js/Components/Home/Contact.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js",
-      "resources/js/Components/Coaches/Content.jsx",
-      "_sweetalert2.esm.all-B0Dix5B2.js",
-      "_main-rZoj-gSW.js",
-      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
-    ]
-  },
-  "resources/js/Components/Home/Header.jsx": {
-    "file": "assets/Header-D5HHuie2.js",
-    "name": "Header",
-    "src": "resources/js/Components/Home/Header.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js",
-      "resources/js/Components/Home/Benefits.jsx"
-    ],
-    "css": [
-      "swiper.css"
-    ]
-  },
-  "resources/js/Components/Home/Testimonies.jsx": {
-    "file": "assets/Testimonies-D5HHuie2.js",
-    "name": "Testimonies",
-    "src": "resources/js/Components/Home/Testimonies.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js",
-      "resources/js/Components/Home/Benefits.jsx"
-    ],
-    "css": [
-      "swiper.css"
-    ]
-  },
-  "resources/js/Components/Resources/Header.jsx": {
-    "file": "assets/Header-DZuBCkO2.js",
-    "name": "Header",
-    "src": "resources/js/Components/Resources/Header.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Resources/MainContent.jsx": {
-    "file": "assets/MainContent-G8Uv5tTk.js",
-    "name": "MainContent",
-    "src": "resources/js/Components/Resources/MainContent.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/Resources/Sidebar.jsx": {
-    "file": "assets/Sidebar-DV5N8-Xi.js",
-    "name": "Sidebar",
-    "src": "resources/js/Components/Resources/Sidebar.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js",
-      "resources/js/Components/Coaches/Content.jsx",
-      "_main-rZoj-gSW.js",
-      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
-    ]
-  },
-  "resources/js/Components/Tailwind/Base.jsx": {
-    "file": "assets/Base-tZPNtRXD.js",
-    "name": "Base",
-    "src": "resources/js/Components/Tailwind/Base.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js",
-      "_index-Sd7so-oN.js",
-      "_index-Cevqm-zP.js"
-    ]
-  },
-  "resources/js/Components/Tailwind/Footer.jsx": {
-    "file": "assets/Footer-XugdULh5.js",
-    "name": "Footer",
-    "src": "resources/js/Components/Tailwind/Footer.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js",
-      "resources/js/Components/Tailwind/Base.jsx",
-      "_index-Sd7so-oN.js",
-      "_index-Cevqm-zP.js"
-    ]
-  },
-  "resources/js/Components/Tailwind/Header.jsx": {
-    "file": "assets/Header-BFVaNcXc.js",
-    "name": "Header",
-    "src": "resources/js/Components/Tailwind/Header.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/accordion/Accordion.jsx": {
-    "file": "assets/Accordion-G8Uv5tTk.js",
-    "name": "Accordion",
-    "src": "resources/js/Components/accordion/Accordion.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/accordion/AccordionCard.jsx": {
-    "file": "assets/AccordionCard-G8Uv5tTk.js",
-    "name": "AccordionCard",
-    "src": "resources/js/Components/accordion/AccordionCard.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/dropdown/Dropdown.jsx": {
-    "file": "assets/Dropdown-G8Uv5tTk.js",
-    "name": "Dropdown",
-    "src": "resources/js/Components/dropdown/Dropdown.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/dropdown/DropdownEnd.jsx": {
-    "file": "assets/DropdownEnd-G8Uv5tTk.js",
-    "name": "DropdownEnd",
-    "src": "resources/js/Components/dropdown/DropdownEnd.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/dropdown/DropdownItem.jsx": {
-    "file": "assets/DropdownItem-G8Uv5tTk.js",
-    "name": "DropdownItem",
-    "src": "resources/js/Components/dropdown/DropdownItem.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/form/CheckboxFormGroup.jsx": {
-    "file": "assets/CheckboxFormGroup-DZuBCkO2.js",
-    "name": "CheckboxFormGroup",
-    "src": "resources/js/Components/form/CheckboxFormGroup.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/form/InputFormGroup.jsx": {
-    "file": "assets/InputFormGroup-DZuBCkO2.js",
-    "name": "InputFormGroup",
-    "src": "resources/js/Components/form/InputFormGroup.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/form/PasswordFormGroup.jsx": {
-    "file": "assets/PasswordFormGroup-DZuBCkO2.js",
-    "name": "PasswordFormGroup",
-    "src": "resources/js/Components/form/PasswordFormGroup.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/form/QuillFormGroup.jsx": {
-    "file": "assets/QuillFormGroup-DZuBCkO2.js",
-    "name": "QuillFormGroup",
-    "src": "resources/js/Components/form/QuillFormGroup.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/form/SelectAPIFormGroup.jsx": {
-    "file": "assets/SelectAPIFormGroup-DuKlYppZ.js",
-    "name": "SelectAPIFormGroup",
-    "src": "resources/js/Components/form/SelectAPIFormGroup.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js",
-      "_main-rZoj-gSW.js",
-      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
-    ]
-  },
-  "resources/js/Components/form/SelectFormGroup.jsx": {
-    "file": "assets/SelectFormGroup-DZuBCkO2.js",
-    "name": "SelectFormGroup",
-    "src": "resources/js/Components/form/SelectFormGroup.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/form/TextareaFormGroup.jsx": {
-    "file": "assets/TextareaFormGroup-DZuBCkO2.js",
-    "name": "TextareaFormGroup",
-    "src": "resources/js/Components/form/TextareaFormGroup.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
-  "resources/js/Components/form/TippyButton.jsx": {
-    "file": "assets/TippyButton-3Zv2zQAH.js",
-    "name": "TippyButton",
-    "src": "resources/js/Components/form/TippyButton.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ],
-    "css": [
-      "tippy.css"
-    ]
-  },
-  "resources/js/Components/modals/WhatsAppModal.jsx": {
-    "file": "assets/WhatsAppModal-BcRlH4g1.js",
-    "name": "WhatsAppModal",
-    "src": "resources/js/Components/modals/WhatsAppModal.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js",
-      "_sweetalert2.esm.all-B0Dix5B2.js",
-      "_main-rZoj-gSW.js",
-      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
-    ],
-    "css": [
-      "WhatsAppModal.css"
-    ]
-  },
-  "resources/js/Components/svg/Yeti.jsx": {
-    "file": "assets/Yeti-G8Uv5tTk.js",
-    "name": "Yeti",
-    "src": "resources/js/Components/svg/Yeti.jsx",
-    "isEntry": true,
-    "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_index-DFv2mRv-.js"
-    ]
-  },
   "resources/js/ConfirmEmail.jsx": {
-    "file": "assets/ConfirmEmail-j0wa0AsQ.js",
+    "file": "assets/ConfirmEmail-DcWReniA.js",
     "name": "ConfirmEmail",
     "src": "resources/js/ConfirmEmail.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "resources/js/Utils/ReactAppend.jsx",
       "_index-DFv2mRv-.js",
-      "_CreateReactScript-CUMqdtXr.js",
-      "_index.esm-sSnp8gJX.js",
+      "_CreateReactScript-CtGA_jb7.js",
+      "_index.esm-BrMLCXn2.js",
       "_logo-BjQK9OLG.js",
       "_index-Sd7so-oN.js",
       "_main-rZoj-gSW.js",
@@ -1854,22 +1128,22 @@
     ]
   },
   "resources/js/Events.jsx": {
-    "file": "assets/Events-DiR3JJEL.js",
+    "file": "assets/Events-BNRWtKT_.js",
     "name": "Events",
     "src": "resources/js/Events.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
-      "_Base-Dzns7jCj.js",
+      "resources/js/components/About/StatisticCard.jsx",
+      "_Base-YH4mQVv7.js",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
       "_EventCard-G9F3fBbP.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_logo-BjQK9OLG.js",
-      "resources/js/Components/Tailwind/Base.jsx",
+      "resources/js/components/Tailwind/Base.jsx",
       "_index-Sd7so-oN.js",
       "_index-Cevqm-zP.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
       "_main-rZoj-gSW.js"
     ],
@@ -1879,26 +1153,26 @@
     ]
   },
   "resources/js/Home.jsx": {
-    "file": "assets/Home-8GUP8NOJ.js",
+    "file": "assets/Home-BuxIuUwh.js",
     "name": "Home",
     "src": "resources/js/Home.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_sweetalert2.esm.all-B0Dix5B2.js",
-      "resources/js/Components/Home/Benefits.jsx",
-      "_Base-Dzns7jCj.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "resources/js/components/Home/Benefits.jsx",
+      "_Base-YH4mQVv7.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_index-Sd7so-oN.js",
       "_main-rZoj-gSW.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
       "_logo-BjQK9OLG.js",
-      "resources/js/Components/Tailwind/Base.jsx",
+      "resources/js/components/Tailwind/Base.jsx",
       "_index-Cevqm-zP.js",
-      "_index.esm-sSnp8gJX.js"
+      "_index.esm-BrMLCXn2.js"
     ],
     "css": [
       "swiper.css",
@@ -1906,18 +1180,18 @@
     ]
   },
   "resources/js/Login.jsx": {
-    "file": "assets/Login-03PqhzrK.js",
+    "file": "assets/Login-DHBCbBpc.js",
     "name": "Login",
     "src": "resources/js/Login.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "resources/js/Utils/ReactAppend.jsx",
       "_index-DFv2mRv-.js",
       "_JSEncrypt-D3I3x59l.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_AuthRest-Bx0KAoyH.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "_sweetalert2.esm.all-B0Dix5B2.js",
       "_main-rZoj-gSW.js",
       "_logo-BjQK9OLG.js",
@@ -1930,29 +1204,29 @@
     ]
   },
   "resources/js/Profile.jsx": {
-    "file": "assets/Profile-BZx1JkL9.js",
+    "file": "assets/Profile-BFAGnmqO.js",
     "name": "Profile",
     "src": "resources/js/Profile.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_CreateReactScript-CUMqdtXr.js",
-      "_Base-Dzns7jCj.js",
+      "_CreateReactScript-CtGA_jb7.js",
+      "_Base-YH4mQVv7.js",
       "_HtmlContent-ChrcnoQm.js",
       "_CoachCard-C7ishWcU.js",
       "_html2string-CfCixsO3.js",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_sweetalert2.esm.all-B0Dix5B2.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_Number2Currency-e57Tgsuk.js",
       "_index-Sd7so-oN.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
       "_main-rZoj-gSW.js",
       "_logo-BjQK9OLG.js",
-      "resources/js/Components/Tailwind/Base.jsx",
+      "resources/js/components/Tailwind/Base.jsx",
       "_index-Cevqm-zP.js"
     ],
     "css": [
@@ -1961,20 +1235,20 @@
     ]
   },
   "resources/js/Register.jsx": {
-    "file": "assets/Register-nbUCx7O8.js",
+    "file": "assets/Register-DOk4o9ki.js",
     "name": "Register",
     "src": "resources/js/Register.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "resources/js/Utils/ReactAppend.jsx",
       "_index-DFv2mRv-.js",
       "_JSEncrypt-D3I3x59l.js",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_AuthRest-Bx0KAoyH.js",
       "_index-Cevqm-zP.js",
       "_hoist-non-react-statics.cjs-CgXjTu_P.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "_SelectFormGroup-zdEBadcZ.js",
       "_Modal-DK-QXr2H.js",
       "_HtmlContent-ChrcnoQm.js",
@@ -1990,23 +1264,23 @@
     ]
   },
   "resources/js/ResourceDetails.jsx": {
-    "file": "assets/ResourceDetails-DqLgCt4i.js",
+    "file": "assets/ResourceDetails-OGNzL9vv.js",
     "name": "ResourceDetails",
     "src": "resources/js/ResourceDetails.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_CreateReactScript-CUMqdtXr.js",
-      "_Base-Dzns7jCj.js",
+      "_CreateReactScript-CtGA_jb7.js",
+      "_Base-YH4mQVv7.js",
       "_HtmlContent-ChrcnoQm.js",
       "_index-Sd7so-oN.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
       "_main-rZoj-gSW.js",
       "_logo-BjQK9OLG.js",
-      "resources/js/Components/Tailwind/Base.jsx",
+      "resources/js/components/Tailwind/Base.jsx",
       "_index-Cevqm-zP.js"
     ],
     "css": [
@@ -2015,25 +1289,25 @@
     ]
   },
   "resources/js/Resources.jsx": {
-    "file": "assets/Resources-C8Pa7CD_.js",
+    "file": "assets/Resources-CthpP9IY.js",
     "name": "Resources",
     "src": "resources/js/Resources.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_CreateReactScript-CUMqdtXr.js",
-      "_Base-Dzns7jCj.js",
+      "_CreateReactScript-CtGA_jb7.js",
+      "_Base-YH4mQVv7.js",
       "_ArrayJoin-2k6ba35P.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "_html2string-CfCixsO3.js",
       "_index-Sd7so-oN.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
       "_main-rZoj-gSW.js",
       "_logo-BjQK9OLG.js",
-      "resources/js/Components/Tailwind/Base.jsx",
+      "resources/js/components/Tailwind/Base.jsx",
       "_index-Cevqm-zP.js"
     ],
     "css": [
@@ -2047,22 +1321,22 @@
     "src": "resources/js/Reutilizables/Annotations/AnnotationModal.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "_main-rZoj-gSW.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
     ]
   },
   "resources/js/Reutilizables/Businesses/BusinessCard.jsx": {
-    "file": "assets/BusinessCard-DDOWif55.js",
+    "file": "assets/BusinessCard-BuA28RaA.js",
     "name": "BusinessCard",
     "src": "resources/js/Reutilizables/Businesses/BusinessCard.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
     ]
   },
@@ -2072,10 +1346,10 @@
     "src": "resources/js/Reutilizables/Businesses/BusinessIWorkCard.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "_main-rZoj-gSW.js",
-      "resources/js/Components/Coaches/Content.jsx",
+      "resources/js/components/Coaches/Content.jsx",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
     ]
   },
@@ -2085,7 +1359,7 @@
     "src": "resources/js/Reutilizables/Pagination/FilterPagination.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js"
     ]
   },
@@ -2095,29 +1369,29 @@
     "src": "resources/js/Reutilizables/Projects/DateRange.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js"
     ]
   },
   "resources/js/Settings.jsx": {
-    "file": "assets/Settings-BZkZ3uh9.js",
+    "file": "assets/Settings-Cipx0o7O.js",
     "name": "Settings",
     "src": "resources/js/Settings.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
-      "_CreateReactScript-CUMqdtXr.js",
+      "_CreateReactScript-CtGA_jb7.js",
       "_ReactAppend-B2yHrbEd.js",
       "_main-rZoj-gSW.js",
-      "_Base-B_hia5Ud.js",
+      "_Base-ChgXDiHa.js",
       "_Modal-DK-QXr2H.js",
       "_InputFormGroup-mlGH8S_Q.js",
       "_QuillFormGroup-BdVmqQwU.js",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_index-Sd7so-oN.js",
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
     ],
     "css": [
@@ -2130,12 +1404,12 @@
     "src": "resources/js/Svg/logo.svg"
   },
   "resources/js/Utils/CreateReactScript.jsx": {
-    "file": "assets/CreateReactScript-BASyzooq.js",
+    "file": "assets/CreateReactScript-DqS4xWB-.js",
     "name": "CreateReactScript",
     "src": "resources/js/Utils/CreateReactScript.jsx",
     "isEntry": true,
     "imports": [
-      "_index.esm-sSnp8gJX.js",
+      "_index.esm-BrMLCXn2.js",
       "_main-rZoj-gSW.js",
       "_index-DFv2mRv-.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
@@ -2151,7 +1425,7 @@
     "src": "resources/js/Utils/HtmlContent.jsx",
     "isEntry": true,
     "imports": [
-      "resources/js/Components/About/StatisticCard.jsx",
+      "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js"
     ]
   },
@@ -2188,5 +1462,731 @@
     "name": "SetSelectValue",
     "src": "resources/js/Utils/SetSelectValue.jsx",
     "isEntry": true
+  },
+  "resources/js/components/About/StatisticCard.jsx": {
+    "file": "assets/StatisticCard-ClKiNAEV.js",
+    "name": "StatisticCard",
+    "src": "resources/js/components/About/StatisticCard.jsx",
+    "isEntry": true,
+    "imports": [
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/About/StatisticItem.jsx": {
+    "file": "assets/StatisticItem-G8Uv5tTk.js",
+    "name": "StatisticItem",
+    "src": "resources/js/components/About/StatisticItem.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/About/StatisticsSection.jsx": {
+    "file": "assets/StatisticsSection-G8Uv5tTk.js",
+    "name": "StatisticsSection",
+    "src": "resources/js/components/About/StatisticsSection.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/About/VissionMissionSection.jsx": {
+    "file": "assets/VissionMissionSection-G8Uv5tTk.js",
+    "name": "VissionMissionSection",
+    "src": "resources/js/components/About/VissionMissionSection.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Adminto/Base.jsx": {
+    "file": "assets/Base-BfOXWwh1.js",
+    "name": "Base",
+    "src": "resources/js/components/Adminto/Base.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js",
+      "_main-rZoj-gSW.js",
+      "_index.esm-BrMLCXn2.js",
+      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
+    ],
+    "css": [
+      "tippy.css"
+    ]
+  },
+  "resources/js/components/Adminto/DataGrid.jsx": {
+    "file": "assets/DataGrid-BLgX_Cbc.js",
+    "name": "DataGrid",
+    "src": "resources/js/components/Adminto/DataGrid.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js",
+      "_main-rZoj-gSW.js",
+      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
+    ]
+  },
+  "resources/js/components/Adminto/Dx/DxBox.jsx": {
+    "file": "assets/DxBox-VfW-eA6M.js",
+    "name": "DxBox",
+    "src": "resources/js/components/Adminto/Dx/DxBox.jsx",
+    "isEntry": true,
+    "imports": [
+      "_index-DFv2mRv-.js",
+      "resources/js/Utils/ReactAppend.jsx",
+      "_server.browser-D9g_Vj5o.js",
+      "_index-Sd7so-oN.js"
+    ]
+  },
+  "resources/js/components/Adminto/Dx/DxButton.jsx": {
+    "file": "assets/DxButton-BO1WENnq.js",
+    "name": "DxButton",
+    "src": "resources/js/components/Adminto/Dx/DxButton.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_server.browser-D9g_Vj5o.js",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Adminto/Footer.jsx": {
+    "file": "assets/Footer-G8Uv5tTk.js",
+    "name": "Footer",
+    "src": "resources/js/components/Adminto/Footer.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Adminto/Menu.jsx": {
+    "file": "assets/Menu-DFu1QMZN.js",
+    "name": "Menu",
+    "src": "resources/js/components/Adminto/Menu.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js",
+      "_main-rZoj-gSW.js",
+      "_index.esm-BrMLCXn2.js",
+      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
+    ],
+    "css": [
+      "tippy.css"
+    ]
+  },
+  "resources/js/components/Adminto/Menu/MenuItem.jsx": {
+    "file": "assets/MenuItem-BuA28RaA.js",
+    "name": "MenuItem",
+    "src": "resources/js/components/Adminto/Menu/MenuItem.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js",
+      "_index.esm-BrMLCXn2.js",
+      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
+    ]
+  },
+  "resources/js/components/Adminto/Menu/MenuItemContainer.jsx": {
+    "file": "assets/MenuItemContainer-G8Uv5tTk.js",
+    "name": "MenuItemContainer",
+    "src": "resources/js/components/Adminto/Menu/MenuItemContainer.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Adminto/Modal.jsx": {
+    "file": "assets/Modal-G8Uv5tTk.js",
+    "name": "Modal",
+    "src": "resources/js/components/Adminto/Modal.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Adminto/NavBar.jsx": {
+    "file": "assets/NavBar-BLgX_Cbc.js",
+    "name": "NavBar",
+    "src": "resources/js/components/Adminto/NavBar.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js",
+      "_main-rZoj-gSW.js",
+      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
+    ]
+  },
+  "resources/js/components/Adminto/RightBar.jsx": {
+    "file": "assets/RightBar-BLgX_Cbc.js",
+    "name": "RightBar",
+    "src": "resources/js/components/Adminto/RightBar.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js",
+      "_main-rZoj-gSW.js",
+      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
+    ]
+  },
+  "resources/js/components/Adminto/Table.jsx": {
+    "file": "assets/Table-BLgX_Cbc.js",
+    "name": "Table",
+    "src": "resources/js/components/Adminto/Table.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js",
+      "_main-rZoj-gSW.js",
+      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
+    ]
+  },
+  "resources/js/components/Adminto/form/CheckboxFormGroup.jsx": {
+    "file": "assets/CheckboxFormGroup-G8Uv5tTk.js",
+    "name": "CheckboxFormGroup",
+    "src": "resources/js/components/Adminto/form/CheckboxFormGroup.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Adminto/form/FileFormGroup.jsx": {
+    "file": "assets/FileFormGroup-BLgX_Cbc.js",
+    "name": "FileFormGroup",
+    "src": "resources/js/components/Adminto/form/FileFormGroup.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js",
+      "_main-rZoj-gSW.js",
+      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
+    ]
+  },
+  "resources/js/components/Adminto/form/ImageFormGroup.jsx": {
+    "file": "assets/ImageFormGroup-G8Uv5tTk.js",
+    "name": "ImageFormGroup",
+    "src": "resources/js/components/Adminto/form/ImageFormGroup.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Adminto/form/InputFormGroup.jsx": {
+    "file": "assets/InputFormGroup-G8Uv5tTk.js",
+    "name": "InputFormGroup",
+    "src": "resources/js/components/Adminto/form/InputFormGroup.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Adminto/form/PasswordFormGroup.jsx": {
+    "file": "assets/PasswordFormGroup-G8Uv5tTk.js",
+    "name": "PasswordFormGroup",
+    "src": "resources/js/components/Adminto/form/PasswordFormGroup.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Adminto/form/QuillFormGroup.jsx": {
+    "file": "assets/QuillFormGroup-G8Uv5tTk.js",
+    "name": "QuillFormGroup",
+    "src": "resources/js/components/Adminto/form/QuillFormGroup.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Adminto/form/SelectAPIFormGroup.jsx": {
+    "file": "assets/SelectAPIFormGroup-BLgX_Cbc.js",
+    "name": "SelectAPIFormGroup",
+    "src": "resources/js/components/Adminto/form/SelectAPIFormGroup.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js",
+      "_main-rZoj-gSW.js",
+      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
+    ]
+  },
+  "resources/js/components/Adminto/form/SelectFormGroup.jsx": {
+    "file": "assets/SelectFormGroup-G8Uv5tTk.js",
+    "name": "SelectFormGroup",
+    "src": "resources/js/components/Adminto/form/SelectFormGroup.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Adminto/form/SwitchFormGroup.jsx": {
+    "file": "assets/SwitchFormGroup-G8Uv5tTk.js",
+    "name": "SwitchFormGroup",
+    "src": "resources/js/components/Adminto/form/SwitchFormGroup.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Adminto/form/TextareaFormGroup.jsx": {
+    "file": "assets/TextareaFormGroup-G8Uv5tTk.js",
+    "name": "TextareaFormGroup",
+    "src": "resources/js/components/Adminto/form/TextareaFormGroup.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Adminto/form/TippyButton.jsx": {
+    "file": "assets/TippyButton-Bj1P2YOf.js",
+    "name": "TippyButton",
+    "src": "resources/js/components/Adminto/form/TippyButton.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ],
+    "css": [
+      "tippy.css"
+    ]
+  },
+  "resources/js/components/Coach/Agreements/Details.jsx": {
+    "file": "assets/Details-G8Uv5tTk.js",
+    "name": "Details",
+    "src": "resources/js/components/Coach/Agreements/Details.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Coach/Agreements/Modal.jsx": {
+    "file": "assets/Modal-JqazuYUu.js",
+    "name": "Modal",
+    "src": "resources/js/components/Coach/Agreements/Modal.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js",
+      "_sweetalert2.esm.all-B0Dix5B2.js",
+      "_main-rZoj-gSW.js",
+      "resources/js/components/Coaches/Content.jsx",
+      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
+    ]
+  },
+  "resources/js/components/Coaches/CoachCard.jsx": {
+    "file": "assets/CoachCard-G8Uv5tTk.js",
+    "name": "CoachCard",
+    "src": "resources/js/components/Coaches/CoachCard.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Coaches/Content.jsx": {
+    "file": "assets/Content-BpL_PU-L.js",
+    "name": "Content",
+    "src": "resources/js/components/Coaches/Content.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js",
+      "_main-rZoj-gSW.js",
+      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
+    ]
+  },
+  "resources/js/components/Coaches/Events.jsx": {
+    "file": "assets/Events-G8Uv5tTk.js",
+    "name": "Events",
+    "src": "resources/js/components/Coaches/Events.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Coaches/FAQItem.jsx": {
+    "file": "assets/FAQItem-G8Uv5tTk.js",
+    "name": "FAQItem",
+    "src": "resources/js/components/Coaches/FAQItem.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Coaches/FAQSection.jsx": {
+    "file": "assets/FAQSection-G8Uv5tTk.js",
+    "name": "FAQSection",
+    "src": "resources/js/components/Coaches/FAQSection.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Coaches/Header.jsx": {
+    "file": "assets/Header-G8Uv5tTk.js",
+    "name": "Header",
+    "src": "resources/js/components/Coaches/Header.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Counter/SimpleCounter.jsx": {
+    "file": "assets/SimpleCounter-G8Uv5tTk.js",
+    "name": "SimpleCounter",
+    "src": "resources/js/components/Counter/SimpleCounter.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Events/Content.jsx": {
+    "file": "assets/Content-G8Uv5tTk.js",
+    "name": "Content",
+    "src": "resources/js/components/Events/Content.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Events/EventCard.jsx": {
+    "file": "assets/EventCard-G8Uv5tTk.js",
+    "name": "EventCard",
+    "src": "resources/js/components/Events/EventCard.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Home/Banner.jsx": {
+    "file": "assets/Banner-DGJDOz_9.js",
+    "name": "Banner",
+    "src": "resources/js/components/Home/Banner.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js",
+      "resources/js/components/Coaches/Content.jsx",
+      "_sweetalert2.esm.all-B0Dix5B2.js",
+      "_main-rZoj-gSW.js",
+      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
+    ]
+  },
+  "resources/js/components/Home/Banner.svg": {
+    "file": "Banner.svg",
+    "src": "resources/js/components/Home/Banner.svg"
+  },
+  "resources/js/components/Home/Benefits.jsx": {
+    "file": "assets/Benefits-DugJU9Ud.js",
+    "name": "Benefits",
+    "src": "resources/js/components/Home/Benefits.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Home/Blogs.jsx": {
+    "file": "assets/Blogs-G8Uv5tTk.js",
+    "name": "Blogs",
+    "src": "resources/js/components/Home/Blogs.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Home/Contact.jsx": {
+    "file": "assets/Contact-DGJDOz_9.js",
+    "name": "Contact",
+    "src": "resources/js/components/Home/Contact.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js",
+      "resources/js/components/Coaches/Content.jsx",
+      "_sweetalert2.esm.all-B0Dix5B2.js",
+      "_main-rZoj-gSW.js",
+      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
+    ]
+  },
+  "resources/js/components/Home/Header.jsx": {
+    "file": "assets/Header-D5HHuie2.js",
+    "name": "Header",
+    "src": "resources/js/components/Home/Header.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js",
+      "resources/js/components/Home/Benefits.jsx"
+    ],
+    "css": [
+      "swiper.css"
+    ]
+  },
+  "resources/js/components/Home/Testimonies.jsx": {
+    "file": "assets/Testimonies-D5HHuie2.js",
+    "name": "Testimonies",
+    "src": "resources/js/components/Home/Testimonies.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js",
+      "resources/js/components/Home/Benefits.jsx"
+    ],
+    "css": [
+      "swiper.css"
+    ]
+  },
+  "resources/js/components/Resources/Header.jsx": {
+    "file": "assets/Header-DZuBCkO2.js",
+    "name": "Header",
+    "src": "resources/js/components/Resources/Header.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Resources/MainContent.jsx": {
+    "file": "assets/MainContent-G8Uv5tTk.js",
+    "name": "MainContent",
+    "src": "resources/js/components/Resources/MainContent.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/Resources/Sidebar.jsx": {
+    "file": "assets/Sidebar-DV5N8-Xi.js",
+    "name": "Sidebar",
+    "src": "resources/js/components/Resources/Sidebar.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js",
+      "resources/js/components/Coaches/Content.jsx",
+      "_main-rZoj-gSW.js",
+      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
+    ]
+  },
+  "resources/js/components/Tailwind/Base.jsx": {
+    "file": "assets/Base-tZPNtRXD.js",
+    "name": "Base",
+    "src": "resources/js/components/Tailwind/Base.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js",
+      "_index-Sd7so-oN.js",
+      "_index-Cevqm-zP.js"
+    ]
+  },
+  "resources/js/components/Tailwind/Footer.jsx": {
+    "file": "assets/Footer-XugdULh5.js",
+    "name": "Footer",
+    "src": "resources/js/components/Tailwind/Footer.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js",
+      "resources/js/components/Tailwind/Base.jsx",
+      "_index-Sd7so-oN.js",
+      "_index-Cevqm-zP.js"
+    ]
+  },
+  "resources/js/components/Tailwind/Header.jsx": {
+    "file": "assets/Header-BFVaNcXc.js",
+    "name": "Header",
+    "src": "resources/js/components/Tailwind/Header.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/accordion/Accordion.jsx": {
+    "file": "assets/Accordion-G8Uv5tTk.js",
+    "name": "Accordion",
+    "src": "resources/js/components/accordion/Accordion.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/accordion/AccordionCard.jsx": {
+    "file": "assets/AccordionCard-G8Uv5tTk.js",
+    "name": "AccordionCard",
+    "src": "resources/js/components/accordion/AccordionCard.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/dropdown/Dropdown.jsx": {
+    "file": "assets/Dropdown-G8Uv5tTk.js",
+    "name": "Dropdown",
+    "src": "resources/js/components/dropdown/Dropdown.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/dropdown/DropdownEnd.jsx": {
+    "file": "assets/DropdownEnd-G8Uv5tTk.js",
+    "name": "DropdownEnd",
+    "src": "resources/js/components/dropdown/DropdownEnd.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/dropdown/DropdownItem.jsx": {
+    "file": "assets/DropdownItem-G8Uv5tTk.js",
+    "name": "DropdownItem",
+    "src": "resources/js/components/dropdown/DropdownItem.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/form/CheckboxFormGroup.jsx": {
+    "file": "assets/CheckboxFormGroup-DZuBCkO2.js",
+    "name": "CheckboxFormGroup",
+    "src": "resources/js/components/form/CheckboxFormGroup.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/form/InputFormGroup.jsx": {
+    "file": "assets/InputFormGroup-DZuBCkO2.js",
+    "name": "InputFormGroup",
+    "src": "resources/js/components/form/InputFormGroup.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/form/PasswordFormGroup.jsx": {
+    "file": "assets/PasswordFormGroup-DZuBCkO2.js",
+    "name": "PasswordFormGroup",
+    "src": "resources/js/components/form/PasswordFormGroup.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/form/QuillFormGroup.jsx": {
+    "file": "assets/QuillFormGroup-DZuBCkO2.js",
+    "name": "QuillFormGroup",
+    "src": "resources/js/components/form/QuillFormGroup.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/form/SelectAPIFormGroup.jsx": {
+    "file": "assets/SelectAPIFormGroup-DuKlYppZ.js",
+    "name": "SelectAPIFormGroup",
+    "src": "resources/js/components/form/SelectAPIFormGroup.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js",
+      "_main-rZoj-gSW.js",
+      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
+    ]
+  },
+  "resources/js/components/form/SelectFormGroup.jsx": {
+    "file": "assets/SelectFormGroup-DZuBCkO2.js",
+    "name": "SelectFormGroup",
+    "src": "resources/js/components/form/SelectFormGroup.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/form/TextareaFormGroup.jsx": {
+    "file": "assets/TextareaFormGroup-DZuBCkO2.js",
+    "name": "TextareaFormGroup",
+    "src": "resources/js/components/form/TextareaFormGroup.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
+  },
+  "resources/js/components/form/TippyButton.jsx": {
+    "file": "assets/TippyButton-3Zv2zQAH.js",
+    "name": "TippyButton",
+    "src": "resources/js/components/form/TippyButton.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ],
+    "css": [
+      "tippy.css"
+    ]
+  },
+  "resources/js/components/modals/WhatsAppModal.jsx": {
+    "file": "assets/WhatsAppModal-BcRlH4g1.js",
+    "name": "WhatsAppModal",
+    "src": "resources/js/components/modals/WhatsAppModal.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js",
+      "_sweetalert2.esm.all-B0Dix5B2.js",
+      "_main-rZoj-gSW.js",
+      "____vite-browser-external_commonjs-proxy-BQdpDcDf.js"
+    ],
+    "css": [
+      "WhatsAppModal.css"
+    ]
+  },
+  "resources/js/components/svg/Yeti.jsx": {
+    "file": "assets/Yeti-G8Uv5tTk.js",
+    "name": "Yeti",
+    "src": "resources/js/components/svg/Yeti.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/About/StatisticCard.jsx",
+      "_index-DFv2mRv-.js"
+    ]
   }
 }
