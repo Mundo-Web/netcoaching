@@ -216,6 +216,7 @@ const Modal = ({ dataLoaded, setDataLoaded, onSave = () => { } }) => {
         label='Monto total de servicio'
         col='col-md-4 col-sm-6 col-xs-12'
         type='number'
+        step={0.01}
         id='montoTotal'
         required
       />

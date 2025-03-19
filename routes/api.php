@@ -34,12 +34,14 @@ use App\Http\Controllers\Coachee\PaymentController as CoacheePaymentController;
 // Public
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Coach\PaymentController as CoachPaymentController;
 use App\Http\Controllers\CoachController;
 use App\Http\Controllers\CoverController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LogbookController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\NoteController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RequestController;
 use App\Http\Controllers\ResourceController;
@@ -181,6 +183,8 @@ Route::middleware('auth')->group(function () {
         Route::delete('/schedules/{id}', [CoachScheduleController::class, 'delete']);
 
         Route::post('/reports', [CoachReportController::class, 'save']);
+
+        Route::post('/payments/paginate', [CoachPaymentController::class, 'paginate']);
     });
 
     Route::middleware('can:Coachee')->prefix('coachee')->group(function () {

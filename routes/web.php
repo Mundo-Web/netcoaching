@@ -39,6 +39,8 @@ use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AboutusController;
+use App\Http\Controllers\Coach\PaymentController as CoachPaymentController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -100,6 +102,8 @@ Route::middleware(['can:Coach', 'auth'])->prefix('coach')->group(function () {
     // Route::get('/coaches', [CoachController::class, 'reactView'])->name('Coach/Home.jsx');
     // Route::get('/businesses', [BusinessController::class, 'reactView'])->name('Businesses.jsx');
     // Route::get('/services', [ServiceController::class, 'reactView'])->name('Services.jsx');
+
+    Route::get('/payments', [CoachPaymentController::class, 'reactView'])->name('Coach/Payments.jsx');
 
     Route::get('/profile', [CoachProfileController::class, 'reactView'])->name('Coach/Profile.jsx');
 });
