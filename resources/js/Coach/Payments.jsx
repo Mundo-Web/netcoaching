@@ -113,6 +113,10 @@ const Payments = () => {
           }
         },
         {
+          dataField: 'coachee.name',
+          caption: 'Estudiante',
+        },
+        {
           dataField: 'amount',
           caption: 'Monto',
           cellTemplate: (container, { data }) => {
