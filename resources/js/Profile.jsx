@@ -84,6 +84,7 @@ const Profile = ({ coach, country, countries, resources, coaches, session, hasRo
               className='w-full aspect-[8/3] object-cover object-center rounded-lg'
               src={`/api/cover/${coach.uuid}`}
               alt="Cover Photo"
+              onError={e => $(e.target).remove()}
             />
             <div className="flex gap-4 my-[5%] items-center">
               <img
