@@ -1231,7 +1231,7 @@
     ]
   },
   "resources/js/Profile.jsx": {
-    "file": "assets/Profile-B9mRD-Ns.js",
+    "file": "assets/Profile-D6DQ6bEm.js",
     "name": "Profile",
     "src": "resources/js/Profile.jsx",
     "isEntry": true,
@@ -1248,13 +1248,13 @@
       "_sweetalert2.esm.all-B0Dix5B2.js",
       "resources/js/components/Coaches/Content.jsx",
       "_Number2Currency-e57Tgsuk.js",
+      "_index-Cevqm-zP.js",
       "_index-Sd7so-oN.js",
       "_index.esm-CrCAkvZ6.js",
       "____vite-browser-external_commonjs-proxy-BQdpDcDf.js",
       "_main-rZoj-gSW.js",
       "_logo-BjQK9OLG.js",
-      "resources/js/components/Tailwind/Base.jsx",
-      "_index-Cevqm-zP.js"
+      "resources/js/components/Tailwind/Base.jsx"
     ],
     "css": [
       "tippy.css",

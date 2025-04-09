@@ -10,11 +10,13 @@ import Tippy from '@tippyjs/react';
 import Swal from 'sweetalert2';
 import RequestsRest from './Actions/RequestsRest';
 import Number2Currency from './Utils/Number2Currency';
-import getYTVideoId from './Utils/getYTVideoId';
+import YouTube from 'react-youtube';
 
 const requestsRest = new RequestsRest();
 
 const Profile = ({ coach, country, countries, resources, coaches, session, hasRole }) => {
+
+  const [isPlaying, setIsPlaying] = React.useState(false);
 
   let btnCTA = <Fragment>
     Iniciar sesion para ver opciones
@@ -82,14 +84,41 @@ const Profile = ({ coach, country, countries, resources, coaches, session, hasRo
         <div className="flex flex-col-reverse md:flex-row gap-4 md:gap-8">
           <div className="md:w-2/3">
             {
-              coach.video &&
-              <iframe
-                className='w-full aspect-[16/9] rounded-lg mb-[5%]'
-                src={`https://www.youtube.com/embed/${coach.video}`}
-                title="YouTube video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              coach.video && (
+                <div className="relative w-full aspect-[16/9] rounded-lg mb-[5%] overflow-hidden group">
+                  <YouTube
+                    videoId={coach.video}
+                    opts={{
+                      width: '100%',
+                      height: '100%',
+                      playerVars: {
+                        autoplay: 1,
+                      },
+                    }}
+                    onPlay={() => setIsPlaying(true)}
+                    onPause={() => setIsPlaying(false)}
+                    onEnd={() => setIsPlaying(false)}
+                    className={`w-full h-full ${!isPlaying ? 'hidden' : ''}`}
+                  />
+                  {!isPlaying && (
+                    <>
+                      <img
+                        src={`https://img.youtube.com/vi/${coach.video}/maxresdefault.jpg`}
+                        alt="Video thumbnail"
+                        className="w-full h-full object-cover"
+                      />
+                      <button
+                        onClick={() => setIsPlaying(true)}
+                        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                                 bg-black/50 hover:bg-black/70 text-white rounded-full py-2 px-5
+                                 transition-all duration-300 group-hover:scale-110"
+                      >
+                        <i className="mdi mdi-play mdi-48px"></i>
+                      </button>
+                    </>
+                  )}
+                </div>
+              )
             }
             <div className="flex gap-4 mb-[5%] items-center">
               <img
