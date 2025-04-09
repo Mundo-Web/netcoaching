@@ -136,7 +136,7 @@ const Details = ({ coachee, coach, process_topic, start_date, session_frequency,
 
     <h3 className="mt-2">Otros aspectos importantes</h3>
     <h4>Modificación de horarios:</h4>
-    <p>Si surgiera algún cambio o impedimento de último momento, por favor avísame con 3 de anticipación por lo menos y coordinaremos una nueva cita, yo por mi parte haré lo mismo; de no mediar aviso previo, la sesión programada se considerará como brindada.</p>
+    <p>Si surgiera algún cambio o impedimento de último momento, por favor avísame con {coach?.schedule_change_notice} de anticipación por lo menos y coordinaremos una nueva cita, yo por mi parte haré lo mismo; de no mediar aviso previo, la sesión programada se considerará como brindada.</p>
     <p>También es necesario que tomes las previsiones adecuadas para asistir con toda puntualidad a nuestras citas, cualquier demora o retraso cuenta dentro del tiempo de la sesión misma.</p>
 
     <h4>Espacio entre las sesiones:</h4>
