@@ -93,11 +93,14 @@ const Profile = ({ coach, country, countries, resources, coaches, session, hasRo
                       height: '100%',
                       playerVars: {
                         autoplay: 1,
+                        controls: 0,
+                        disablekb: 1,
+                        modestbranding: 1,
+                        showinfo: 0,
+                        rel: 0
                       },
                     }}
-                    onPlay={() => setIsPlaying(true)}
                     onPause={() => setIsPlaying(false)}
-                    onEnd={() => setIsPlaying(false)}
                     className={`w-full h-full ${!isPlaying ? 'hidden' : ''}`}
                   />
                   {!isPlaying && (
