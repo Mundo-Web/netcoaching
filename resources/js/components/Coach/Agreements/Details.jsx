@@ -1,6 +1,6 @@
 import React from "react"
 
-const Details = ({ coachee, coach, process_topic, start_date, session_frequency, sessions, session_duration, total_amount, day, time, location, created_at, ...props }) => {
+const Details = ({ coachee, coach, process_topic, start_date, session_frequency, sessions, session_duration, total_amount, day, time, location, created_at, installments, ...props }) => {
   const days = {
     'L': 'Lunes',
     'M': 'Martes',
@@ -116,6 +116,10 @@ const Details = ({ coachee, coach, process_topic, start_date, session_frequency,
     <div className="mb-1">
       <strong className="me-1">Monto:</strong>
       USD {Number(total_amount).toFixed(2)}
+    </div>
+    <div className="mb-1">
+      <strong className="me-1">Nro cuotas:</strong>
+      {installments}
     </div>
     <div className="mb-1">
       <strong className="me-1">Día:</strong>

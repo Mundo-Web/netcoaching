@@ -141,7 +141,7 @@ const Modal = ({ dataLoaded, setDataLoaded, onSave = () => { } }) => {
 
     <div className="row mt-2" id='conditions-container'>
       <h5 className="text-info">Condiciones para el proceso de coaching</h5>
-      <p>Hemos acordado para este proceso sujetarnos a las condiciones que se mencionan a continuación:</p>
+      <p> sujetarnos a las condiciones que se mencionan a continuación:</p>
 
       <SelectFormGroup eRef={processTypeRef} label='Tipo de proceso' col='col-md-4 col-sm-6 col-xs-12' dropdownParent='#conditions-container' id='tipoProceso' required>
         <option value='coaching'>Coaching</option>
