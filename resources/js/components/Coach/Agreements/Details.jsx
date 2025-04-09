@@ -1,6 +1,6 @@
 import React from "react"
 
-const Details = ({ coachee, coach, process_topic, start_date, session_frequency, sessions, session_duration, total_amount, day, time, location, ...props }) => {
+const Details = ({ coachee, coach, process_topic, start_date, session_frequency, sessions, session_duration, total_amount, day, time, location, created_at, ...props }) => {
   const days = {
     'L': 'Lunes',
     'M': 'Martes',
@@ -153,8 +153,8 @@ const Details = ({ coachee, coach, process_topic, start_date, session_frequency,
 
     <p className="mt-2">El acuerdo supone la aceptación y compromiso del coachée en cada uno de sus términos y condiciones.</p>
 
-    <h4 className="mt-2">Yo, Carlos Manuel Gamboa Palomino, he leído el presente acuerdo y estoy conforme en todas sus partes.</h4>
-    <p>Lima, {moment().format('dddd LL')}.</p>
+    <h4 className="mt-2">Yo, {coachee?.name} {coachee?.lastname}, he leído el presente acuerdo y estoy conforme en todas sus partes.</h4>
+    <p>Lima, {moment(created_at).format('dddd LL')}.</p>
 
     <div className="row mt-5">
       <div className="col-md-6">

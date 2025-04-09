@@ -92,7 +92,7 @@ const Profile = ({ coach, country, countries, resources, coaches, session, hasRo
                       width: '100%',
                       height: '100%',
                       playerVars: {
-                        autoplay: 1,
+                        autoplay: isPlaying ? 1 : 0,
                         controls: 0,
                         disablekb: 1,
                         modestbranding: 1,
