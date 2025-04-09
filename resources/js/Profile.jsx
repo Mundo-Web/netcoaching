@@ -10,6 +10,7 @@ import Tippy from '@tippyjs/react';
 import Swal from 'sweetalert2';
 import RequestsRest from './Actions/RequestsRest';
 import Number2Currency from './Utils/Number2Currency';
+import getYTVideoId from './Utils/getYTVideoId';
 
 const requestsRest = new RequestsRest();
 
@@ -80,13 +81,17 @@ const Profile = ({ coach, country, countries, resources, coaches, session, hasRo
       <section className='p-[5%] mt-[68px]'>
         <div className="flex flex-col-reverse md:flex-row gap-4 md:gap-8">
           <div className="md:w-2/3">
-            <img
-              className='w-full aspect-[8/3] object-cover object-center rounded-lg'
-              src={`/api/cover/${coach.uuid}`}
-              alt="Cover Photo"
-              onError={e => $(e.target).remove()}
-            />
-            <div className="flex gap-4 my-[5%] items-center">
+            {
+              coach.video &&
+              <iframe
+                className='w-full aspect-[16/9] rounded-lg mb-[5%]'
+                src={`https://www.youtube.com/embed/${coach.video}`}
+                title="YouTube video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            }
+            <div className="flex gap-4 mb-[5%] items-center">
               <img
                 className='w-24 h-24 rounded-full object-cover object-center'
                 src={`/api/profile/${coach.uuid}`}

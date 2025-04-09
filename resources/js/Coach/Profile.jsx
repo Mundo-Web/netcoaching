@@ -93,19 +93,19 @@ const Profile = (props) => {
           <div className='card-body'>
             <div className="row">
               <div className="col-sm-4 col-xs-12 position-relative">
-                <Tippy content='Cambiar portada' arrow={true}>
+                {/* <Tippy content='Cambiar portada' arrow={true}>
                   <label htmlFor='cover' className='ratio ratio-21x9' style={{ cursor: 'pointer' }}>
                     <input className='d-none' type='file' name='cover' id='cover' accept='image/*' onChange={onCoverChange} />
                     <img src={`/api/cover/${session.uuid}?v=${crypto.randomUUID()}`} alt={`Perfil de ${session.name} ${session.lastname}`} style={{ width: '100%', objectFit: 'cover', objectPosition: 'center', borderRadius: '4px' }} />
                   </label>
-                </Tippy>
+                </Tippy> */}
                 <Tippy content='Cambiar foto de perfil' arrow={true}>
-                  <label htmlFor='avatar' className='rounded-circle mx-auto d-block position-relative' style={{ cursor: 'pointer', width: 'max-content', marginTop: '-48px' }}>
+                  <label htmlFor='avatar' className='rounded-circle mx-auto d-block position-relative w-100' style={{ cursor: 'pointer' }}>
                     <input className='d-none' type='file' name='avatar' id='avatar' accept='image/*' onChange={onProfileChange} />
-                    <img className='avatar-xl rounded-circle bg-white' src={`/api/profile/${session.uuid}?v=${crypto.randomUUID()}`} alt={`Perfil de ${session.name} ${session.lastname}`} style={{ objectFit: 'cover', objectPosition: 'center' }} />
+                    <img className='bg-white w-100 rounded' src={`/api/profile/${session.uuid}?v=${crypto.randomUUID()}`} alt={`Perfil de ${session.name} ${session.lastname}`} style={{ objectFit: 'cover', objectPosition: 'center' }} />
                   </label>
                 </Tippy>
-                <ul className="social-list list-inline mt-3 mb-0">
+                {/* <ul className="social-list list-inline mt-3 mb-0">
                   <li className="list-inline-item">
                     <a href="#" className="social-list-item border-purple text-purple"><i className="fab fa-facebook-f"></i></a>
                   </li>
@@ -118,7 +118,7 @@ const Profile = (props) => {
                   <li className="list-inline-item">
                     <a href="#" className="social-list-item border-secondary text-secondary"><i className="mdi mdi-github"></i></a>
                   </li>
-                </ul>
+                </ul> */}
               </div>
               <div className="col-sm-8 col-xs-12">
                 <div className='row'>

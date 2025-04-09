@@ -16,7 +16,8 @@ class AgreementController extends BasicController
     public function setPaginationInstance(string $model)
     {
         return $model::with(['coach', 'coachee', 'observations', 'observations.observer'])
-            ->where('coach_id', Auth::user()->id);
+            // ->where('coach_id', Auth::user()->id)
+            ;
     }
 
     public function beforeSave(HttpRequest $request)
