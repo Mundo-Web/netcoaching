@@ -20,6 +20,7 @@ const Register = ({ PUBLIC_RSA_KEY, RECAPTCHA_SITE_KEY, terms = 'Terminos y cond
   const [loading, setLoading] = useState(true)
   const [captchaValue, setCaptchaValue] = useState(null)
   const [found, setFound] = useState(false)
+  const [isCoach, setIsCoach] = useState(true)
 
   // const documentTypeRef = useRef()
   // const documentNumberRef = useRef()
@@ -33,10 +34,6 @@ const Register = ({ PUBLIC_RSA_KEY, RECAPTCHA_SITE_KEY, terms = 'Terminos y cond
   const specialtyRef = useRef()
 
   const termsModalRef = useRef();
-
-  useEffect(() => {
-    setLoading(false)
-  }, [null])
 
   const onRegisterSubmit = async (e) => {
     e.preventDefault()
@@ -86,6 +83,25 @@ const Register = ({ PUBLIC_RSA_KEY, RECAPTCHA_SITE_KEY, terms = 'Terminos y cond
     setLoading(false)
   }
 
+  useEffect(() => {
+    const handleRoleChange = () => {
+      const selectedRole = $(roleRef.current).val()
+      const roleData = roles.find(role => role.relative_id === selectedRole)
+      setIsCoach(roleData?.name === 'Coach')
+    }
+
+    $(roleRef.current).on('change', handleRoleChange)
+    handleRoleChange()
+
+    return () => {
+      $(roleRef.current).off('change', handleRoleChange)
+    }
+  }, [roles])
+
+  useEffect(() => {
+    setLoading(false)
+  }, [null])
+
   return (<>
     <div className="account-pages mt-5 mb-5">
       <div className="container">
@@ -118,7 +134,9 @@ const Register = ({ PUBLIC_RSA_KEY, RECAPTCHA_SITE_KEY, terms = 'Terminos y cond
                     </div>
                   </div>
 
-                  <SelectFormGroup label='Especialidad' eRef={specialtyRef} required multiple>
+                  <SelectFormGroup
+                    label={isCoach ? '¿Cuál es tu especialidad?' : '¿Qué aspectos quieres mejorar en tu vida?'}
+                    eRef={specialtyRef} required multiple>
                     {
                       specialties.map((specialty, i) => {
                         return <option key={`specialty-${i}`} value={specialty.id}>{specialty.name}</option>

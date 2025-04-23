@@ -2,11 +2,9 @@ import { createRoot } from 'react-dom/client'
 import React, { useEffect, useRef, useState } from 'react'
 import JSEncrypt from 'jsencrypt'
 import CreateReactScript from './Utils/CreateReactScript'
-import { Link } from '@inertiajs/react'
 import SelectFormGroup from '@Adminto/form/SelectFormGroup'
 import Modal from '@Adminto/Modal'
 import HtmlContent from './Utils/HtmlContent'
-import Swal from 'sweetalert2'
 import logo from './Svg/logo.svg'
 import { GET } from 'sode-extend-react'
 import GoogleRest from './actions/GoogleRest'
@@ -54,7 +52,6 @@ const Register = ({ PUBLIC_RSA_KEY, terms = 'Terminos y condiciones', roles = []
     const handleRoleChange = () => {
       const selectedRole = $(roleRef.current).val()
       const roleData = roles.find(role => role.relative_id === selectedRole)
-      console.log(roleData, roles)
       setIsCoach(roleData?.name === 'Coach')
     }
 
