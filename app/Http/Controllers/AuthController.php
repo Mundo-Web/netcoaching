@@ -48,7 +48,7 @@ class AuthController extends Controller
           $request->session()->invalidate();
           $request->session()->regenerateToken();
           return redirect()->route('Login.jsx', [
-            'message' => "No puedes iniciar sesion con este usuario, contacta al administrador"
+            'message' => $request->message ?? "No puedes iniciar sesion con este usuario, contacta al administrador"
           ]);
           break;
       }

@@ -82,10 +82,16 @@ class GoogleController extends BasicController
                 $userJpa->assignRole($roleJpa->name);
 
                 $specialties = $request->specialties ?? [];
+                SpecialtiesByUser::query()
+                    ->where('user_id', $userJpa->id)
+                    ->whereNotIn('specialty_id', $specialties)
+                    ->delete();
                 foreach ($specialties as $specialty) {
-                    SpecialtiesByUser::create([
+                    SpecialtiesByUser::updateOrCreate([
                         'user_id' => $userJpa->id,
-                        'specialty_id' => $specialty
+                        'specialty_id' => $specialty,
+                    ], [
+                        'status' => $roleJpa->name === 'Coachee'
                     ]);
                 }
 
