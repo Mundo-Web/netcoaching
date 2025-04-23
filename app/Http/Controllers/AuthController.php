@@ -5,13 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Classes\EmailConfig;
 use App\Http\Services\ReCaptchaService;
 use App\Models\Constant;
-use App\Models\ModelHasRoles;
 use App\Models\User;
-use App\Models\Person;
 use App\Models\PreUser;
 use App\Models\SpecialtiesByUser;
 use App\Models\Specialty;
-use App\Providers\RouteServiceProvider;
 use Exception;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\RedirectResponse;
@@ -318,7 +315,7 @@ class AuthController extends Controller
       $mailer->addAddress($userJpa->email);
       $mailer->isHTML(true);
       $mailer->send();
-    });
+    }, fn ($res, $th) => dump($th->getMessage()));
     return response($response->toArray(), $response->status);
   }
 
