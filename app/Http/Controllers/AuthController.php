@@ -315,7 +315,7 @@ class AuthController extends Controller
       $mailer->addAddress($userJpa->email);
       $mailer->isHTML(true);
       $mailer->send();
-    }, fn ($res, $th) => dump($th->getMessage()));
+    });
     return response($response->toArray(), $response->status);
   }
 
