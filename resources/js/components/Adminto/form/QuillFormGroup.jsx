@@ -18,6 +18,8 @@ const QuillFormGroup = ({ col, label, eRef, value, required = false, rows = 3, t
     quill.root.innerHTML = value ?? ''
   }, [null])
 
+  console.log('algo aqui')
+
   return <div className={`form-group ${col} mb-2`} style={{ height: 'max-content' }}>
     <label htmlFor='' className="mb-1 form-label">
       {label} {required && <b className="text-danger">*</b>}

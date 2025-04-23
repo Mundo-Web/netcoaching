@@ -40,6 +40,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\Coach\PaymentController as CoachPaymentController;
+use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\PaymentController;
 
 /*
@@ -67,6 +68,10 @@ Route::get('/register', [AuthController::class, 'registerView'])->name('Register
 Route::get('/confirm-email/{token}', [AuthController::class, 'confirmEmailView'])->name('ConfirmEmail.jsx');
 
 Route::get('/confirmation/{token}', [AuthController::class, 'loginView']);
+
+// Google Auth routes
+Route::get('/auth/google', [GoogleController::class, 'googleRedirect']);
+Route::get('/auth/google/callback', [GoogleController::class, 'googleCallback']);
 
 // Admin routes
 Route::middleware(['can:Admin', 'auth'])->prefix('admin')->group(function () {

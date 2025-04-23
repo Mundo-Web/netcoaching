@@ -6,6 +6,7 @@ use App\Http\Classes\dxResponse;
 use App\Models\Aboutus;
 use App\Models\dxDataGrid;
 use App\Models\Faq;
+use App\Models\User;
 use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -78,9 +79,10 @@ class BasicController extends Controller
   {
     $summaryJpa = Aboutus::where('name', 'Resúmen')->first();
     $faqs = Faq::where('visible', true)->where('visible', true)->get();
-    if (Auth::check()) Auth::user()->getAllPermissions();
+    $sessionJpa = User::find(Auth::id());
+    if (Auth::check()) $sessionJpa->getAllPermissions();
     $properties = [
-      'session' => Auth::user(),
+      'session' => $sessionJpa,
       'summary' => $summaryJpa->description,
       'faqs' => $faqs,
       'global' => [

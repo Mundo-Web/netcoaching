@@ -3,10 +3,11 @@ import { createRoot } from "react-dom/client";
 import Modal from "@Adminto/Modal.jsx";
 import Table from "@Adminto/Table";
 import InputFormGroup from "@Adminto/form/InputFormGroup";
-import SelectAPIFormGroup from "@Adminto/Form/SelectAPIFormGroup";
+import TextareaFormGroup from "@Adminto/form/TextareaFormGroup";
+import SelectFormGroup from "@Adminto/form/SelectFormGroup";
 import PasswordFormGroup from "@Adminto/Form/PasswordFormGroup";
+import QuillFormGroup from '@Adminto/form/QuillFormGroup';
 import CreateReactScript from "@Utils/CreateReactScript";
-import SetSelectValue from "@Utils/SetSelectValue";
 import BaseAdminto from "@Adminto/Base";
 import JSEncrypt from "jsencrypt";
 import Global from "@Utils/Global";
@@ -18,7 +19,7 @@ import Tippy from "@tippyjs/react";
 
 const coachesRest = new AdminCoachesRest();
 
-const Coaches = ({ }) => {
+const Coaches = ({ countries = [] }) => {
   const gridRef = useRef()
   const modalRef = useRef()
   const pwdModalRef = useRef()
@@ -27,8 +28,17 @@ const Coaches = ({ }) => {
   const idRef = useRef()
   const nameRef = useRef()
   const lastnameRef = useRef()
+  const dniRef = useRef()
+  const phonePrefixRef = useRef()
+  const phoneRef = useRef()
+  const videoRef = useRef()
+  const titleRef = useRef()
+  const countryRef = useRef()
+  const cityRef = useRef()
+  const addressRef = useRef()
+  const summaryRef = useRef()
+  const descriptionRef = useRef()
   const emailRef = useRef()
-  const rolesRef = useRef()
   const passwordRef = useRef()
   const confirmRef = useRef()
 
@@ -44,15 +54,21 @@ const Coaches = ({ }) => {
     if (data?.id) setIsEditing(true)
     else setIsEditing(false)
 
-    const roles = []
-
     idRef.current.value = data?.id || null
     nameRef.current.value = data?.name || null
     lastnameRef.current.value = data?.lastname || null
-    emailRef.current.value = data?.email || null
-    SetSelectValue(rolesRef.current, roles, 'id', 'name')
-    passwordRef.current.value = null
-    confirmRef.current.value = null
+    dniRef.current.value = data?.dni || null
+    emailRef.current.textContent = data?.email || null
+    phonePrefixRef.current.value = data?.phone_prefix || null
+    phoneRef.current.value = data?.phone || null
+    videoRef.current.value = data?.video ? `https://youtu.be/${data?.video}` : ''
+    titleRef.current.value = data?.title || null
+    $(countryRef.current).val(data?.country || '89').trigger('change')
+    cityRef.current.value = data?.city || null
+    addressRef.current.value = data?.address || null
+    summaryRef.current.value = data?.summary || null
+    descriptionRef.current.value = data?.description || null
+    descriptionRef.editor.setHTML(data?.description || 'Agrega una descripción')
 
     $(modalRef.current).modal('show')
   }
@@ -66,17 +82,19 @@ const Coaches = ({ }) => {
   const onModalSubmit = async (e) => {
     e.preventDefault()
 
-    const password = passwordRef.current.value
-    const confirm = confirmRef.current.value
-
     const request = {
       id: idRef.current.value || undefined,
       name: nameRef.current.value,
       lastname: lastnameRef.current.value,
-      email: emailRef.current.value,
-      roles: $(rolesRef.current).val(),
-      password: password ? jsEncrypt.encrypt(password) : undefined,
-      confirm: confirm ? jsEncrypt.encrypt(confirm) : undefined
+      phone_prefix: phonePrefixRef.current.value,
+      phone: phoneRef.current.value,
+      video: videoRef.current.value,
+      title: titleRef.current.value,
+      country: countryRef.current.value,
+      city: cityRef.current.value,
+      address: addressRef.current.value,
+      summary: summaryRef.current.value,
+      description: descriptionRef.current.value
     }
 
     const result = await coachesRest.save(request)
@@ -220,12 +238,12 @@ const Coaches = ({ }) => {
         {
           caption: 'Acciones',
           cellTemplate: (container, { data }) => {
-            // container.append(DxButton({
-            //   className: 'btn btn-xs btn-soft-primary',
-            //   title: 'Modificar datos',
-            //   icon: 'fa fa-pen',
-            //   onClick: () => onModalOpen(data)
-            // }))
+            container.append(DxButton({
+              className: 'btn btn-xs btn-soft-primary',
+              title: 'Modificar datos',
+              icon: 'fa fa-pen',
+              onClick: () => onModalOpen(data)
+            }))
             container.append(DxButton({
               className: 'btn btn-xs btn-soft-dark',
               title: 'Restablecer contraseña',
@@ -249,15 +267,26 @@ const Coaches = ({ }) => {
           allowExporting: false
         }
       ]} />
-    <Modal modalRef={modalRef} title={isEditing ? 'Editar usuario' : 'Agregar usuario'} onSubmit={onModalSubmit}>
+    <Modal modalRef={modalRef} title={isEditing ? 'Editar coach' : 'Agregar coach'} onSubmit={onModalSubmit}>
       <div className='row' id='users-crud-container'>
         <input ref={idRef} type='hidden' />
+        <div className="mb-2">
+          Estás editando datos de: <b ref={emailRef}></b>
+        </div>
         <InputFormGroup eRef={nameRef} label='Nombres' col='col-md-6' required />
         <InputFormGroup eRef={lastnameRef} label='Apellidos' col='col-md-6' required />
-        <InputFormGroup eRef={emailRef} label='Correo' col='col-12' type='email' required />
-        <SelectAPIFormGroup eRef={rolesRef} label='Asignar roles' col='col-12' dropdownParent='#users-crud-container' searchAPI='/api/roles/paginate' searchBy='name' required multiple />
-        <PasswordFormGroup eRef={passwordRef} label='Contraseña' col='col-md-6' required={!isEditing} />
-        <PasswordFormGroup eRef={confirmRef} label='Repetir contraseña' col='col-md-6' required={!isEditing} />
+        <InputFormGroup eRef={dniRef} label='DNI' col='col-md-4' required />
+        <SelectFormGroup eRef={phonePrefixRef} label='Prefijo' col='col-md-4' />
+        <InputFormGroup eRef={phoneRef} label='Teléfono' col='col-md-4' />
+        <InputFormGroup eRef={videoRef} label='Video de YouTube' col='col-md-12' />
+        <InputFormGroup eRef={titleRef} label='Título' col='col-md-6' required />
+        <SelectFormGroup eRef={countryRef} label='Pais' col='col-md-6 col-sm-12' dropdownParent='#users-crud-container' required>
+          {countries.map((country, i) => <option key={`country-${i}`} value={country.id}>{country.name}</option>)}
+        </SelectFormGroup>
+        <InputFormGroup eRef={cityRef} label='Ciudad' col='col-md-6' required />
+        <InputFormGroup eRef={addressRef} label='Dirección' col='col-md-6' />
+        <TextareaFormGroup eRef={summaryRef} label='Resumen' col='col-12' />
+        <QuillFormGroup eRef={descriptionRef} label='Descripción' col='col-12' required />
       </div>
     </Modal>
 

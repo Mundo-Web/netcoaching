@@ -5,7 +5,7 @@ const InputFormGroup = ({ col, label, eRef, type = 'text', placeholder, required
     <label htmlFor='' className="mb-1 form-label">
       {label} {required && <b className="text-danger">*</b>}
     </label>
-    <input ref={eRef} type={type} className='form-control' placeholder={placeholder} required={required} disabled={disabled} readOnly={readOnly} defaultValue={value ?? ''} step={step}  onChange={onChange} min={min} max={max}/>
+    <input ref={eRef} type={type} className={`form-control ${disabled && 'disabled'}`} placeholder={placeholder} required={required} disabled={disabled} readOnly={readOnly} defaultValue={value ?? ''} step={step} onChange={onChange} min={min} max={max} />
   </div>
 }
 

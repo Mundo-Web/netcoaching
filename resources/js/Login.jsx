@@ -87,21 +87,25 @@ const Login = ({ PUBLIC_RSA_KEY, token, APP_DOMAIN, APP_PROTOCOL }) => {
                         <label className="form-check-label" htmlFor="checkbox-signin" style={{ cursor: 'pointer' }}>Recuerdame</label>
                       </div>
                     </div>
-                    <div className="mb-3 d-grid text-center">
-                      <button className="btn btn-primary" type="submit"> Iniciar Sesión </button>
+                    <div className="d-grid text-center">
+                      <button className="btn btn-primary mb-2" type="submit"> Iniciar Sesión </button>
+                      <a href='/auth/google' className="btn btn-white position-relative d-flex align-items-center justify-content-center">
+                        <img src="/images/img/google.svg" alt="Google Icon" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                        Iniciar sesión con Google
+                      </a>
                     </div>
                   </form>
                 </div>
               </div>
               <div className="row mt-3">
                 <div className="col-12 text-center">
-                  {/* <p>
+                  <p>
                     <Link href="/recovery" className="text-muted ms-1">
                       <i
                         className="fa fa-lock me-1"></i>
                       Olvidaste tu contraseña?
                     </Link>
-                  </p> */}
+                  </p>
                   <p className="text-muted">
                     No tienes una cuenta aun?
                     <Link href="/register" className="text-white ms-1">

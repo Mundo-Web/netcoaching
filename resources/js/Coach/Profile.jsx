@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import CreateReactScript from '../Utils/CreateReactScript';
-import InputFormGroup from '../Components/Adminto/form/InputFormGroup';
+import InputFormGroup from '@Adminto/form/InputFormGroup';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import ProfileRest from '../Actions/ProfileRest';
@@ -126,7 +126,7 @@ const Profile = (props) => {
                   <InputFormGroup eRef={lastnameRef} label='Apellidos' value={session.lastname} required col='col-md-6 col-sm-12' />
                   <InputFormGroup eRef={dniRef} label='DNI' value={session.dni} required col='col-md-6 col-sm-12' />
                   <InputFormGroup eRef={phoneRef} label='Telefono' value={session.phone} col='col-md-6 col-sm-12' />
-                  <InputFormGroup eRef={videoRef} label='Video de YouTube' value={`https://youtu.be/${session.video}`} />
+                  <InputFormGroup eRef={videoRef} label='Video de YouTube' value={session.video ? `https://youtu.be/${session.video}`: ''} />
                   <InputFormGroup eRef={titleRef} label='Titulo' value={session.title} col='col-md-6 col-sm-12' required />
                   <SelectFormGroup eRef={countryRef} label='Pais' value={session.country} col='col-md-6 col-sm-12' required>
                     {countries.map((country, i) => <option key={`country-${i}`} value={country.id} selected={country.id == session.country}>{country.name}</option>)}

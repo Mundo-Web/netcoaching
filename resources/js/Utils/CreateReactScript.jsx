@@ -51,6 +51,10 @@ const CreateReactScript = (render) => {
       }
       render(el, { ...properties, can, hasRole })
 
+      $('.modal-backdrop').each(function () {
+        if (!$(this).text()) $(this).remove()
+      })
+
       // document.getElementById('app').removeAttribute('data-page')
     },
   });

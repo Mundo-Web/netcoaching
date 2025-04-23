@@ -6,6 +6,8 @@ use App\Http\Controllers\BasicController;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use SoDe\Extend\File;
+use SoDe\Extend\JSON;
 
 class CoachController extends BasicController
 {
@@ -15,7 +17,10 @@ class CoachController extends BasicController
 
     public function setReactViewProperties(Request $request)
     {
-        return [];
+        $countries = JSON::parse(File::get('../storage/app/utils/countries.json'));
+        return [
+            'countries' => $countries,
+        ];
     }
 
     public function setPaginationInstance(string $model)
