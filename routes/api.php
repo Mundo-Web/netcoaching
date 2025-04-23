@@ -38,6 +38,7 @@ use App\Http\Controllers\Coach\PaymentController as CoachPaymentController;
 use App\Http\Controllers\CoachController;
 use App\Http\Controllers\CoverController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\LogbookController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\NoteController;
@@ -77,6 +78,8 @@ Route::post('/resources/paginate', [ResourceController::class, 'paginate']);
 Route::post('/messages', [MessageController::class, 'save']);
 Route::post('/subscriptions', [SubscriptionController::class, 'save']);
 Route::post('/requests', [RequestController::class, 'save']);
+
+Route::post('/google', [GoogleController::class, 'save']);
 
 Route::middleware('auth')->group(function () {
     Route::delete('logout', [AuthController::class, 'destroy'])

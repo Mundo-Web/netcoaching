@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use SoDe\Extend\Crypto;
 use SoDe\Extend\File;
+use SoDe\Extend\JSON;
 use SoDe\Extend\Response;
 
 class BasicController extends Controller
@@ -77,27 +78,35 @@ class BasicController extends Controller
 
   public function reactView(Request $request)
   {
-    $summaryJpa = Aboutus::where('name', 'Resúmen')->first();
-    $faqs = Faq::where('visible', true)->where('visible', true)->get();
-    $sessionJpa = User::find(Auth::id());
-    if (Auth::check()) $sessionJpa->getAllPermissions();
-    $properties = [
-      'session' => $sessionJpa,
-      'summary' => $summaryJpa->description,
-      'faqs' => $faqs,
-      'global' => [
-        'PUBLIC_RSA_KEY' => Controller::$PUBLIC_RSA_KEY,
-        'APP_NAME' => env('APP_NAME'),
-        'APP_URL' => env('APP_URL'),
-        'APP_DOMAIN' => env('APP_DOMAIN'),
-        'APP_PROTOCOL' => env('APP_PROTOCOL', 'https'),
-        'CULQI_PUBLIC_KEY' => env('CULQI_PUBLIC_KEY')
-      ],
-    ];
-    foreach ($this->setReactViewProperties($request) as $key => $value) {
-      $properties[$key] = $value;
+    try {
+      $summaryJpa = Aboutus::where('name', 'Resúmen')->first();
+      $faqs = Faq::where('visible', true)->where('visible', true)->get();
+      $sessionJpa = User::find(Auth::id());
+      if (Auth::check()) $sessionJpa->getAllPermissions();
+      $properties = [
+        'session' => $sessionJpa,
+        'summary' => $summaryJpa->description,
+        'faqs' => $faqs,
+        'global' => [
+          'PUBLIC_RSA_KEY' => Controller::$PUBLIC_RSA_KEY,
+          'APP_NAME' => env('APP_NAME'),
+          'APP_URL' => env('APP_URL'),
+          'APP_DOMAIN' => env('APP_DOMAIN'),
+          'APP_PROTOCOL' => env('APP_PROTOCOL', 'https'),
+          'CULQI_PUBLIC_KEY' => env('CULQI_PUBLIC_KEY')
+        ],
+      ];
+      foreach ($this->setReactViewProperties($request) as $key => $value) {
+        $properties[$key] = $value;
+      }
+      return Inertia::render($this->reactView, $properties)->rootView($this->reactRootView);
+    } catch (\Throwable $th) {
+      if ($this->reactRootView == 'auth') {
+        return redirect()->route('Login.jsx', [
+          'message' => $th->getMessage()
+        ]);
+      }
     }
-    return Inertia::render($this->reactView, $properties)->rootView($this->reactRootView);
   }
 
   public function paginate(Request $request): HttpResponse|ResponseFactory

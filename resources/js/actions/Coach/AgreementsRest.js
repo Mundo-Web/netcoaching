@@ -11,7 +11,7 @@ class AgreementsRest extends BasicRest {
       return result.data
     } catch (error) {
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Error',
         body: error.message,
         type: 'danger'

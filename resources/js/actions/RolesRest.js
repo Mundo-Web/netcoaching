@@ -28,7 +28,7 @@ class RolesRest {
       if (!status) throw new Error(result?.message || 'Ocurrio un error inesperado')
 
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Correcto',
         body: result.message,
         type: 'success'
@@ -36,7 +36,7 @@ class RolesRest {
       return true
     } catch (error) {
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Error',
         body: error.message,
         type: 'danger'
@@ -54,7 +54,7 @@ class RolesRest {
       if (!fetchStatus) throw new Error(result?.message ?? 'Ocurrio un error inesperado')
 
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Correcto',
         body: result.message,
         type: 'success'
@@ -63,7 +63,7 @@ class RolesRest {
       return true
     } catch (error) {
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Error',
         body: error.message,
         type: 'danger'
@@ -81,7 +81,7 @@ class RolesRest {
       if (!fetchStatus) throw new Error(result?.message ?? 'Ocurrio un error inesperado')
 
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Correcto',
         body: result.message,
         type: 'success'
@@ -90,7 +90,7 @@ class RolesRest {
       return true
     } catch (error) {
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Error',
         body: error.message,
         type: 'danger'

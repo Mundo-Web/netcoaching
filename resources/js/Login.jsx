@@ -9,7 +9,7 @@ import { GET } from 'sode-extend-react'
 import logo from './Svg/logo.svg'
 import Global from './Utils/Global'
 
-const Login = ({ PUBLIC_RSA_KEY, token, APP_DOMAIN, APP_PROTOCOL }) => {
+const Login = ({ PUBLIC_RSA_KEY, token }) => {
 
   const jsEncrypt = new JSEncrypt()
   jsEncrypt.setPublicKey(PUBLIC_RSA_KEY)

@@ -23,7 +23,7 @@ class SettingsRest {
       if (!status) throw new Error(result?.message || 'Ocurrio un error inesperado')
 
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Correcto',
         body: result.message,
         type: 'success'
@@ -31,7 +31,7 @@ class SettingsRest {
       return true
     } catch (error) {
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Error',
         body: error.message,
         type: 'danger'
@@ -49,7 +49,7 @@ class SettingsRest {
       if (!fetchStatus) throw new Error(result?.message ?? 'Ocurrio un error inesperado')
 
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Correcto',
         body: result.message,
         type: 'success'
@@ -58,7 +58,7 @@ class SettingsRest {
       return true
     } catch (error) {
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Error',
         body: error.message,
         type: 'danger'
@@ -76,7 +76,7 @@ class SettingsRest {
       if (!fetchStatus) throw new Error(result?.message ?? 'Ocurrio un error inesperado')
 
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Correcto',
         body: result.message,
         type: 'success'
@@ -85,7 +85,7 @@ class SettingsRest {
       return true
     } catch (error) {
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Error',
         body: error.message,
         type: 'danger'

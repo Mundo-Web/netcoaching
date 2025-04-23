@@ -84,7 +84,7 @@ const WhatsAppModal = ({ status: whatsappStatus, setStatus, WA_URL, APP_URL }) =
       method: 'DELETE'
     })
     Notify.add({
-      icon: '/assets/img/logo-login.svg',
+      icon: '/assets/img/icon.svg',
       title: 'Operacion correcta',
       body: `Se cerro la sesion de ${sessionInfo?.pushname || 'WhatsApp'}`
     })
@@ -109,13 +109,13 @@ const WhatsAppModal = ({ status: whatsappStatus, setStatus, WA_URL, APP_URL }) =
       if (!res.ok) throw new Error('No se pudo enviar el ping');
 
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Operacion correcta',
         body: `Se envio el ping a ${phoneRef.current.value}`
       })
     } catch (error) {
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Error',
         body: error.message,
         type: 'danger'

@@ -70,6 +70,7 @@ Route::get('/confirm-email/{token}', [AuthController::class, 'confirmEmailView']
 Route::get('/confirmation/{token}', [AuthController::class, 'loginView']);
 
 // Google Auth routes
+Route::get('/register-google', [GoogleController::class, 'reactView'])->name('RegisterGoogle.jsx');
 Route::get('/auth/google', [GoogleController::class, 'googleRedirect']);
 Route::get('/auth/google/callback', [GoogleController::class, 'googleCallback']);
 

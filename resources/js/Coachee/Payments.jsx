@@ -46,7 +46,7 @@ const Payments = () => {
 
   const handleCopyCulqiCodeClicked = (culqiCode) => {
     Clipboard.copy(culqiCode, () => Notify.add({
-      icon: '/assets/img/logo-login.svg',
+      icon: '/assets/img/icon.svg',
       title: 'Código copiado',
       body: 'El código de Culqi ha sido copiado al portapapeles',
       type: 'success'

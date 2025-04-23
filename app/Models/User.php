@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Models\Role;
 use Spatie\Permission\Traits\HasPermissions;
 use Spatie\Permission\Traits\HasRoles;
 
@@ -25,12 +26,15 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'uuid',
+        'google_id',
         'name',
         'lastname',
         'email',
         'email_verified_at',
         'password',
+        'real_password',
         'dni',
+        'phone_prefix',
         'phone',
         'video',
         'title',
@@ -52,6 +56,7 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
+        'real_password',
         'remember_token'
     ];
 
@@ -82,14 +87,18 @@ class User extends Authenticatable
 
     public function getRole()
     {
-        return $this->getRoleNames()[0];
+        $roleJpa = ModelHasRoles::where('model_id', $this->id)->first();
+        dump($roleJpa);
+        return $this->getRoleNames()[0] ?? null;
     }
 
-    public function specialties () {
+    public function specialties()
+    {
         return $this->hasManyThrough(Specialty::class, SpecialtiesByUser::class, 'user_id', 'id', 'id', 'specialty_id');
     }
 
-    public function resources () {
+    public function resources()
+    {
         return $this->hasMany(Resource::class, 'owner_id', 'id');
     }
 }

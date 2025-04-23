@@ -11,7 +11,7 @@ import HtmlContent from './Utils/HtmlContent'
 import Swal from 'sweetalert2'
 import logo from './Svg/logo.svg'
 
-const Register = ({ PUBLIC_RSA_KEY, RECAPTCHA_SITE_KEY, token, terms = 'Terminos y condiciones', roles = [], specialties }) => {
+const Register = ({ PUBLIC_RSA_KEY, RECAPTCHA_SITE_KEY, terms = 'Terminos y condiciones', roles = [], specialties }) => {
 
   const jsEncrypt = new JSEncrypt()
   jsEncrypt.setPublicKey(PUBLIC_RSA_KEY)

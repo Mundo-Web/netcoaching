@@ -22,7 +22,7 @@ class CoverRest {
       if (!res.ok) throw new Error(data?.message ?? 'Ocurrio un error inesperado')
 
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Correcto',
         body: 'La imagen de portada se actualizo correctamente',
         type: 'success'
@@ -30,7 +30,7 @@ class CoverRest {
       return data.data
     } catch (error) {
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Error',
         body: error.message,
         type: 'danger'

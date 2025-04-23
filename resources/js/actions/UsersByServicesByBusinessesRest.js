@@ -12,7 +12,7 @@ class UsersByServicesByBusinessesRest extends BasicRest {
       })
       if (!status) throw new Error(result?.message || 'Ocurrio un error al agregar el usuario')
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Correcto',
         body: result.message,
         type: 'success'
@@ -20,7 +20,7 @@ class UsersByServicesByBusinessesRest extends BasicRest {
       return true
     } catch (error) {
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Error',
         body: error.message,
         type: 'danger'
@@ -37,7 +37,7 @@ class UsersByServicesByBusinessesRest extends BasicRest {
       })
       if (!status) throw new Error(result?.message || 'Ocurrio un error al abrir el servicio')
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Correcto',
         body: result.message,
         type: 'success'
@@ -45,7 +45,7 @@ class UsersByServicesByBusinessesRest extends BasicRest {
       return true
     } catch (error) {
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Error',
         body: error.message,
         type: 'danger'

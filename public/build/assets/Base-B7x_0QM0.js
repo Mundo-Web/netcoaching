@@ -1,0 +1,1 @@
+import"./StatisticCard-ClKiNAEV.js";import"./index-DFv2mRv-.js";/* empty css              */import"./main-O6pq-kYS.js";import"./index.esm-sSnp8gJX.js";import"./___vite-browser-external_commonjs-proxy-BQdpDcDf.js";moment.tz.setDefault("UTC");

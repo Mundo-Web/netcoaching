@@ -11,7 +11,7 @@ class ProfileRest {
       if (!status) throw new Error(result?.message || 'Ocurrio un error inesperado')
 
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Correcto',
         body: result.message,
         type: 'success'
@@ -19,7 +19,7 @@ class ProfileRest {
       return true
     } catch (error) {
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Error',
         body: error.message,
         type: 'danger'
@@ -49,7 +49,7 @@ class ProfileRest {
       if (!res.ok) throw new Error(data?.message ?? 'Ocurrio un error inesperado')
 
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Correcto',
         body: 'La imagen de perfil se actualizo correctamente',
         type: 'success'
@@ -57,7 +57,7 @@ class ProfileRest {
       return data.data
     } catch (error) {
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Error',
         body: error.message,
         type: 'danger'

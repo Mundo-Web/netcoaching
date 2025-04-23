@@ -11,7 +11,7 @@ class AuthRest {
       if (!status) throw new Error(result?.message || 'Error al iniciar sesion')
 
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Operacion correcta',
         body: 'Se inicio sesion correctamente'
       })
@@ -19,10 +19,11 @@ class AuthRest {
       return result
     } catch (error) {
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Error',
         body: error.message,
-        type: 'danger'
+        type: 'danger',
+        timeout: 99999999999999999
       })
       return false
     }
@@ -38,7 +39,7 @@ class AuthRest {
       if (!status) throw new Error(result?.message || 'Error al registrar el usuario')
 
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Operacion correcta',
         body: 'Se registro el usuario correctamente'
       })
@@ -46,7 +47,7 @@ class AuthRest {
       return result.data
     } catch (error) {
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Error',
         body: error.message,
         type: 'danger'

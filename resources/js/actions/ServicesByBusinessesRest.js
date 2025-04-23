@@ -23,7 +23,7 @@ class ServicesByBusinessesRest extends BasicRest {
       })
       if (!status) throw new Error(result?.message || 'Ocurrio un error al habilitar el servicio')
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Correcto',
         body: result.message,
         type: 'success'
@@ -31,7 +31,7 @@ class ServicesByBusinessesRest extends BasicRest {
       return result
     } catch (error) {
       Notify.add({
-        icon: '/assets/img/logo-login.svg',
+        icon: '/assets/img/icon.svg',
         title: 'Error',
         body: error.message,
         type: 'danger'

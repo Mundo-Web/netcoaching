@@ -31,7 +31,8 @@ class AuthController extends Controller
   public function loginView(Request $request, string $confirmation = null)
   {
     if (Auth::check()) {
-      switch (Auth::user()->getRole()) {
+      $sessionJpa = User::find(Auth::id());
+      switch ($sessionJpa->getRole()) {
         case 'Admin':
           return redirect('/admin/home');
           break;
@@ -46,7 +47,9 @@ class AuthController extends Controller
           Auth::guard('web')->logout();
           $request->session()->invalidate();
           $request->session()->regenerateToken();
-          return redirect('/login');
+          return redirect()->route('Login.jsx', [
+            'message' => "No puedes iniciar sesion con este usuario, contacta al administrador"
+          ]);
           break;
       }
     };
@@ -145,6 +148,15 @@ class AuthController extends Controller
       }
 
       $request->session()->regenerate();
+
+      $sessionJpa = User::find(Auth::id());
+
+      if (!$sessionJpa->getRole()) {
+        Auth::guard('web')->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        throw new Exception('No puedes iniciar sesion con este usuario, contacta al administrador');
+      }
     });
     return response($response->toArray(), $response->status);
   }
@@ -185,7 +197,7 @@ class AuthController extends Controller
         'password' => Controller::decode($body['password']),
         'confirmation_token' => Crypto::randomUUID(),
         'token' => Crypto::randomUUID(),
-        'specialties' => JSON::stringify($body['specialties'])
+        'specialties' => JSON::stringify($body['specialties'] ?? [])
       ]);
 
       $content = Constant::value('confirm-email');
