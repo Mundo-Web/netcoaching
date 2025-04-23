@@ -29,14 +29,13 @@ class GoogleController extends BasicController
 
     public function setReactViewProperties(Request $request)
     {
-        dump($request->query('google_id'));
+        if (!$request->query('google_id')) throw new Exception('Necesitas enviar un ID de autenticación de Google');
+
         $userJpa = User::query()
             ->where('google_id', $request->query('google_id'))
             ->first();
 
         if (!$userJpa) throw new Exception('No se ha encontrado el usuario');
-
-        dump($userJpa->getRole());
 
         if ($userJpa->hasAnyRole(['Admin', 'Coach', 'Coachee'])) {
             $error = "El usuario {$userJpa->email} ya se encuentra registrado. Por favor, inicie sesión con su correo y contraseña.";
@@ -45,8 +44,6 @@ class GoogleController extends BasicController
 
         $roles = Role::where('public', true)->get();
         $specialties = Specialty::all();
-
-        dump('si paso');
 
         return [
             'session' => $userJpa,
@@ -95,11 +92,8 @@ class GoogleController extends BasicController
                 return $userJpa;
             });
 
-            dump($userJpa);
-
             Auth::login($userJpa);
         });
-        dump($response);
         return response($response->toArray(), $response->status);
     }
 

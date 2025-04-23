@@ -122,3 +122,8 @@ Route::middleware(['can:Coachee', 'auth'])->prefix('coachee')->group(function ()
     Route::get('/sessions', [CoacheeScheduleController::class, 'reactView'])->name('Coachee/Schedules.jsx');
     Route::get('/payments', [CoacheePaymentController::class, 'reactView'])->name('Coachee/Payments.jsx');
 });
+
+// Capturar error 403 y redireccionar a la página de inicio
+// Route::get('/403', function () {
+//     return redirect()->route('Login.jsx');
+// })->name('403');
