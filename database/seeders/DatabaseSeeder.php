@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             TestimonySeeder::class,
             EventSeeder::class,
             FaqSeeder::class,
+            RecoveryEmailSeeder::class,
         ]);
     }
 }

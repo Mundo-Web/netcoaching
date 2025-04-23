@@ -65,6 +65,8 @@ Route::get('/events', [EventController::class, 'reactView'])->name('Events.jsx')
 Route::get('/profile/{coach}', [ProfileController::class, 'reactView'])->name('Profile.jsx');
 Route::get('/login', [AuthController::class, 'loginView'])->name('Login.jsx');
 Route::get('/register', [AuthController::class, 'registerView'])->name('Register.jsx');
+Route::get('/recovery', [AuthController::class, 'recoveryView'])->name('Recovery.jsx');
+Route::get('/recovery/{token}', [AuthController::class, 'resetPasswordView'])->name('ResetPassword.jsx');
 Route::get('/confirm-email/{token}', [AuthController::class, 'confirmEmailView'])->name('ConfirmEmail.jsx');
 
 Route::get('/confirmation/{token}', [AuthController::class, 'loginView']);

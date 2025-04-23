@@ -4,7 +4,7 @@ class AuthRest {
   static login = async (request) => {
     try {
 
-      const { status, result } = await Fetch('./api/login', {
+      const { status, result } = await Fetch('/api/login', {
         method: 'POST',
         body: JSON.stringify(request)
       })
@@ -32,7 +32,7 @@ class AuthRest {
   static signup = async (request) => {
     try {
 
-      const { status, result } = await Fetch('./api/signup', {
+      const { status, result } = await Fetch('/api/signup', {
         method: 'POST',
         body: JSON.stringify(request)
       })
@@ -53,6 +53,54 @@ class AuthRest {
         type: 'danger'
       })
       return null
+    }
+  }
+
+  static recovery = async (request) => {
+    try {
+      const { status, result } = await Fetch('/api/recovery', {
+        method: 'POST',
+        body: JSON.stringify(request)
+      })
+      if (!status) throw new Error(result?.message || 'Error al recuperar la contraseña')
+      Notify.add({
+        icon: '/assets/img/icon.svg',
+        title: 'Operacion correcta',
+        body: 'Se envio el correo de recuperacion correctamente'
+      })
+      return true
+    } catch (error) {
+      Notify.add({
+        icon: '/assets/img/icon.svg',
+        title: 'Error',
+        body: error.message,
+        type: 'danger'
+      })
+      return false
+    }
+  }
+
+  static reset = async (request) => {
+    try {
+      const { status, result } = await Fetch('/api/reset', {
+        method: 'POST',
+        body: JSON.stringify(request)
+      })
+      if (!status) throw new Error(result?.message || 'Error al recuperar la contraseña')
+      Notify.add({
+        icon: '/assets/img/icon.svg',
+        title: 'Operacion correcta',
+        body: 'Se cambio la contraseña correctamente'
+      })
+      return true
+    } catch (error) {
+      Notify.add({
+        icon: '/assets/img/icon.svg',
+        title: 'Error',
+        body: error.message,
+        type: 'danger'
+      })
+      return false
     }
   }
 }

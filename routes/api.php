@@ -59,8 +59,10 @@ use App\Http\Controllers\SubscriptionController;
 |
 */
 
-Route::post('login', [AuthController::class, 'login']);
-Route::post('signup', [AuthController::class, 'signup']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/signup', [AuthController::class, 'signup']);
+Route::post('/recovery', [AuthController::class, 'recovery']);
+Route::post('/reset', [AuthController::class, 'resetPassword']);
 Route::get('/sliders/media/{uuid}', [AdminSliderController::class, 'media']);
 Route::get('/benefits/media/{uuid}', [AdminBenefitController::class, 'media']);
 Route::get('/testimonies/media/{uuid}', [AdminTestimonyController::class, 'media']);

@@ -35,6 +35,7 @@ class User extends Authenticatable
         'real_password',
         'dni',
         'phone_prefix',
+        'recovery_token',
         'phone',
         'video',
         'title',
@@ -57,6 +58,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'real_password',
+        'google_id',
+        'recovery_token',
         'remember_token'
     ];
 

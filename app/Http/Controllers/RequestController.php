@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Classes\EmailConfig;
+use App\Models\Constant;
 use App\Models\Request;
+use App\Models\User;
 use Exception;
 use Illuminate\Http\Request as HttpRequest;
 use Illuminate\Support\Facades\Auth;
+use SoDe\Extend\Text;
 
 class RequestController extends BasicController
 {
@@ -31,5 +35,25 @@ class RequestController extends BasicController
         }
 
         return $data;
+    }
+
+    public function afterSave(HttpRequest $request, $requestJpa)
+    {
+        try {
+            $userJpa = User::find($requestJpa->coach_id);
+            $content = Text::replaceData(Constant::value('watch-requests'), [
+                'APP_DOMAIN' => env('APP_DOMAIN'),
+                'APP_NAME' => env('APP_NAME'),
+            ]);
+
+            $mailer = EmailConfig::config();
+            $mailer->Subject = 'Tienes Solicitudes pendientes - ' . env('APP_NAME');
+            $mailer->Body = $content;
+            $mailer->addAddress($userJpa->email);
+            $mailer->isHTML(true);
+            $mailer->send();
+        } catch (\Throwable $th) {
+            dump($th->getMessage());
+        }
     }
 }
