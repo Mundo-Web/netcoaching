@@ -72,6 +72,7 @@ class BasicRest {
       })
       return result
     } catch (error) {
+      console.Error(error)
       Notify.add({
         icon: '/assets/img/icon.svg',
         title: 'Error',
