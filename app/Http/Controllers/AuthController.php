@@ -31,6 +31,7 @@ class AuthController extends Controller
     if (Auth::check()) {
       $sessionJpa = User::find(Auth::id());
       dump($sessionJpa);
+      dump($sessionJpa->getRole());
       switch ($sessionJpa->getRole()) {
         case 'Admin':
           return redirect('/admin/home');
