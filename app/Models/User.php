@@ -91,7 +91,6 @@ class User extends Authenticatable
     public function getRole()
     {
         $roleJpa = ModelHasRoles::where('model_id', $this->id)->first();
-        dump($roleJpa);
         return $this->getRoleNames()[0] ?? null;
     }
 
