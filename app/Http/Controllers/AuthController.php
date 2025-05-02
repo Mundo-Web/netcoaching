@@ -222,6 +222,8 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
         throw new Exception('No puedes iniciar sesion con este usuario, contacta al administrador');
       }
+
+      Auth::login($sessionJpa);
     });
     return response($response->toArray(), $response->status);
   }
