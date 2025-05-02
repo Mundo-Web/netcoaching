@@ -42,12 +42,12 @@ class AuthController extends Controller
           break;
 
         default:
-          // Auth::guard('web')->logout();
-          // $request->session()->invalidate();
-          // $request->session()->regenerateToken();
-          // return redirect()->route('Login.jsx', [
-          //   'message' => $request->message ?? "No puedes iniciar sesion con este usuario, contacta al administrador"
-          // ]);
+          Auth::guard('web')->logout();
+          $request->session()->invalidate();
+          $request->session()->regenerateToken();
+          return redirect()->route('Login.jsx', [
+            'message' => $request->message ?? "No puedes iniciar sesion con este usuario, contacta al administrador"
+          ]);
           break;
       }
     };
