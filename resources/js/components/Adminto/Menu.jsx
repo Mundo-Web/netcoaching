@@ -100,7 +100,7 @@ const Menu = ({ session, hasRole }) => {
                 <MenuItem href='/coach/sessions' icon='mdi mdi-playlist-play'>Sesiones</MenuItem>
               </MenuItemContainer>
 
-              <MenuItem href="/coach/calendar" icon='mdi mdi-calendar'>Calendario</MenuItem>
+              {/* <MenuItem href="/coach/calendar" icon='mdi mdi-calendar'>Calendario</MenuItem> */}
               <MenuItem href="/coach/resources" icon='mdi mdi-cube'>Recursos</MenuItem>
               <MenuItem href="/coach/payments" icon='mdi mdi-currency-usd'>Pagos</MenuItem>
             </>
