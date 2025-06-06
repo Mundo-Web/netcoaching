@@ -3,7 +3,7 @@ import html2string from '../../Utils/html2string';
 
 const MainContent = ({ resources }) => {
   return (
-    <section className="w-full flex flex-col lg:grid lg:grid-cols-2 gap-10">
+    <section className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
       {resources.map((resource, index) => {
         const link = resource.social_media === 'youtube'
           ? `https://i.ytimg.com/vi/${resource.media_id}/hqdefault.jpg`
@@ -21,7 +21,7 @@ const MainContent = ({ resources }) => {
               />
             </a>
             <a href={ref}>
-              <h1 className="mt-8 mb-4 text-2xl md:text-4xl font-bold leading-10 text-teal-950 truncate">
+              <h1 className="mt-8 mb-4 text-xl md:text-2xl lg:text-4xl font-bold leading-tight text-teal-950 truncate">
                 {resource.name}
               </h1>
             </a>
