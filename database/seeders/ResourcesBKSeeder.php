@@ -53,7 +53,8 @@ class ResourcesBKSeeder extends Seeder
                 'tags' => '',
                 'social_media'=> $resourceBK['rrss'] ?? 'youtube',
                 'media_id' => $resourceBK['video'] ?? '' ,
-                'status' => $resourceBK['estado']
+                'status' => $resourceBK['estado'],
+                'created_at' => $resourceBK['fecha']
             ]);
         }
     }

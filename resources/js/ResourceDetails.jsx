@@ -5,11 +5,6 @@ import TailwindBase from '@Tailwind/Base';
 import HtmlContent from '@Utils/HtmlContent';
 
 const ResourceDetails = ({ resource }) => {
-  const link = resource.social_media === 'youtube'
-    ? `https://i.ytimg.com/vi/${resource.media_id}/hqdefault.jpg`
-    : `/api/cover/thumbnail/${resource.media_id}`;
-  const ref = `/resources/${resource.id}`;
-
   const tags = resource.tags.split(',').map(x => x.trim()).filter(Boolean)
 
   return (
@@ -32,7 +27,7 @@ const ResourceDetails = ({ resource }) => {
             resource.social_media == 'youtube'
               ? <iframe className='block mx-auto aspect-video object-cover object-center w-full max-w-[720px]' src={`https://www.youtube.com/embed/${resource.media_id}`} title={resource.name} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
               : <>
-                <iframe className='block mx-auto aspect-video object-cover object-center w-full max-w-[720px]'  src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02gpLe3v614moTtQKeXdpNGrkbddTn3bSdUr6zbVn8DBWh3G7h66kXRFE8VCCBQyzWl%26id%3D100074665197621&show_text=false&width=500" style={{ border: 'none', overflow: 'hidden' }} scrolling="no" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                <iframe className='block mx-auto aspect-video object-cover object-center w-full max-w-[720px]'  src={`https://www.facebook.com/plugins/post.php?href=${resource.media_id}&show_text=false&width=500`} style={{ border: 'none', overflow: 'hidden' }} scrolling="no" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                 {/* <img className='block mx-auto aspect-video object-cover object-center w-full max-w-[720px]' src={link} alt="" /> */}
               </>
           }
