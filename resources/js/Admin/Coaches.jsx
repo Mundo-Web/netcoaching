@@ -41,6 +41,8 @@ const Coaches = ({ countries = [] }) => {
   const emailRef = useRef()
   const passwordRef = useRef()
   const confirmRef = useRef()
+  const priceRef = useRef()
+  const experienceRef = useRef()
 
   const pwdIdRef = useRef()
   const pwdPasswordRef = useRef()
@@ -69,6 +71,8 @@ const Coaches = ({ countries = [] }) => {
     summaryRef.current.value = data?.summary || null
     descriptionRef.current.value = data?.description || null
     descriptionRef.editor.setHTML(data?.description || 'Agrega una descripción')
+    priceRef.current.value = data?.price || null
+    experienceRef.current.value = data?.experience || null
 
     $(modalRef.current).modal('show')
   }
@@ -86,6 +90,7 @@ const Coaches = ({ countries = [] }) => {
       id: idRef.current.value || undefined,
       name: nameRef.current.value,
       lastname: lastnameRef.current.value,
+      dni: dniRef.current.value,
       phone_prefix: phonePrefixRef.current.value,
       phone: phoneRef.current.value,
       video: videoRef.current.value,
@@ -94,7 +99,9 @@ const Coaches = ({ countries = [] }) => {
       city: cityRef.current.value,
       address: addressRef.current.value,
       summary: summaryRef.current.value,
-      description: descriptionRef.current.value
+      description: descriptionRef.current.value,
+      price: priceRef.current.value,
+      experience: experienceRef.current.value
     }
 
     const result = await coachesRest.save(request)
@@ -194,6 +201,16 @@ const Coaches = ({ countries = [] }) => {
           caption: 'Correo'
         },
         {
+          dataField: 'price',
+          caption: 'Precio',
+          dataType: 'number'
+        },
+        {
+          dataField: 'experience',
+          caption: 'Años de experiencia',
+          dataType: 'number'
+        },
+        {
           dataField: 'score',
           caption: 'Calificacion',
           dataType: 'number',
@@ -285,6 +302,9 @@ const Coaches = ({ countries = [] }) => {
         </SelectFormGroup>
         <InputFormGroup eRef={cityRef} label='Ciudad' col='col-md-6' required />
         <InputFormGroup eRef={addressRef} label='Dirección' col='col-md-6' />
+        <InputFormGroup eRef={priceRef} label='Precio' col='col-md-6' type="number" required />
+        <InputFormGroup eRef={experienceRef} label='Años de experiencia' col='col-md-6' type="number" required />
+        
         <TextareaFormGroup eRef={summaryRef} label='Resumen' col='col-12' />
         <QuillFormGroup eRef={descriptionRef} label='Descripción' col='col-12' required />
       </div>

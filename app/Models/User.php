@@ -29,6 +29,7 @@ class User extends Authenticatable
         'google_id',
         'name',
         'lastname',
+        'dni',
         'email',
         'email_verified_at',
         'password',
@@ -46,6 +47,7 @@ class User extends Authenticatable
         'description',
         'price',
         'max_price',
+        'experience',
         'score',
         'status',
     ];
