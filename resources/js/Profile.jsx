@@ -215,7 +215,8 @@ const Profile = ({ coach, country, countries, resources, coaches, session, hasRo
 
           </div>
           <div className="md:w-1/3 block md:sticky top-[15%] h-max">
-            <h2 className='text-2xl mb-4 font-bold'>S/. {Number2Currency(coach.price)} {coach.max_price && <>- {Number2Currency(coach.max_price)}</>}</h2>
+            {/* <h2 className='text-2xl mb-4 font-bold'>S/. {Number2Currency(coach.price)} {coach.max_price && <>- {Number2Currency(coach.max_price)}</>}</h2> */}
+            <h2 className='text-2xl mb-4 font-bold'>{coach.price_string}</h2>
             <p className='mb-2'>
               <i className='fas fa-globe-americas w-6'></i>
               <b>Nacionalidad</b>: {country.name} - {coach.city}

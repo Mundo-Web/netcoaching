@@ -1,7 +1,7 @@
 import Tippy from "@tippyjs/react"
 import React from "react"
 
-const CoachCard = ({ uuid, name, lastname, country, city, summary, specialties, experience, trained_hours, price, score, max_price }) => {
+const CoachCard = ({ uuid, name, lastname, country, city, summary, specialties, experience, trained_hours, price, price_string, score, max_price }) => {
   return <>
     <a href={`/profile/${uuid}`}>
       <article className="flex flex-col w-full">
@@ -63,11 +63,12 @@ const CoachCard = ({ uuid, name, lastname, country, city, summary, specialties, 
               {summary || <i>- Sin descripcion -</i>}
             </p>
           </div>
-          <p className="mt-2 block mb-1 w-full text-lg font-bold leading-snug">S/. {Number(price).toFixed(2)} {
+          {/* <p className="mt-2 block mb-1 w-full text-lg font-bold leading-snug">S/. {Number(price).toFixed(2)} {
             max_price
               ? <span className="">- {Number(max_price).toFixed(2)}</span>
               : ''
-          }</p>
+          }</p> */}
+          <p className="mt-2 block mb-1 w-full text-lg font-bold leading-snug">{price_string}</p>
         </div>
       </article>
     </a>

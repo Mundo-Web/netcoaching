@@ -42,6 +42,7 @@ const Coaches = ({ countries = [] }) => {
   const passwordRef = useRef()
   const confirmRef = useRef()
   const priceRef = useRef()
+  const priceStringRef = useRef()
   const experienceRef = useRef()
 
   const pwdIdRef = useRef()
@@ -72,6 +73,7 @@ const Coaches = ({ countries = [] }) => {
     descriptionRef.current.value = data?.description || null
     descriptionRef.editor.setHTML(data?.description || 'Agrega una descripción')
     priceRef.current.value = data?.price || null
+    priceStringRef.current.value = data?.price_string || null
     experienceRef.current.value = data?.experience || null
 
     $(modalRef.current).modal('show')
@@ -101,6 +103,7 @@ const Coaches = ({ countries = [] }) => {
       summary: summaryRef.current.value,
       description: descriptionRef.current.value,
       price: priceRef.current.value,
+      price_string: priceStringRef.current.value,
       experience: experienceRef.current.value
     }
 
@@ -201,7 +204,7 @@ const Coaches = ({ countries = [] }) => {
           caption: 'Correo'
         },
         {
-          dataField: 'price',
+          dataField: 'price_string',
           caption: 'Precio',
           dataType: 'number'
         },
@@ -302,9 +305,12 @@ const Coaches = ({ countries = [] }) => {
         </SelectFormGroup>
         <InputFormGroup eRef={cityRef} label='Ciudad' col='col-md-6' required />
         <InputFormGroup eRef={addressRef} label='Dirección' col='col-md-6' />
-        <InputFormGroup eRef={priceRef} label='Precio' col='col-md-6' type="number" required />
+        <div hidden>
+          <InputFormGroup eRef={priceRef} label='Precio' col='col-md-6' required />
+        </div>
+        <InputFormGroup eRef={priceStringRef} label='Precio' col='col-md-6' required />
         <InputFormGroup eRef={experienceRef} label='Años de experiencia' col='col-md-6' type="number" required />
-        
+
         <TextareaFormGroup eRef={summaryRef} label='Resumen' col='col-12' />
         <QuillFormGroup eRef={descriptionRef} label='Descripción' col='col-12' required />
       </div>

@@ -46,6 +46,7 @@ class User extends Authenticatable
         'summary',
         'description',
         'price',
+        'price_string',
         'max_price',
         'experience',
         'score',
