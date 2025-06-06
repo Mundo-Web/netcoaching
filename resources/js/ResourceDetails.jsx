@@ -34,7 +34,7 @@ const ResourceDetails = ({ resource }) => {
         </section>
         <hr  className='w-1/2 mx-auto'/>
         <section className='py-[5%]'>
-          <HtmlContent className='max-w-[720px] mx-auto prose' html={resource.description} />
+          <HtmlContent className='max-w-[720px] mx-auto prose whitespace-pre-line' html={resource.description} />
         </section>
         <section className='pt-[5%]'>
           <div className="flex flex-wrap gap-1 items-center w-full text-sm max-md:max-w-full">
