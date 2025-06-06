@@ -19,7 +19,7 @@ const Testimonies = ({ testimonies }) => {
                       <p className="mt-1 text-sm font-medium leading-tight max-md:max-w-full">{testimony.country}</p>
                     </div>
                   </header>
-                  <p className="mt-6 w-full text-base leading-6 max-md:max-w-full">{testimony.description}</p>
+                  <p className="mt-6 w-full text-base leading-6 max-md:max-w-full whitespace-pre-line">{testimony.description}</p>
                 </article>
               </div>
             ))}
