@@ -8,7 +8,7 @@ const Sidebar = ({ specialties, archive, setResources }) => {
 
   const [search, setSearch] = useState(null);
   const [type, setType] = useState(null);
-  const [month, setMonth] = useState(archive[0]?.full || null);
+  const [month, setMonth] = useState(null);
 
   useEffect(() => {
     const filter = []
@@ -80,8 +80,16 @@ const Sidebar = ({ specialties, archive, setResources }) => {
             <div className="self-stretch my-auto">Archivo</div>
             <div className="flex shrink-0 self-stretch my-auto w-5 h-5" />
           </div>
+          <div className={`flex cursor-pointer gap-10 justify-between items-center mt-4 w-full ${month == null ? 'font-medium leading-tight text-red-500' : ''}`} onClick={() => setMonth(null)}>
+            <div className="self-stretch my-auto">Todos</div>
+            {
+                (month == null)
+                  ? <i className="mdi mdi-chevron-right text-lg text-red-500"></i>
+                  : ''
+              }
+          </div>
           {archive.map((item, index) => (
-            <div key={index} className={`flex gap-10 justify-between items-center mt-4 w-full ${month == item.full ? 'font-medium leading-tight text-red-500' : ''}`} onClick={() => setMonth(item.full)}>
+            <div key={index} className={`flex cursor-pointer gap-10 justify-between items-center mt-4 w-full ${month == item.full ? 'font-medium leading-tight text-red-500' : ''}`} onClick={() => setMonth(item.full)}>
               <div className="self-stretch my-auto">{item.month} {item.year}</div>
               {
                 (month == item.full)
