@@ -1,10 +1,10 @@
 import Base from '@Tailwind/Base';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import Content from './Components/Events/Content';
 import CreateReactScript from './Utils/CreateReactScript';
 
-const Events = ({ events }) => {
+const Events = ({ events, eventsWP }) => {
 
   return (<>
     <section className="p-[5%] self-center mt-[68px] w-full max-md:mt-10">
@@ -37,7 +37,7 @@ const Events = ({ events }) => {
       </div>
     </section>
 
-    <Content events={events} />
+    <Content events={events}  eventsWP={eventsWP}/>
   </>);
 }
 

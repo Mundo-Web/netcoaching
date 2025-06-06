@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import EventCard from "./EventCard"
 
-const Content = ({ events }) => {
+const Content = ({ events, eventsWP }) => {
   const types = ['Todos', ...new Set(events.map(({ type }) => type))]
 
   const [search, setSearch] = useState('')
@@ -39,10 +39,15 @@ const Content = ({ events }) => {
         </section>
       </form>
       <div className=" w-full md:w-8/12 lg:w-9/12">
-        <section className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-8'>
+        <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8'>
           {events.filter(({ type: eventType, name, description }) => (type == 'Todos' || type == eventType) && (name.toLowerCase().includes(search) || description.toLowerCase().includes(search))).map((event, i) => {
             return <EventCard key={i} {...event} />;
           })}
+          {
+            eventsWP.map((event, i) => {
+              return <EventCard key={i} {...event} />;
+            })
+          }
         </section>
       </div>
     </section>
