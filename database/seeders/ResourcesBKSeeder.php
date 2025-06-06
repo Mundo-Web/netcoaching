@@ -50,6 +50,7 @@ class ResourcesBKSeeder extends Seeder
                 'name'=> $resourceBK['titulo'],
                 'description'=> $resourceBK['descripcion'],
                 'specialty_id'=> $specialtyJpa->id,
+                'tags' => '',
                 'social_media'=> $resourceBK['rrss'] ?? 'youtube',
                 'media_id' => $resourceBK['video'] ?? '' ,
                 'status' => $resourceBK['estado']
