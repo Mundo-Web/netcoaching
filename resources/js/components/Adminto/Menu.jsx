@@ -103,6 +103,8 @@ const Menu = ({ session, hasRole }) => {
               {/* <MenuItem href="/coach/calendar" icon='mdi mdi-calendar'>Calendario</MenuItem> */}
               <MenuItem href="/coach/resources" icon='mdi mdi-cube'>Recursos</MenuItem>
               <MenuItem href="/coach/payments" icon='mdi mdi-currency-usd'>Pagos</MenuItem>
+              <li className="menu-title">Configuraciones</li>
+              <MenuItem href="/coach/profile" icon='mdi mdi-account-box'>Mi perfil</MenuItem>
             </>
           }
           {
@@ -115,12 +117,13 @@ const Menu = ({ session, hasRole }) => {
                 <MenuItem href='/coachee/sessions' icon='mdi mdi-playlist-play'>Sesiones</MenuItem>
               </MenuItemContainer>
               <MenuItem href="/coachee/payments" icon='mdi mdi-currency-usd'>Pagos</MenuItem>
+              
             </>
           }
 
-          <li className="menu-title">Configuraciones</li>
-          <MenuItem href="/coach/profile" icon='mdi mdi-account-box'>Mi perfil</MenuItem>
-          <MenuItem href="/coach/bank-accounts" icon='mdi mdi-credit-card-settings'>Cuentas bancarias</MenuItem>
+          
+          
+          {/* <MenuItem href="/coach/bank-accounts" icon='mdi mdi-credit-card-settings'>Cuentas bancarias</MenuItem> */}
 
         </ul>
 
