@@ -32,6 +32,7 @@ class ResourceController extends BasicController
             DB::raw('YEAR(created_at) as year, MONTH(created_at) as month')
         )
             ->distinct()
+            ->where('status', true)
             ->orderBy('year', 'desc')
             ->orderBy('month', 'desc')
             ->get();
