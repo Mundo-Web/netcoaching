@@ -190,6 +190,7 @@ const Resources = ({ specialties }) => {
         <SelectFormGroup eRef={socialMediaRef} label="Red social" dropdownParent='#resources-container' required>
           <option value="youtube">YouTube</option>
           <option value="facebook">Facebook</option>
+          <option value="file">Archivo</option>
         </SelectFormGroup>
         <TextareaFormGroup eRef={mediaIdRef} label='Link del recurso' col='col-12' rows={1} required />
         <QuillFormGroup eRef={descriptionRef} label='Descripcion' col='col-12' height='240px' required />

@@ -31,7 +31,7 @@ const Base = ({ children, summary, session, faqs }) => {
       {children}
       <div style={{ display: 'flex', justifyContent: 'flex-end', position: 'relative' }}>
         <div style={{ position: 'fixed', bottom: '80px', zIndex: 20, right: '18px' }}>
-          <a href={`https://api.whatsapp.com/send?phone=51948681429`} target="_blank">
+          <a href={`https://api.whatsapp.com/send?phone=51948681429&text=Hola,+quiero+conocer+más+sobre+Net+Coaching`} target="_blank">
             <img src='/images/img/WhatsApp.png' alt="whatsapp" style={{ width: '80px' }} />
           </a>
         </div>
