@@ -10,7 +10,7 @@ const EventCard = ({ image, name, link, date_time, type, description }) => {
         loading="lazy"
         src={image.startsWith('http') ? image : `/api/events/media/${image}`}
         alt={name}
-        className="object-cover object-center w-full aspect-video max-md:max-w-full rounded-lg"
+        className="object-cover object-center w-full aspect-[3/2] max-md:max-w-full rounded-lg"
         onError={e => e.target.src = '/api/events/media/null'}
       />
       <div className="flex flex-col mt-4 w-full max-md:max-w-full">

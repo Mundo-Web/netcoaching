@@ -17,7 +17,7 @@ const Home = ({ sliders, benefits, resources, testimonies }) => {
         <Benefits benefits={benefits} />
         <Banner />
         <Testimonies testimonies={testimonies} />
-        <Blogs resources={resources} />
+        {/* <Blogs resources={resources} /> */}
         <Contact />
       </main>
     </>
