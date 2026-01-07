@@ -19,7 +19,6 @@ class EventController extends BasicController
             $res = new Fetch(env('ACADEMY_URl') . '/wp-json/wp/v2/sfwd-courses?_fields=id,date,link,title,yoast_head_json.og_description,status,yoast_head_json.og_image.0.url,yoast_head_json.schema.@graph.1.itemListElement.1.name&orderby=date&order=desc');
             $data = $res->text();
             $firstBracketPos = strpos($data, '[');
-            dump($firstBracketPos);
             if ($firstBracketPos === false) throw new \Exception('No se encontró el primer corchete');
             $jsonText = substr($data, $firstBracketPos);
             $eventsWP = JSON::parse($jsonText);
