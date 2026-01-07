@@ -29,11 +29,10 @@ const Base = ({ children, summary, session, faqs }) => {
     <Header items={menuItems} session={session} />
     <main>
       {children}
-      <div className="flex justify-end relative">
-        <div className="fixed bottom-[80px] z-[20] right-[18px] md:right-[25px] fixedWhastapp">
-          <a href={`https://api.whatsapp.com/send?phone=51948681429`}
-            target="_blank" className="">
-            <img src='/images/img/WhatsApp.png' alt="whatsapp" className="w-20" />
+      <div style={{ display: 'flex', justifyContent: 'flex-end', position: 'relative' }}>
+        <div style={{ position: 'fixed', bottom: '80px', zIndex: 20, right: '18px' }}>
+          <a href={`https://api.whatsapp.com/send?phone=51948681429`} target="_blank">
+            <img src='/images/img/WhatsApp.png' alt="whatsapp" style={{ width: '80px' }} />
           </a>
         </div>
       </div>
