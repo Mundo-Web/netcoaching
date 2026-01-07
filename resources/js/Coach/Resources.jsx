@@ -27,8 +27,10 @@ const Resources = ({ specialties }) => {
   const socialMediaRef = useRef()
   const mediaIdRef = useRef()
   const descriptionRef = useRef()
+  const fileInputRef = useRef()
 
   const [isEditing, setIsEditing] = useState(false)
+  const [socialMedia, setSocialMedia] = useState('youtube')
 
   const onModalOpen = (data) => {
     if (data?.id) setIsEditing(true)
@@ -37,8 +39,9 @@ const Resources = ({ specialties }) => {
     idRef.current.value = data?.id ?? ''
     nameRef.current.value = data?.name ?? ''
     tagsRef.current.value = data?.tags ?? ''
-    $(specialtyRef).val(data?.specialty_id ?? '').trigger('change')
-    $(socialMediaRef).val(data?.social_media ?? '').trigger('change')
+    $(specialtyRef.current).val(data?.specialty_id ?? '').trigger('change')
+    $(socialMediaRef.current).val(data?.social_media ?? '').trigger('change')
+    setSocialMedia(data?.social_media ?? 'youtube')
     if (data?.social_media == 'youtube' && data?.media_id) {
       mediaIdRef.current.value = `https://youtu.be/${data?.media_id}`
     } else {
@@ -52,17 +55,21 @@ const Resources = ({ specialties }) => {
   const onModalSubmit = async (e) => {
     e.preventDefault()
 
-    const request = {
-      id: idRef.current.value || undefined,
-      name: nameRef.current.value,
-      tags: tagsRef.current.value,
-      specialty_id: specialtyRef.current.value,
-      social_media: socialMediaRef.current.value,
-      media_id: mediaIdRef.current.value,
-      description: descriptionRef.current.value,
+    const formData = new FormData()
+    formData.append('id', idRef.current.value || '')
+    formData.append('name', nameRef.current.value)
+    formData.append('tags', tagsRef.current.value)
+    formData.append('specialty_id', specialtyRef.current.value)
+    formData.append('social_media', socialMediaRef.current.value)
+    formData.append('description', descriptionRef.current.value)
+
+    if (socialMediaRef.current.value === 'file' && fileInputRef.current.files[0]) {
+      formData.append('media_id', fileInputRef.current.files[0])
+    } else {
+      formData.append('media_id', mediaIdRef.current.value)
     }
 
-    const result = await resourcesRest.save(request)
+    const result = await resourcesRest.save(formData)
     if (!result) return
 
     $(gridRef.current).dxDataGrid('instance').refresh()
@@ -132,7 +139,10 @@ const Resources = ({ specialties }) => {
           cellTemplate: (container, { data }) => {
             if (data.social_media == 'youtube') {
               ReactAppend(container, <img src={`https://i.ytimg.com/vi/${data.media_id}/hqdefault.jpg`} style={{ width: '80px', height: '48px', objectFit: 'cover', objectPosition: 'center', borderRadius: '4px' }} />)
-            } else {
+            } else if (data.social_media == 'file') {
+              ReactAppend(container, <img src={`/api/resources/media/${data.media_id}`} style={{ width: '80px', height: '48px', objectFit: 'cover', objectPosition: 'center', borderRadius: '4px' }} />)
+            }
+            else {
               ReactAppend(container, <img src='/api/cover/thumbnail/null' style={{ width: '80px', height: '48px', objectFit: 'cover', objectPosition: 'center', borderRadius: '4px' }} />)
             }
           }
@@ -187,12 +197,20 @@ const Resources = ({ specialties }) => {
             })
           }
         </SelectFormGroup>
-        <SelectFormGroup eRef={socialMediaRef} label="Red social" dropdownParent='#resources-container' required>
+        <SelectFormGroup eRef={socialMediaRef} label="Red social" dropdownParent='#resources-container' required
+          onChange={(e) => setSocialMedia(e.target.value)}
+        >
           <option value="youtube">YouTube</option>
           <option value="facebook">Facebook</option>
           <option value="file">Archivo</option>
         </SelectFormGroup>
-        <TextareaFormGroup eRef={mediaIdRef} label='Link del recurso' col='col-12' rows={1} required />
+        <div className='col-12 mb-3' hidden={socialMedia !== 'file'}>
+          <label className='form-label'>Imagen del recurso</label>
+          <input ref={fileInputRef} type='file' className='form-control' accept='image/*' required />
+        </div>
+        <div className='col-12 mb-3' hidden={socialMedia !== 'youtube'}>
+          <TextareaFormGroup eRef={mediaIdRef} label='Link del recurso' col='col-12' rows={1} required />
+        </div>
         <QuillFormGroup eRef={descriptionRef} label='Descripcion' col='col-12' height='240px' required />
       </div>
     </Modal>

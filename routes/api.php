@@ -64,6 +64,7 @@ Route::post('/signup', [AuthController::class, 'signup']);
 Route::post('/recovery', [AuthController::class, 'recovery']);
 Route::post('/reset', [AuthController::class, 'resetPassword']);
 Route::get('/sliders/media/{uuid}', [AdminSliderController::class, 'media']);
+Route::get('/resources/media/{uuid}', [AdminResourceController::class, 'media']);
 Route::get('/benefits/media/{uuid}', [AdminBenefitController::class, 'media']);
 Route::get('/testimonies/media/{uuid}', [AdminTestimonyController::class, 'media']);
 Route::get('/events/media/{uuid}', [AdminEventController::class, 'media']);
@@ -109,6 +110,7 @@ Route::middleware('auth')->group(function () {
         Route::patch('/coachees/status', [AdminCoacheeController::class, 'status']);
         Route::delete('/coachees/{id}', [AdminCoacheeController::class, 'delete']);
 
+        Route::post('/resources', [AdminResourceController::class, 'save']);
         Route::post('/resources/paginate', [AdminResourceController::class, 'paginate']);
         Route::patch('/resources/status', [AdminResourceController::class, 'status']);
         Route::delete('/resources/{id}', [AdminResourceController::class, 'delete']);

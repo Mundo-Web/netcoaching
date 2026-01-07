@@ -637,7 +637,7 @@
     ]
   },
   "resources/js/Admin/Resources.jsx": {
-    "file": "assets/Resources-BVVl8D9L.js",
+    "file": "assets/Resources-CgD_TD7w.js",
     "name": "Resources",
     "src": "resources/js/Admin/Resources.jsx",
     "isEntry": true,
@@ -645,7 +645,12 @@
       "resources/js/components/About/StatisticCard.jsx",
       "_index-DFv2mRv-.js",
       "resources/js/Utils/ReactAppend.jsx",
+      "_Modal-DK-QXr2H.js",
       "_ReactAppend-D4SS4jYG.js",
+      "_InputFormGroup-Bk_i3k0Z.js",
+      "_SelectFormGroup-zdEBadcZ.js",
+      "_TextareaFormGroup-LqQ2U8Qb.js",
+      "_QuillFormGroup-BDV-Xc8g.js",
       "_CreateReactScript-C6GN-fM5.js",
       "_Base-BagvSZvh.js",
       "_DxButton-Dg4Y_djx.js",
@@ -894,7 +899,7 @@
     ]
   },
   "resources/js/Coach/Resources.jsx": {
-    "file": "assets/Resources-BeBzmhIV.js",
+    "file": "assets/Resources-CVCVGEzW.js",
     "name": "Resources",
     "src": "resources/js/Coach/Resources.jsx",
     "isEntry": true,
@@ -1380,7 +1385,7 @@
     ]
   },
   "resources/js/Resources.jsx": {
-    "file": "assets/Resources-BJoh5bMk.js",
+    "file": "assets/Resources-DmxKsvhD.js",
     "name": "Resources",
     "src": "resources/js/Resources.jsx",
     "isEntry": true,

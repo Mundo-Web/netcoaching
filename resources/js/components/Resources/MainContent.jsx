@@ -5,9 +5,13 @@ const MainContent = ({ resources }) => {
   return (
     <section className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
       {resources.map((resource, index) => {
-        const link = resource.social_media === 'youtube'
-          ? `https://i.ytimg.com/vi/${resource.media_id}/hqdefault.jpg`
-          : `/api/cover/thumbnail/${resource.media_id}`;
+        let link = `/api/cover/thumbnail/${resource.media_id}`;
+        if (resource.social_media == 'youtube') {
+          link = `https://i.ytimg.com/vi/${resource.media_id}/hqdefault.jpg`;
+        }
+        if (resource.social_media == 'file') {
+          link = `/api/resources/media/${resource.media_id}`;
+        }
         const ref = `/resources/${resource.id}`
         return (
           <article key={index} className="w-full">
