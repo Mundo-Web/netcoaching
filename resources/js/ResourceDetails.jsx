@@ -24,12 +24,11 @@ const ResourceDetails = ({ resource }) => {
         </header>
         <section className='py-[5%]'>
           {
-            resource.social_media == 'youtube'
-              ? <iframe className='block mx-auto aspect-video object-cover object-center w-full max-w-[720px]' src={`https://www.youtube.com/embed/${resource.media_id}`} title={resource.name} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
-              : <>
-                <iframe className='block mx-auto aspect-video object-cover object-center w-full max-w-[720px]'  src={`https://www.facebook.com/plugins/post.php?href=${resource.media_id}&show_text=false&width=500`} style={{ border: 'none', overflow: 'hidden' }} scrolling="no" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                {/* <img className='block mx-auto aspect-video object-cover object-center w-full max-w-[720px]' src={link} alt="" /> */}
-              </>
+            resource.social_media === 'youtube'
+              ? <iframe className='block mx-auto aspect-video object-cover object-center w-full max-w-[720px]' src={`https://www.youtube.com/embed/${resource.media_id}`} title={resource.name} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen />
+              : resource.social_media === 'file'
+                ? <img className='block mx-auto aspect-video object-cover object-center w-full max-w-[720px]' src={`/api/resources/media/${resource.media_id}`} alt={resource.name} />
+                : <iframe className='block mx-auto aspect-video object-cover object-center w-full max-w-[720px]' src={`https://www.facebook.com/plugins/post.php?href=${resource.media_id}&show_text=false&width=500`} style={{ border: 'none', overflow: 'hidden' }} scrolling="no" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
           }
         </section>
         <hr  className='w-1/2 mx-auto'/>
