@@ -5,7 +5,7 @@ import TailwindBase from '@Tailwind/Base';
 import HtmlContent from '@Utils/HtmlContent';
 
 const ResourceDetails = ({ resource }) => {
-  const tags = resource.tags?.split(',').map(x => x.trim()).filter(Boolean) 
+  const tags = resource.tags?.split(',').map(x => x.trim()).filter(Boolean) || []
 
   return (
     <>
