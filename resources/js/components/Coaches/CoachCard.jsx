@@ -34,12 +34,12 @@ const CoachCard = ({ uuid, name, lastname, country, city, summary, specialties, 
                 }
               </span>
             </div>
-            <div className="flex flex-row w-full">
+            {/* <div className="flex flex-row w-full">
               <i className="fa fa-hourglass-half me-1"></i>
               <span className="self-stretch my-auto truncate">
                 {trained_hours}h entrenadas
               </span>
-            </div>
+            </div> */}
           </div>
           <div className="flex flex-col mt-1 w-full text-sm">
             <Tippy content={`${name} ${lastname}`}>
