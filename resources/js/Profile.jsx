@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import CreateReactScript from './Utils/CreateReactScript';
 import 'tippy.js/dist/tippy.css';
@@ -17,6 +17,15 @@ const requestsRest = new RequestsRest();
 const Profile = ({ coach, country, countries, resources, coaches, session, hasRole }) => {
 
   const [isPlaying, setIsPlaying] = React.useState(false);
+
+  // Fix for YouTube postMessage origin error
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.YT) {
+      window.YTConfig = {
+        host: 'https://www.youtube.com'
+      };
+    }
+  }, []);
 
   let btnCTA = <Fragment>
     Iniciar sesion para ver opciones
@@ -97,7 +106,8 @@ const Profile = ({ coach, country, countries, resources, coaches, session, hasRo
                         disablekb: 1,
                         modestbranding: 1,
                         showinfo: 0,
-                        rel: 0
+                        rel: 0,
+                        origin: window.location.origin // Explicitly set origin to prevent postMessage mismatch
                       },
                     }}
                     onPause={() => setIsPlaying(false)}
