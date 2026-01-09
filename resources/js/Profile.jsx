@@ -116,7 +116,7 @@ const Profile = ({ coach, country, countries, resources, coaches, session, hasRo
                   {!isPlaying && (
                     <>
                       <img
-                        src={`//i.ytimg.com/vi/${coach.video}/maxresdefault.jpg`}
+                        src={`//i.ytimg.com/vi/${coach.video}/hqdefault.jpg`}
                         alt="Video thumbnail"
                         className="w-full h-full object-cover"
                         onError={(e) => {
