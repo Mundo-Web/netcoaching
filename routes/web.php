@@ -39,9 +39,11 @@ use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AboutusController;
+use App\Http\Controllers\Admin\RequestController as AdminRequestController;
 use App\Http\Controllers\Coach\PaymentController as CoachPaymentController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\RequestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,8 +80,9 @@ Route::get('/auth/google/callback', [GoogleController::class, 'googleCallback'])
 
 // Admin routes
 Route::middleware(['can:Admin', 'auth'])->prefix('admin')->group(function () {
-    Route::get('/', fn() => redirect('Admin/Home.jsx'));
+    Route::get('/', fn() => redirect('/admin/home'));
     Route::get('/home', [AdminHomeController::class, 'reactView'])->name('Admin/Home.jsx');
+    Route::get('/requests', [AdminRequestController::class, 'reactView'])->name('Admin/Requests.jsx');
     Route::get('/coaches', [AdminCoachController::class, 'reactView'])->name('Admin/Coaches.jsx');
     Route::get('/coachees', [AdminCoacheeController::class, 'reactView'])->name('Admin/Coachees.jsx');
     Route::get('/resources', [AdminResourceController::class, 'reactView'])->name('Admin/Resources.jsx');
@@ -99,7 +102,7 @@ Route::middleware(['can:Admin', 'auth'])->prefix('admin')->group(function () {
 
 // Coach routes
 Route::middleware(['can:Coach', 'auth'])->prefix('coach')->group(function () {
-    Route::get('/', fn() => redirect(route('Coach/Home.jsx')));
+    Route::get('/', fn() => redirect(route('/coach/home')));
     Route::get('/home', [CoachHomeController::class, 'reactView'])->name('Coach/Home.jsx');
     Route::get('/resources', [CoachResourceController::class, 'reactView'])->name('Coach/Resources.jsx');
     Route::get('/requests', [CoachRequestController::class, 'reactView'])->name('Coach/Requests.jsx');
@@ -118,6 +121,7 @@ Route::middleware(['can:Coach', 'auth'])->prefix('coach')->group(function () {
 
 // Coachee routes
 Route::middleware(['can:Coachee', 'auth'])->prefix('coachee')->group(function () {
+    Route::get('/', fn() => redirect(route('/coachee/home')));
     Route::get('/home', [CoacheeHomeController::class, 'reactView'])->name('Coachee/Home.jsx');
     Route::get('/requests', [CoacheeRequestController::class, 'reactView'])->name('Coachee/Requests.jsx');
     Route::get('/agreements', [CoacheeAgreementController::class, 'reactView'])->name('Coachee/Agreements.jsx');

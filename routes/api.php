@@ -33,6 +33,7 @@ use App\Http\Controllers\Coachee\PaymentController as CoacheePaymentController;
 
 // Public
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\Admin\RequestController as AdminRequestController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Coach\PaymentController as CoachPaymentController;
 use App\Http\Controllers\CoachController;
@@ -109,6 +110,11 @@ Route::middleware('auth')->group(function () {
         Route::post('/coachees/paginate', [AdminCoacheeController::class, 'paginate']);
         Route::patch('/coachees/status', [AdminCoacheeController::class, 'status']);
         Route::delete('/coachees/{id}', [AdminCoacheeController::class, 'delete']);
+
+        Route::post('/requests', [AdminRequestController::class, 'save']);
+        Route::post('/requests/paginate', [AdminRequestController::class, 'paginate']);
+        Route::patch('/requests/status', [AdminRequestController::class, 'status']);
+        Route::delete('/requests/{id}', [AdminRequestController::class, 'delete']);
 
         Route::post('/resources', [AdminResourceController::class, 'save']);
         Route::post('/resources/paginate', [AdminResourceController::class, 'paginate']);
