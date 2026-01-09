@@ -116,10 +116,10 @@ const Profile = ({ coach, country, countries, resources, coaches, session, hasRo
                   {!isPlaying && (
                     <>
                       <img
-                        src={`https://img.youtube.com/vi/${coach.video}/maxresdefault.jpg`}
+                        src={`//i.ytimg.com/vi/${coach.video}/maxresdefault.jpg`}
                         alt="Video thumbnail"
                         className="w-full h-full object-cover"
-                        onError={(e) => { e.target.src = `https://img.youtube.com/vi/${coach.video}/default.jpg`; }}
+                        onError={(e) => { e.target.src = `//i.ytimg.com/vi/${coach.video}/default.jpg`; }}
                       />
                       <button
                         onClick={() => setIsPlaying(true)}
