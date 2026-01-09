@@ -25,7 +25,8 @@ class RequestController extends BasicController
 
     public function setPaginationInstance(string $model)
     {
-        return $model::with(['coach', 'coachee'])
+        return $model::select('requests.*')
+            ->with(['coach', 'coachee'])
             ->join('users as coach', 'requests.coach_id', '=', 'coach.id')
             ->join('users as coachee', 'requests.coachee_id', '=', 'coachee.id');
     }
