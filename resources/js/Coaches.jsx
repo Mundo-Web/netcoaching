@@ -11,10 +11,11 @@ function Coaches({ specialties, countries, events, faqs }) {
   const [filter, setFilter] = useState({
     specialty: null,
     search: null,
-    orderBy: 'asc',
+    orderBy: 'name_asc',
     minPrice: null,
     maxPrice: null
   })
+  console.log(filter)
   return (<>
     <Header specialties={specialties} setFilter={setFilter} />
     <Content countries={countries} filter={filter} setFilter={setFilter} />

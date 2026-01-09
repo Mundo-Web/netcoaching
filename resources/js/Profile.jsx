@@ -39,7 +39,7 @@ const Profile = ({ coach, country, countries, resources, coaches, session, hasRo
         Ver solicitudes de {coach.name.split(' ')[0]}
         <i className='ms-1 mdi mdi-file-document-edit'></i>
       </Fragment>
-      actionCTA = () => location.href = '/admin/solicitudes'
+      actionCTA = () => location.href = '/admin/requests'
     } else if (session.id === coach.id) {
       btnCTA = <Fragment>
         Editar perfil

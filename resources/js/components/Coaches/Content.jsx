@@ -89,7 +89,7 @@ const Content = ({ countries, filter, setFilter }) => {
               { value: 'score_desc', label: 'Calificación: Mayor primero' },
               { value: 'score_asc', label: 'Calificación: Menor primero' },
             ]}
-            defaultValue={{ value: 'price_asc', label: 'Precio: De menor a mayor' }}
+            defaultValue={{ value: 'name_asc', label: 'Nombre: A-Z' }}
             styles={{
               control: (base) => ({
                 ...base,
