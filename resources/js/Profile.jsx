@@ -119,7 +119,10 @@ const Profile = ({ coach, country, countries, resources, coaches, session, hasRo
                         src={`//i.ytimg.com/vi/${coach.video}/maxresdefault.jpg`}
                         alt="Video thumbnail"
                         className="w-full h-full object-cover"
-                        onError={(e) => { e.target.src = `//i.ytimg.com/vi/${coach.video}/default.jpg`; }}
+                        onError={(e) => {
+                          e.target.src = `/api/profile/${coach.uuid}`;
+                          e.target.classList.add('blur-sm');
+                        }}
                       />
                       <button
                         onClick={() => setIsPlaying(true)}
