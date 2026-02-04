@@ -61,7 +61,7 @@ const Testimonies = ({ countries }) => {
     for (const key in request) {
       formData.append(key, request[key])
     }
-    const file = imageRef.target.files[0]
+    const file = imageRef.current.files[0]
     if (file) {
       // const { thumbnail, type, ...rest } = await File.compress(file, { square: false })
       // formData.append('image', await File.fromURL(`data:${type};base64,${thumbnail}`))
