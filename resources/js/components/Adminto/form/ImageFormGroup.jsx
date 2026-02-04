@@ -9,8 +9,9 @@ const ImageFormGroup = ({ id, col, label, eRef, required = false, onChange = () 
   const imageRef = useRef()
 
   const onImageChange = async (e) => {
-    const file = e.target.files[0]
-    const resizedFile = await resizeImage(file);
+    const file = e.target.files[0] ?? null
+    if (!file) return
+    const resizedFile = await resizeImage(file)
     const url = await File.toURL(resizedFile)
     imageRef.current.src = url
     onChange(e)
