@@ -13,7 +13,7 @@ const Testimonies = ({ testimonies }) => {
               <div key={index} className={index > 0 ? "mt-6" : ""}>
                 <article className="flex flex-col p-8 w-full rounded-lg bg-zinc-100 max-md:px-5 max-md:max-w-full">
                   <header className="flex flex-wrap gap-4 items-start w-full max-md:max-w-full">
-                    <img src={`/api/testimonies/media/${testimony.image}`} alt={`${testimony.name}'s profile`} className="flex shrink-0 w-12 h-12 rounded-full bg-zinc-200" />
+                    <img src={`/api/testimonies/media/${testimony.image}`} alt={`${testimony.name}'s profile`} className="flex shrink-0 w-12 h-12 rounded-full bg-zinc-200 object-cover object-center" />
                     <div className="flex flex-col flex-1 shrink basis-0 min-w-[240px] max-md:max-w-full">
                       <h3 className="text-xl font-bold leading-tight max-md:max-w-full">{testimony.name}</h3>
                       <p className="mt-1 text-sm font-medium leading-tight max-md:max-w-full">{testimony.country}</p>
