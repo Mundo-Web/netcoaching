@@ -15,25 +15,25 @@ function About({ aboutus, indicators }) {
       {
         (history?.description && history?.visible) ?
           <section className="w-full max-md:max-w-full mb-16 max-md:mb-10">
-          <article className="flex gap-5 max-md:flex-col">
-            <div className="flex flex-col w-4/12 max-md:ml-0 max-md:w-full">
-              <h1 className="text-4xl font-bold leading-10 text-cyan-950 max-md:mt-3 max-md:max-w-full">
-                {Global.APP_NAME}: Un Viaje desde sus Inicios hasta Hoy
-              </h1>
-            </div>
-            <div className="flex flex-col ml-5 w-8/12 max-md:ml-0 max-md:w-full">
-              <p className="self-stretch text-base leading-6 text-cyan-950 max-md:mt-3 max-md:max-w-full">
-                {history.description}
-              </p>
-            </div>
-          </article>
-        </section> : ''
+            <article className="flex gap-5 max-md:flex-col items-center">
+              <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+                <h1 className="text-4xl font-bold leading-10 text-cyan-950 max-md:mt-3 max-md:max-w-full">
+                  {Global.APP_NAME}: Un Viaje desde sus Inicios hasta Hoy
+                </h1>
+                <p className="mt-4 self-stretch text-base leading-6 text-cyan-950 max-md:mt-3 max-md:max-w-full">
+                  {history.description}
+                </p>
+              </div>
+              <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+                <img
+                  loading="lazy"
+                  src="/assets/img/about-wb.jpeg"
+                  className="object-contain w-full rounded max-md:max-w-full"
+                />
+              </div>
+            </article>
+          </section> : ''
       }
-      <img
-        loading="lazy"
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/eb7d4e1f35374fe412bb24f1d4b542859fa12dc2cb3967d2deec7e548a818f23?placeholderIfAbsent=true&apiKey=5cee531c8862493aa6f0e0854aa64731"
-        className="object-contain w-full rounded aspect-[3.19] max-md:max-w-full"
-      />
       <StatisticsSection indicators={indicators} />
       <section className="flex flex-col md:flex-row gap-6 items-center justify-between mt-24 max-md:mt-10">
         <article className="flex flex-col self-stretch my-auto text-cyan-950 w-7/12 max-md:w-full">

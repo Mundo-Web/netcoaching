@@ -75,7 +75,7 @@ const Content = ({ countries, filter, setFilter }) => {
   }
 
   return <>
-    <section className='p-[5%] min-h-[75vh] block md:flex items-start gap-5'>
+    <section className='p-[5%] min-h-[75vh] block md:flex items-start gap-6'>
       <form className="flex flex-col w-full md:w-4/12 lg:w-3/12">
         <div className='w-full lg:w-full'>
           <label className="text-lg font-semibold text-gray-800 mb-2">Ordenar por</label>
@@ -133,7 +133,7 @@ const Content = ({ countries, filter, setFilter }) => {
         </div>
       </form>
       <div className=" w-full md:w-8/12 lg:w-9/12">
-        <section className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8 min-h-80'>
+        <section className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 min-h-80'>
           {coaches.map((coach, i) => {
             if (!coach) return <div key={i} className='placeholder h-40 w-full bg-gray-100'></div>
             const country = countries.find((x) => x.id == coach.country)
