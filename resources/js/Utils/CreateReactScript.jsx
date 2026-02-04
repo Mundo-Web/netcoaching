@@ -44,11 +44,13 @@ const CreateReactScript = (render) => {
         return Boolean(roles.find(x => x.name == role))
       }
 
-      FetchParams.headers = {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-        'X-Xsrf-Token': decodeURIComponent(Cookies.get('XSRF-TOKEN'))
-      }
+      FetchParams.call = () => ({
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          'X-Xsrf-Token': decodeURIComponent(Cookies.get('XSRF-TOKEN'))
+        }
+      })
       render(el, { ...properties, can, hasRole })
 
       // $('.modal-backdrop').each(function () {

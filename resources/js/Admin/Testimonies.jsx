@@ -60,7 +60,7 @@ const Testimonies = ({ countries }) => {
     for (const key in request) {
       formData.append(key, request[key])
     }
-    const file = imageRef.current.files[0]
+    const file = imageRef.files[0]
     if (file) {
       // const { thumbnail, type, ...rest } = await File.compress(file, { square: false })
       // formData.append('image', await File.fromURL(`data:${type};base64,${thumbnail}`))
@@ -130,6 +130,7 @@ const Testimonies = ({ countries }) => {
               <img
                 className='avatar-xs rounded-circle'
                 src={`/api/testimonies/media/${data.image}`}
+                style={{objectFit: 'cover', objectPosition: 'center'}}
                 alt={data.name}
               />,
               <p className='mb-0' style={{ fontSize: "14px" }}>{data.name}</p>

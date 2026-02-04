@@ -30,7 +30,7 @@
         "react-select": "^5.8.0",
         "react-youtube": "^10.1.0",
         "slick-carousel": "^1.8.1",
-        "sode-extend-react": "^1.2.7",
+        "sode-extend-react": "1.2.11",
         "sweetalert2": "^11.11.1",
         "swiper": "^11.1.12"
     }
