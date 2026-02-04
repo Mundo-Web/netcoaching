@@ -20,6 +20,9 @@ import Tippy from "@tippyjs/react";
 const coachesRest = new AdminCoachesRest();
 
 const Coaches = ({ countries = [] }) => {
+
+  console.log(countries)
+
   const gridRef = useRef()
   const modalRef = useRef()
   const pwdModalRef = useRef()

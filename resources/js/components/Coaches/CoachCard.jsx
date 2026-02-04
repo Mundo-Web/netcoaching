@@ -2,6 +2,7 @@ import Tippy from "@tippyjs/react"
 import React from "react"
 
 const CoachCard = ({ uuid, name, lastname, country, city, summary, specialties, experience, trained_hours, price, price_string, score, max_price }) => {
+  console.log(country)
   return <>
     <a href={`/profile/${uuid}`}>
       <article className="flex flex-col w-full">
@@ -17,7 +18,8 @@ const CoachCard = ({ uuid, name, lastname, country, city, summary, specialties, 
         <div className="flex flex-col w-full text-cyan-950 border p-2 rounded-b-lg">
           <div className="flex flex-col gap-2 items-start w-full text-xs font-medium leading-tight text-cyan-950">
             <div className="flex flex-row w-full">
-              <i className="fas fa-globe-americas me-1"></i>
+              {/* <i className="fas fa-globe-americas me-1"></i> */}
+              <span className="font-emoji me-1">{country?.flag ?? <i className="fas fa-globe-americas me-1"></i>}</span>
               <span className="self-stretch my-auto truncate">{
                 (country?.name || city)
                   ? `${country?.name ?? 'Sin nacionalidad'}, ${city ?? 'Sin ciudad'}`.trim()

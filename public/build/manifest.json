@@ -53,8 +53,8 @@
       "resources/js/components/Tailwind/Base.jsx"
     ]
   },
-  "_CoachCard-Dqaj9eGi.js": {
-    "file": "assets/CoachCard-Dqaj9eGi.js",
+  "_CoachCard-DwKu6Krp.js": {
+    "file": "assets/CoachCard-DwKu6Krp.js",
     "name": "CoachCard",
     "imports": [
       "resources/js/components/About/StatisticCard.jsx",
@@ -438,7 +438,7 @@
     ]
   },
   "resources/js/Admin/Coaches.jsx": {
-    "file": "assets/Coaches-D0BAH45_.js",
+    "file": "assets/Coaches-_5pBzlin.js",
     "name": "Coaches",
     "src": "resources/js/Admin/Coaches.jsx",
     "isEntry": true,
@@ -1125,7 +1125,7 @@
     ]
   },
   "resources/js/Coaches.jsx": {
-    "file": "assets/Coaches-LDNFTZJb.js",
+    "file": "assets/Coaches-CBhZlUc6.js",
     "name": "Coaches",
     "src": "resources/js/Coaches.jsx",
     "isEntry": true,
@@ -1137,7 +1137,7 @@
       "_Base-D2rUYxuf.js",
       "_hoist-non-react-statics.cjs-CgXjTu_P.js",
       "_index-Sd7so-oN.js",
-      "_CoachCard-Dqaj9eGi.js",
+      "_CoachCard-DwKu6Krp.js",
       "resources/js/components/Coaches/Content.jsx",
       "_ArrayJoin-2k6ba35P.js",
       "_EventCard-DymhttAl.js",
@@ -1252,7 +1252,7 @@
     ]
   },
   "resources/js/Profile.jsx": {
-    "file": "assets/Profile-WhihoF7Z.js",
+    "file": "assets/Profile-DUhc2CmH.js",
     "name": "Profile",
     "src": "resources/js/Profile.jsx",
     "isEntry": true,
@@ -1263,7 +1263,7 @@
       "_CreateReactScript-DA-MSol1.js",
       "_Base-D2rUYxuf.js",
       "_HtmlContent-ChrcnoQm.js",
-      "_CoachCard-Dqaj9eGi.js",
+      "_CoachCard-DwKu6Krp.js",
       "_html2string-CfCixsO3.js",
       "_tippy-react.esm-CGYKl-Jd.js",
       "_sweetalert2.esm.all-B0Dix5B2.js",

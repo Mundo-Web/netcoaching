@@ -15,7 +15,6 @@ function Coaches({ specialties, countries, events, faqs }) {
     minPrice: null,
     maxPrice: null
   })
-  console.log(filter)
   return (<>
     <Header specialties={specialties} setFilter={setFilter} />
     <Content countries={countries} filter={filter} setFilter={setFilter} />
