@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react"
+import resizeImage from "../../../Utils/resizeImage"
 
 const ImageFormGroup = ({ id, col, label, eRef, required = false, onChange = () => { }, aspect = '21/9' }) => {
 
@@ -7,49 +8,11 @@ const ImageFormGroup = ({ id, col, label, eRef, required = false, onChange = () 
 
   const imageRef = useRef()
 
-  const resizeImage = (file) => {
-    return new Promise((resolve) => {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const img = new Image();
-        img.onload = () => {
-          const canvas = document.createElement('canvas');
-          const ctx = canvas.getContext('2d');
-          const max = 1000;
-          let { width, height } = img;
-
-          if (width > height) {
-            if (width > max) {
-              height *= max / width;
-              width = max;
-            }
-          } else {
-            if (height > max) {
-              width *= max / height;
-              height = max;
-            }
-          }
-
-          canvas.width = width;
-          canvas.height = height;
-          ctx.drawImage(img, 0, 0, width, height);
-          canvas.toBlob((blob) => {
-            const resizedFile = new File([blob], file.name, { type: file.type });
-            resolve(resizedFile);
-          }, file.type);
-        };
-        img.src = e.target.result;
-      };
-      reader.readAsDataURL(file);
-    });
-  };
-
   const onImageChange = async (e) => {
     const file = e.target.files[0]
     const resizedFile = await resizeImage(file);
     const url = await File.toURL(resizedFile)
     imageRef.current.src = url
-    imageRef.files = [resizedFile]
     onChange(e)
   }
 
