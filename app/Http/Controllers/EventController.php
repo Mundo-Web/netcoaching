@@ -16,7 +16,7 @@ class EventController extends BasicController
     static function getEventsWP()
     {
         try {
-            $res = new Fetch(env('ACADEMY_URl') . '/wp-json/wp/v2/sfwd-courses?_fields=id,date,link,title,yoast_head_json.og_description,status,yoast_head_json.og_image.0.url,yoast_head_json.schema.@graph.1.itemListElement.1.name&orderby=date&order=desc');
+            $res = new Fetch(env('ACADEMY_URl') . '/wp-json/wp/v2/sfwd-courses?_fields=id,date,link,title,yoast_head_json.og_description,status,yoast_head_json.og_image.0.url,yoast_head_json.schema.@graph.1.itemListElement.1.name&orderby=date&order=desc&per_page=100');
             $data = $res->text();
             $firstBracketPos = strpos($data, '[');
             if ($firstBracketPos === false) throw new \Exception('No se encontró el primer corchete');
@@ -36,7 +36,7 @@ class EventController extends BasicController
 
         try {
             $eventPP = $this->getEventsWP();
-            $res = new Fetch(env('ACADEMY_URl') . '/wp-json/wp/v2/sfwd-courses?_fields=id,date,link,title,yoast_head_json.og_description,status,yoast_head_json.og_image.0.url,yoast_head_json.schema.@graph.1.itemListElement.1.name&orderby=date&order=desc');
+            $res = new Fetch(env('ACADEMY_URl') . '/wp-json/wp/v2/sfwd-courses?_fields=id,date,link,title,yoast_head_json.og_description,status,yoast_head_json.og_image.0.url,yoast_head_json.schema.@graph.1.itemListElement.1.name&orderby=date&order=desc&per_page=100');
             $data = $res->text();
             $firstBracketPos = strpos($data, '[');
             if ($firstBracketPos !== false) {
